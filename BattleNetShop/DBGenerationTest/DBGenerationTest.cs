@@ -5,6 +5,7 @@
 
     using BattleNetShop.Data.MSSQL;
     using BattleNetShop.Model;
+    using BattleNetShop.Data.Excel.Xls;
 
     public class DBGenerationTest
     {
@@ -17,6 +18,10 @@
             //BattleNetShop.Initial.MongoDBSeed.MongoDBSeed.SeedData();
 
             //BattleNetShop.Initial.ZippedExcelFilesSeed.ZippedExcelFilesSeed.SeedData();
+
+            var oldExcel = new ExcelXlsHandler();
+            var zipSeeder = new ExcelZippedDataSeeder();
+            zipSeeder.Seed(@"testMe", 200);
         }
     }
 }

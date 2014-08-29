@@ -3,3 +3,6 @@ C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetSh
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xls\obj\Debug\BattleNetShop.Data.Excel.Xls.csprojResolveAssemblyReference.cache
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xls\obj\Debug\BattleNetShop.Data.Excel.Xls.dll
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xls\obj\Debug\BattleNetShop.Data.Excel.Xls.pdb
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xls\bin\Debug\BattleNetShop.Data.Excel.Xls.dll.config
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xls\bin\Debug\BattleNetShop.Model.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xls\bin\Debug\BattleNetShop.Model.pdb

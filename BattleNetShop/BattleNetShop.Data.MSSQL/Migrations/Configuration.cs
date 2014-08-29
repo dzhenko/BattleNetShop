@@ -17,7 +17,7 @@ namespace BattleNetShop.Data.MSSQL.Migrations
             this.ContextKey = "BattleNetShop.Data.BattleNetShopDbContext";
         }
 
-        public override void Seed(BattleNetShopDbContext context)
+        protected override void Seed(BattleNetShopDbContext context)
         {
             // TODO: Seed with initial data from excel AddOrUpdate()
         }
