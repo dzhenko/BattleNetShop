@@ -1,11 +1,11 @@
-namespace BattleNetShop.Data
+namespace BattleNetShop.Data.MSSQL
 {
     using System;
     using System.Data.Entity;
     using System.Linq;
 
     using BattleNetShop.Model;
-    using BattleNetShop.Data.Migrations;
+    using BattleNetShop.Data.MSSQL.Migrations;
 
     public class BattleNetShopDbContext : DbContext
     {

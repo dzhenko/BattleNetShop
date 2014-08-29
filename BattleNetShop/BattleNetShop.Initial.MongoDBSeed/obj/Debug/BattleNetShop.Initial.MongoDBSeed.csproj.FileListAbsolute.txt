@@ -2,3 +2,13 @@ C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetSh
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\BattleNetShop.Initial.MongoDBSeed.pdb
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\obj\Debug\BattleNetShop.Initial.MongoDBSeed.dll
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\obj\Debug\BattleNetShop.Initial.MongoDBSeed.pdb
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\BattleNetShop.Initial.MongoDBSeed.dll.config
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\EntityFramework.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\MongoDB.Bson.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\MongoDB.Driver.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\EntityFramework.xml
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\MongoDB.Bson.xml
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\MongoDB.Driver.xml
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\obj\Debug\BattleNetShop.Initial.MongoDBSeed.csprojResolveAssemblyReference.cache

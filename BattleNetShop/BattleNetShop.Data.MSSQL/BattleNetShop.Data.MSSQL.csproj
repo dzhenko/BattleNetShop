@@ -7,8 +7,8 @@
     <ProjectGuid>{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleNetShop.Data</RootNamespace>
-    <AssemblyName>BattleNetShop.Data</AssemblyName>
+    <RootNamespace>BattleNetShop.Data.MSSQL</RootNamespace>
+    <AssemblyName>BattleNetShop.Data.MSSQL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

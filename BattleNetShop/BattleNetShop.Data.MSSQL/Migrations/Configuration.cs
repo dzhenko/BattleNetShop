@@ -1,4 +1,4 @@
-namespace BattleNetShop.Data.Migrations
+namespace BattleNetShop.Data.MSSQL.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -9,15 +9,15 @@ namespace BattleNetShop.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationsEnabled = true;
 
             // TODO: Remove Data Loss Allowed on deploy
-            AutomaticMigrationDataLossAllowed = true;
+            this.AutomaticMigrationDataLossAllowed = true;
 
-            ContextKey = "BattleNetShop.Data.BattleNetShopDbContext";
+            this.ContextKey = "BattleNetShop.Data.BattleNetShopDbContext";
         }
 
-        protected override void Seed(BattleNetShopDbContext context)
+        public override void Seed(BattleNetShopDbContext context)
         {
             // TODO: Seed with initial data from excel AddOrUpdate()
         }

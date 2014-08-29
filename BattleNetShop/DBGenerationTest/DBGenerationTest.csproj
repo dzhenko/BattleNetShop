@@ -56,17 +56,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BattleNetShop.Data\BattleNetShop.Data.csproj">
+    <ProjectReference Include="..\BattleNetShop.Data.Excel.Xlsx\BattleNetShop.Data.Excel.Xlsx.csproj">
+      <Project>{b4f6260d-0ab0-450d-9462-e510a78b013b}</Project>
+      <Name>BattleNetShop.Data.Excel.Xlsx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Data.Excel.Xls\BattleNetShop.Data.Excel.Xls.csproj">
+      <Project>{368d1a8c-9469-49e2-a20b-b41c00c0a85d}</Project>
+      <Name>BattleNetShop.Data.Excel.Xls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Data.MongoDb\BattleNetShop.Data.MongoDb.csproj">
+      <Project>{801fd9f8-9891-443f-8688-d00472d6a65f}</Project>
+      <Name>BattleNetShop.Data.MongoDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Data.MSSQL\BattleNetShop.Data.MSSQL.csproj">
       <Project>{6bf7172a-e7db-42c5-8122-6d6b65eaff5a}</Project>
-      <Name>BattleNetShop.Data</Name>
+      <Name>BattleNetShop.Data.MSSQL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BattleNetShop.Initial.MongoDBSeed\BattleNetShop.Initial.MongoDBSeed.csproj">
-      <Project>{c863fe51-57d9-4d40-90d9-c66f307bb1c1}</Project>
-      <Name>BattleNetShop.Initial.MongoDBSeed</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BattleNetShop.Initial.ZippedExcelFilesSeed\BattleNetShop.Initial.ZippedExcelFilesSeed.csproj">
-      <Project>{9e5b0656-f0aa-4738-93c4-329cb247e8d7}</Project>
-      <Name>BattleNetShop.Initial.ZippedExcelFilesSeed</Name>
+    <ProjectReference Include="..\BattleNetShop.Data.MySql\BattleNetShop.Data.MySql.csproj">
+      <Project>{3a05f6f4-24f4-4122-91dd-bc37f19fab69}</Project>
+      <Name>BattleNetShop.Data.MySql</Name>
     </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Model\BattleNetShop.Model.csproj">
       <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>

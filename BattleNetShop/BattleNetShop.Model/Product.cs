@@ -26,8 +26,7 @@
 
         public Measure Measure { get; set; }
 
-        [Column("Base Price")]
-        public decimal Price { get; set; }
+        public decimal BasePrice { get; set; }
 
         public virtual ICollection<Purchase> Purchases
         {
