@@ -1,0 +1,4 @@
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\BattleNetShop.Initial.MongoDBSeed.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\bin\Debug\BattleNetShop.Initial.MongoDBSeed.pdb
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\obj\Debug\BattleNetShop.Initial.MongoDBSeed.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Initial.MongoDBSeed\obj\Debug\BattleNetShop.Initial.MongoDBSeed.pdb

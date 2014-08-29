@@ -1,0 +1,12 @@
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\bin\Debug\BattleNetShop.Data.dll.config
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\bin\Debug\BattleNetShop.Data.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\bin\Debug\BattleNetShop.Data.pdb
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\bin\Debug\BattleNetShop.Model.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\bin\Debug\EntityFramework.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\bin\Debug\BattleNetShop.Model.pdb
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\bin\Debug\EntityFramework.xml
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\obj\Debug\BattleNetShop.Data.csprojResolveAssemblyReference.cache
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\obj\Debug\BattleNetShop.Data.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data\obj\Debug\BattleNetShop.Data.pdb
