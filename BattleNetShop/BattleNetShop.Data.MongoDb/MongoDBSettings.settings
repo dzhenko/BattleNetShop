@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BattleNetShop.Data.MongoDb" GeneratedClassName="MongoDBSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MongoDBCloudConnection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mongodb://admin:qwerty@ds053109.mongolab.com:53109/</Value>
+    </Setting>
+    <Setting Name="MongoDBName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BattleNetShop</Value>
+    </Setting>
+    <Setting Name="MongoDBLocalConnection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mongodb://localhost/novCraftDb</Value>
+    </Setting>
+    <Setting Name="MongoDBConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mongodb://localhost/novCraftDb</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

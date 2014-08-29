@@ -1,0 +1,5 @@
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\BattleNetShop.Data.MongoDb.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\BattleNetShop.Data.MongoDb.pdb
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\obj\Debug\BattleNetShop.Data.MongoDb.csprojResolveAssemblyReference.cache
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\obj\Debug\BattleNetShop.Data.MongoDb.dll
+C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\obj\Debug\BattleNetShop.Data.MongoDb.pdb
