@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30626.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Model", "BattleNetShop.Model\BattleNetShop.Model.csproj", "{0144DE51-520F-4226-8AEA-ACCD5CEEF6BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Data", "BattleNetShop.Data\BattleNetShop.Data.csproj", "{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{49F0DFE7-E1F6-47DA-9A9B-F806C641B914}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0144DE51-520F-4226-8AEA-ACCD5CEEF6BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0144DE51-520F-4226-8AEA-ACCD5CEEF6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0144DE51-520F-4226-8AEA-ACCD5CEEF6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0144DE51-520F-4226-8AEA-ACCD5CEEF6BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F0DFE7-E1F6-47DA-9A9B-F806C641B914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F0DFE7-E1F6-47DA-9A9B-F806C641B914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F0DFE7-E1F6-47DA-9A9B-F806C641B914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F0DFE7-E1F6-47DA-9A9B-F806C641B914}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
