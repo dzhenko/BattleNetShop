@@ -46,6 +46,7 @@
                 newReport.TotalIncomes = totalIncomes;
                 this.connection.Add(newReport);
                 this.connection.SaveChanges();
+                Console.WriteLine("REPORT SUCCESSFULLY RECORDED TO MYSQL!");
             }
         }
     }

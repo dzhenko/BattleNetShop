@@ -21,9 +21,8 @@
                 Console.WriteLine("VendorName: {0}", report.VendorName);
                 Console.WriteLine("Total Quantity Sold: {0}", report.TotalQuantitySold);
                 Console.WriteLine("Total Incomes: {0}", report.TotalIncomes);
-
+                Console.WriteLine("------------------------");
             }
-            Console.WriteLine("------------------------");
         }
     }
 }
