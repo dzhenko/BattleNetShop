@@ -5,7 +5,7 @@
     using System.Text;
     using BattleNetShop.Model;
 
-    public class BulkOperationsGenericRepository<T> : GenericRepository<T>, IGenericRepository<T> where T : class
+    public class BulkOperationsGenericRepository : GenericRepository<Purchase>, IGenericRepository<Purchase>
     {
         public BulkOperationsGenericRepository(IBattleNetShopMSSQLDbContext battleNetShopMSSQLDbContext)
             : base(battleNetShopMSSQLDbContext)

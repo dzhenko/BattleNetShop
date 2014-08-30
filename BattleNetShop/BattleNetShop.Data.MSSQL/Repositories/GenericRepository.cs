@@ -14,6 +14,11 @@
             this.context = battleNetShopMSSQLDbContext;
 	    }
 
+        public GenericRepository()
+            : this(new BattleNetShopMSSQLDbContext())
+        {
+        }
+
         protected IBattleNetShopMSSQLDbContext Context
         {
             get
@@ -21,11 +26,6 @@
                 return this.context;
             }
         }
-
-        public GenericRepository()
-	        : this(new BattleNetShopMSSQLDbContext())
-        {
-	    }
 
         public void Add(T entity)
         {
