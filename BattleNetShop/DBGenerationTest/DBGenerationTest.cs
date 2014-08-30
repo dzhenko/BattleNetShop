@@ -21,7 +21,7 @@
 
             var oldExcel = new ExcelXlsHandler();
             var zipSeeder = new ExcelZippedDataSeeder();
-            zipSeeder.Seed(@"testMe", 200);
+            zipSeeder.Seed();
         }
     }
 }

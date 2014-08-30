@@ -6,12 +6,10 @@
     using System.Data;
     using System.Data.OleDb;
 
-    using BattleNetShop.Model;
-
     public class ExcelXlsHandler
     {
         // Task 1 input
-        public ICollection<Purchase> ReadAllPurchases(string fileName)
+        public void ReadAllPurchases(string fileName)
         {
             throw new NotImplementedException();
         }

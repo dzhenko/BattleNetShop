@@ -30,6 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExcelFile.net">
+      <HintPath>..\packages\ExcelFile.net.1.0.7\lib\net45\ExcelFile.net.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,9 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BattleNetShop.Model\BattleNetShop.Model.csproj">
-      <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>
-      <Name>BattleNetShop.Model</Name>
+    <ProjectReference Include="..\ZipFileHandler\ZipFileHandler.csproj">
+      <Project>{66d9dd05-d06e-454f-ad92-2ac3df7bd8b3}</Project>
+      <Name>ZipFileHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +78,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>ExcelSettings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

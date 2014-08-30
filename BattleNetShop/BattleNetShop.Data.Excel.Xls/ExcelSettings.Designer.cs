@@ -41,5 +41,23 @@ namespace BattleNetShop.Data.Excel.Xls {
                 return ((string)(this["InitialProductsFileLocation"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\InitialData\\SalesReports\\")]
+        public string SalesReportsFoldersLocation {
+            get {
+                return ((string)(this["SalesReportsFoldersLocation"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\DataSources\\salesReports.zip")]
+        public string ZipFileResultLocation {
+            get {
+                return ((string)(this["ZipFileResultLocation"]));
+            }
+        }
     }
 }

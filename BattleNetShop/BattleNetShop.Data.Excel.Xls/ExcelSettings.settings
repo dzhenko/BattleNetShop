@@ -8,5 +8,11 @@
     <Setting Name="InitialProductsFileLocation" Type="System.String" Scope="Application">
       <Value Profile="(Default)">..\..\..\..\InitialData\InitialData.xlsx</Value>
     </Setting>
+    <Setting Name="SalesReportsFoldersLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\InitialData\SalesReports\</Value>
+    </Setting>
+    <Setting Name="ZipFileResultLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\DataSources\salesReports.zip</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
