@@ -18,9 +18,9 @@
 
             // new MongoDataSeeder().Seed();
 
-            var coll = new MongoDbData().GetAllProducts();
+            //var coll = new MongoDbData().GetAllProducts();
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
             //var mongo = new MongoDBHandler();
 
