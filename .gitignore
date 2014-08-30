@@ -64,6 +64,12 @@ local.properties
 *.dotCover
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
+BattleNetShop/packages/
+**/bin
+**/debug
+bin/
+debug/
+packages
 packages/
 
 # Visual C++ cache files
