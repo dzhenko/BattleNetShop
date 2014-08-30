@@ -10,3 +10,15 @@ C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetSh
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\BattleNetShop.Model.pdb
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\MongoDB.Bson.xml
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\MongoDB.Driver.xml
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\BattleNetShop.Data.MongoDb.dll.config
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\BattleNetShop.Data.MongoDb.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\BattleNetShop.Data.MongoDb.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\BattleNetShop.Model.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\MongoDB.Bson.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\MongoDB.Driver.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\BattleNetShop.Model.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\MongoDB.Bson.xml
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\bin\Debug\MongoDB.Driver.xml
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\obj\Debug\BattleNetShop.Data.MongoDb.csprojResolveAssemblyReference.cache
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\obj\Debug\BattleNetShop.Data.MongoDb.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MongoDb\obj\Debug\BattleNetShop.Data.MongoDb.pdb

@@ -10,3 +10,15 @@ C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetSh
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\obj\Debug\BattleNetShop.Data.MSSQL.csprojResolveAssemblyReference.cache
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\obj\Debug\BattleNetShop.Data.MSSQL.dll
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\obj\Debug\BattleNetShop.Data.MSSQL.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\bin\Debug\BattleNetShop.Data.MSSQL.dll.config
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\bin\Debug\BattleNetShop.Data.MSSQL.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\bin\Debug\BattleNetShop.Data.MSSQL.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\bin\Debug\BattleNetShop.Model.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\bin\Debug\EntityFramework.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\bin\Debug\BattleNetShop.Model.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\bin\Debug\EntityFramework.xml
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\obj\Debug\BattleNetShop.Data.MSSQL.csprojResolveAssemblyReference.cache
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\obj\Debug\BattleNetShop.Data.MSSQL.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MSSQL\obj\Debug\BattleNetShop.Data.MSSQL.pdb

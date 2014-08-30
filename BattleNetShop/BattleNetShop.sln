@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30626.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Model", "BattleNetShop.Model\BattleNetShop.Model.csproj", "{0144DE51-520F-4226-8AEA-ACCD5CEEF6BF}"
 EndProject
@@ -38,6 +38,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{94851855-81CB-441B-9043-5640964F687D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipFileHandler", "ZipFileHandler\ZipFileHandler.csproj", "{66D9DD05-D06E-454F-AD92-2AC3DF7BD8B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem-4-GenerateJSONFiles", "Problem-4-GenerateJSONFiles\Problem-4-GenerateJSONFiles.csproj", "{22B677A1-1133-430F-9C1A-839A905B094D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{66D9DD05-D06E-454F-AD92-2AC3DF7BD8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66D9DD05-D06E-454F-AD92-2AC3DF7BD8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66D9DD05-D06E-454F-AD92-2AC3DF7BD8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B677A1-1133-430F-9C1A-839A905B094D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B677A1-1133-430F-9C1A-839A905B094D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B677A1-1133-430F-9C1A-839A905B094D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B677A1-1133-430F-9C1A-839A905B094D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0144DE51-520F-4226-8AEA-ACCD5CEEF6BF} = {E56A96E2-42E6-441D-B21A-ABFA5FF28410}
 		{5758307E-504E-4F42-916B-7C46F4A92F83} = {28B9F19D-9442-4007-82A7-BC7395933077}
+		{22B677A1-1133-430F-9C1A-839A905B094D} = {28B9F19D-9442-4007-82A7-BC7395933077}
 		{3A05F6F4-24F4-4122-91DD-BC37F19FAB69} = {073B0B16-B559-45A6-A8CE-83A6D863255E}
 		{801FD9F8-9891-443F-8688-D00472D6A65F} = {073B0B16-B559-45A6-A8CE-83A6D863255E}
 		{368D1A8C-9469-49E2-A20B-B41C00C0A85D} = {073B0B16-B559-45A6-A8CE-83A6D863255E}
