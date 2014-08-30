@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BattleNetShop.Data.SQLite" GeneratedClassName="SQLiteDBSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SQLiteDBSampleDataProducts" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\BattleNetShop.Data.SQLite\SampleData\Products.txt</Value>
+    </Setting>
+    <Setting Name="SQLiteDBFileLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Users\User\Documents\</Value>
+    </Setting>
+    <Setting Name="SQLiteDBName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BattleNetShop.sqlite</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
