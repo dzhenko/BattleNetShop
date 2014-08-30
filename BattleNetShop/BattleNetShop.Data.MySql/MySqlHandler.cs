@@ -14,16 +14,14 @@ namespace BattleNetShop.Data.MySql
             {
                 foreach (var report in connection.Salereports)
                 {
-                    var currentReport = new Salereport
+                    action(new Salereport
                     {
                         Product_id = report.Product_id,
                         ProductName = report.ProductName,
                         VendorName = report.VendorName,
                         TotalQuantitySold = report.TotalQuantitySold,
                         TotalIncomes = report.TotalIncomes
-                    };
-
-                    action(currentReport);
+                    });
                 }
             }
         }

@@ -10,3 +10,4 @@ C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.M
 C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\bin\Debug\Telerik.OpenAccess.40.Extensions.xml
 C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\obj\Debug\BattleNetShop.Data.MySql.dll
 C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\obj\Debug\BattleNetShop.Data.MySql.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\obj\Debug\BattleNetShop.Data.MySql.csprojResolveAssemblyReference.cache
