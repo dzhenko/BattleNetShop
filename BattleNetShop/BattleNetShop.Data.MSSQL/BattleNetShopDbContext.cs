@@ -7,7 +7,7 @@ namespace BattleNetShop.Data.MSSQL
     using BattleNetShop.Model;
     using BattleNetShop.Data.MSSQL.Migrations;
 
-    public class BattleNetShopDbContext : DbContext
+    public class BattleNetShopDbContext : DbContext, IBattleNetShopDbContext
     {
         public BattleNetShopDbContext()
             : base("BattleNetShopConnection")
@@ -17,16 +17,24 @@ namespace BattleNetShop.Data.MSSQL
 
         public IDbSet<Product> Products { get; set; }
 
-        public IDbSet<Category> Categories { get; set; }
+        public IDbSet<ProductCategory> Categories { get; set; }
 
         public IDbSet<Vendor> Vendors { get; set; }
 
-        public IDbSet<Details> Details { get; set; }
+        public IDbSet<ProductDetails> Details { get; set; }
 
         public IDbSet<Purchase> Purchases { get; set; }
 
-        public IDbSet<Date> Dates { get; set; }
+        public IDbSet<PurchaseLocation> Locations { get; set; }
 
-        public IDbSet<Location> Locations { get; set; }
+        public new IDbSet<T> Set<T>() where T : class
+        {
+            return base.Set<T>();
+        }
+
+        public new void SaveChanges()
+        {
+            base.SaveChanges();
+        }
     }
 }

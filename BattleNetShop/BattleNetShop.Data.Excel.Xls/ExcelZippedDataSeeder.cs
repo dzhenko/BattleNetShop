@@ -11,6 +11,9 @@
 
     using BattleNetShop.Utils.ZipFileHandler;
 
+    /// <summary>
+    /// Class used to create a single file with zipped sales reports.
+    /// </summary>
     public class ExcelZippedDataSeeder
     {
         private Dictionary<int, double> productsWithPrices;
@@ -18,16 +21,28 @@
 
         private readonly Random random;
 
+        /// <summary>
+        /// Creates instance of the Excel Zipped Data Seeder.
+        /// </summary>
         public ExcelZippedDataSeeder()
         {
             random = new Random();
         }
 
+        /// <summary>
+        /// Seeds the default sales reports in the default destination path default number of times (200).
+        /// </summary>
         public void Seed()
         {
+            // TODO: Change to 100
             this.Seed(ExcelSettings.Default.SalesReportsFoldersLocation, 20);
         }
 
+        /// <summary>
+        /// Seeds the default sales reports in the given destination path given number of times.
+        /// </summary>
+        /// <param name="destinationPath">The path at witch to create the file</param>
+        /// <param name="numberOfRecords">The number of sales reports to create</param>
         public void Seed(string destinationPath, int numberOfRecords)
         {
             Console.WriteLine("Seeding excel 2003 sales reports");
@@ -38,7 +53,16 @@
 
             GenerateZipFile();
 
+            CleanUp();
+
             Console.WriteLine("Done");
+        }
+
+        private void CleanUp()
+        {
+            Console.WriteLine("Deleting temp files...");
+
+            Directory.Delete(ExcelSettings.Default.SalesReportsFoldersLocation, true);
         }
 
         private void GenerateZipFile()
@@ -86,14 +110,14 @@
 
             productsWithPrices = new Dictionary<int, double>();
 
-            excelHander.ReadExcelSheet(ExcelSettings.Default.InitialProductsFileLocation, "Products", reader =>
+            excelHander.ReadExcelSheet(ExcelSettings.Default.InitialProductsFileLocation, "Products$", reader =>
             {
                 productsWithPrices.Add((int)(double)reader["Id"], (double)reader["Base Price"]);
             });
 
             purchaseLocations = new List<string>();
 
-            excelHander.ReadExcelSheet(ExcelSettings.Default.InitialProductsFileLocation, "Locations", reader =>
+            excelHander.ReadExcelSheet(ExcelSettings.Default.InitialProductsFileLocation, "Locations$", reader =>
             {
                 purchaseLocations.Add((string)reader["Name"]);
             });
@@ -144,7 +168,7 @@
             totalSum += accountPrice;
 
             excel.Row()
-                .Cell("Total", 1, 3)
+                .Cell("Total", 1, 2)
                 .Cell(totalSum + 0.0, 1, 1, excel.NewStyle().Bold());
 
             excel.Save(filename);

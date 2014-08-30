@@ -19,7 +19,6 @@
 
             //BattleNetShop.Initial.ZippedExcelFilesSeed.ZippedExcelFilesSeed.SeedData();
 
-            var oldExcel = new ExcelXlsHandler();
             var zipSeeder = new ExcelZippedDataSeeder();
             zipSeeder.Seed();
         }

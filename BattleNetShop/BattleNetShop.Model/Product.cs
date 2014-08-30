@@ -19,12 +19,12 @@
         public virtual Vendor Vendor { get; set; }
 
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public virtual ProductCategory Category { get; set; }
 
         public int DetailsId { get; set; }
-        public virtual Details Details { get; set; }
+        public virtual ProductDetails Details { get; set; }
 
-        public Measure Measure { get; set; }
+        public ProductMeasure Measure { get; set; }
 
         public decimal BasePrice { get; set; }
 

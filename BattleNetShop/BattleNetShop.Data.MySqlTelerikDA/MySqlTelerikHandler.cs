@@ -6,6 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using BattleNetShop.Data.JSON;
+
     public class MySqlTelerikHandler
     {
         public MySqlSaleReportEntities connection { get; set; }
