@@ -3,3 +3,8 @@ C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetSh
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\obj\Debug\BattleNetShop.Data.MySql.csprojResolveAssemblyReference.cache
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\obj\Debug\BattleNetShop.Data.MySql.dll
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\obj\Debug\BattleNetShop.Data.MySql.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\bin\Debug\BattleNetShop.Data.MySql.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\bin\Debug\BattleNetShop.Data.MySql.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\obj\Debug\BattleNetShop.Data.MySql.csprojResolveAssemblyReference.cache
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\obj\Debug\BattleNetShop.Data.MySql.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.MySql\obj\Debug\BattleNetShop.Data.MySql.pdb
