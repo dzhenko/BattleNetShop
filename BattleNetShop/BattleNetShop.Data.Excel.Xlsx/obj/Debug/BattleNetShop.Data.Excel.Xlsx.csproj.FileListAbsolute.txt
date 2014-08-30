@@ -2,3 +2,7 @@ C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetSh
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xlsx\bin\Debug\BattleNetShop.Data.Excel.Xlsx.pdb
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xlsx\obj\Debug\BattleNetShop.Data.Excel.Xlsx.dll
 C:\Users\dzhenko\Documents\Visual Studio 2013\Projects\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xlsx\obj\Debug\BattleNetShop.Data.Excel.Xlsx.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xlsx\bin\Debug\BattleNetShop.Data.Excel.Xlsx.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xlsx\bin\Debug\BattleNetShop.Data.Excel.Xlsx.pdb
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xlsx\obj\Debug\BattleNetShop.Data.Excel.Xlsx.dll
+C:\Users\nzhul\Documents\GitHub\BattleNetShop\BattleNetShop\BattleNetShop.Data.Excel.Xlsx\obj\Debug\BattleNetShop.Data.Excel.Xlsx.pdb

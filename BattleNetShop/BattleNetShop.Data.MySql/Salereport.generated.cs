@@ -19,7 +19,7 @@ using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
 
-namespace BattleNetShop.Data.MySqlTelerikDA	
+namespace BattleNetShop.Data.MySql	
 {
 	public partial class Salereport
 	{

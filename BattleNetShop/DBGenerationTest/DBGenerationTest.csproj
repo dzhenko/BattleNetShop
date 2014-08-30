@@ -74,10 +74,6 @@
       <Project>{6bf7172a-e7db-42c5-8122-6d6b65eaff5a}</Project>
       <Name>BattleNetShop.Data.MSSQL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BattleNetShop.Data.MySql\BattleNetShop.Data.MySql.csproj">
-      <Project>{3a05f6f4-24f4-4122-91dd-bc37f19fab69}</Project>
-      <Name>BattleNetShop.Data.MySql</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Model\BattleNetShop.Model.csproj">
       <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>
       <Name>BattleNetShop.Model</Name>

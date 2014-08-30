@@ -5,13 +5,20 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using BattleNetShop.Data.MySqlTelerikDA;
+    using BattleNetShop.Data.MySql;
     class Program
     {
         static void Main()
         {
-            MySqlTelerikHandler reportWriter = new MySqlTelerikHandler();
-            reportWriter.WriteReport(2, "AwesomeItem", "Blizzard", 111, 222);
+            var reportWriter = new MySqlHandler();
+            reportWriter.WriteReport(new Salereport
+                {
+                    Product_id = 122,
+                    ProductName = "aidee",
+                    TotalIncomes = 9999,
+                    TotalQuantitySold = 9,
+                    VendorName = "Ivan"
+                });
         }
     }
 }

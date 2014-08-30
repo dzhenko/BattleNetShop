@@ -18,11 +18,11 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
-using BattleNetShop.Data.MySqlTelerikDA;
+using BattleNetShop.Data.MySql;
 
-namespace BattleNetShop.Data.MySqlTelerikDA	
+namespace BattleNetShop.Data.MySql	
 {
-	public partial class MySqlSaleReportEntities : OpenAccessContext, IMySqlSaleReportEntitiesUnitOfWork
+	public partial class BattleNetShopMySqlDbContext : OpenAccessContext, IBattleNetShopMySqlDbContextUnitOfWork
 	{
 		private static string connectionStringName = @"MySqlConnection";
 			
@@ -30,23 +30,23 @@ namespace BattleNetShop.Data.MySqlTelerikDA
 				
 		private static MetadataSource metadataSource = XmlMetadataSource.FromAssemblyResource("EntitiesModel.rlinq");
 		
-		public MySqlSaleReportEntities()
+		public BattleNetShopMySqlDbContext()
 			:base(connectionStringName, backend, metadataSource)
 		{ }
 		
-		public MySqlSaleReportEntities(string connection)
+		public BattleNetShopMySqlDbContext(string connection)
 			:base(connection, backend, metadataSource)
 		{ }
 		
-		public MySqlSaleReportEntities(BackendConfiguration backendConfiguration)
+		public BattleNetShopMySqlDbContext(BackendConfiguration backendConfiguration)
 			:base(connectionStringName, backendConfiguration, metadataSource)
 		{ }
 			
-		public MySqlSaleReportEntities(string connection, MetadataSource metadataSource)
+		public BattleNetShopMySqlDbContext(string connection, MetadataSource metadataSource)
 			:base(connection, backend, metadataSource)
 		{ }
 		
-		public MySqlSaleReportEntities(string connection, BackendConfiguration backendConfiguration, MetadataSource metadataSource)
+		public BattleNetShopMySqlDbContext(string connection, BackendConfiguration backendConfiguration, MetadataSource metadataSource)
 			:base(connection, backendConfiguration, metadataSource)
 		{ }
 			
@@ -70,14 +70,14 @@ namespace BattleNetShop.Data.MySqlTelerikDA
 		}
 		
 		/// <summary>
-		/// Allows you to customize the BackendConfiguration of MySqlSaleReportEntities.
+		/// Allows you to customize the BackendConfiguration of BattleNetShopMySqlDbContext.
 		/// </summary>
-		/// <param name="config">The BackendConfiguration of MySqlSaleReportEntities.</param>
+		/// <param name="config">The BackendConfiguration of BattleNetShopMySqlDbContext.</param>
 		static partial void CustomizeBackendConfiguration(ref BackendConfiguration config);
 		
 	}
 	
-	public interface IMySqlSaleReportEntitiesUnitOfWork : IUnitOfWork
+	public interface IBattleNetShopMySqlDbContextUnitOfWork : IUnitOfWork
 	{
 		IQueryable<Salereport> Salereports
 		{
