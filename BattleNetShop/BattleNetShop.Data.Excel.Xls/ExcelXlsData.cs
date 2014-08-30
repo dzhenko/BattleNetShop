@@ -29,7 +29,7 @@
         /// Reads every row of every report and performs an action of your choice.
         /// </summary>
         /// <param name="action">Action to perform on the returned ProductId, Quantity, UnitPrice, LocationName and Date.</param>
-        public void ReadAllPurchases(Action<Purchase> action, IDictionary<string, int> locationsMapping)
+        public void ReadAllPurchases(IDictionary<string, int> locationsMapping, Action<Purchase> action)
         {
             this.ReadAllPurchases(ExcelSettings.Default.ZipFileResultLocation, (productId, quantity, unitPrice, locationName, date) =>
                 {

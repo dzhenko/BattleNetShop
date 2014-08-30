@@ -45,11 +45,11 @@
             }
         }
 
-        public BulkOperationsGenericRepository Purchases
+        public IGenericRepository<Purchase> Purchases
         {
             get
             {
-                return (BulkOperationsGenericRepository)this.GetRepository<BulkOperationsGenericRepository>();
+                return this.GetRepository<Purchase>();
             }
         }
 
@@ -88,12 +88,7 @@
 
             if (!this.repositories.ContainsKey(typeOfModel))
             {
-                var type = typeof(GenericRepository<T>);
-
-                if (typeOfModel.IsAssignableFrom(typeof(Purchase)))
-                {
-                    type = typeof(BulkOperationsGenericRepository);
-                }
+                var type = typeof(GenericRepository<T>);                
 
                 this.repositories.Add(typeOfModel, Activator.CreateInstance(type, this.context));
             }

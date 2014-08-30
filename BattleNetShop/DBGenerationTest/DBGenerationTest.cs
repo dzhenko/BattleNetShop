@@ -7,11 +7,14 @@
     using BattleNetShop.Model;
     using BattleNetShop.Data.Excel.Xls;
     using BattleNetShop.Data.MongoDb;
+    using BattleNetShop.Logic;
 
     public class DBGenerationTest
     {
         public static void Main()
         {
+            new ExcelReportsLoader().Load();
+
             //var db = new BattleNetShopMSSQLDbContext();
 
             //Console.WriteLine(db.Categories.FirstOrDefault());
