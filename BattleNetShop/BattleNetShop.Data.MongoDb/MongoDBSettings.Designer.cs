@@ -43,22 +43,37 @@ namespace BattleNetShop.Data.MongoDb {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("mongodb://localhost/novCraftDb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("mongodb://localhost/battleNetShopDb")]
         public string MongoDBLocalConnection {
             get {
                 return ((string)(this["MongoDBLocalConnection"]));
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("mongodb://localhost/novCraftDb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("mongodb://localhost/battleNetShopDb")]
         public string MongoDBConnectionString {
             get {
                 return ((string)(this["MongoDBConnectionString"]));
             }
-            set {
-                this["MongoDBConnectionString"] = value;
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        public string MongoDBAddress {
+            get {
+                return ((string)(this["MongoDBAddress"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27017")]
+        public int MongoDBPort {
+            get {
+                return ((int)(this["MongoDBPort"]));
             }
         }
     }

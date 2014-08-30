@@ -5,8 +5,10 @@
 
     using BattleNetShop.Model;
 
-    public interface IBattleNetShopDbContext
+    public interface IBattleNetShopMSSQLDbContext
     {
+        Database Database { get; }
+
         IDbSet<Product> Products { get; set; }
 
         IDbSet<ProductCategory> Categories { get; set; }

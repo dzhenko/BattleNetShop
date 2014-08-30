@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MongoDataSeeder.cs" />
+    <Compile Include="MongoDbData.cs" />
     <Compile Include="MongoDBHandler.cs" />
     <Compile Include="MongoDBSettings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -56,6 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BattleNetShop.Data.Excel.Xls\BattleNetShop.Data.Excel.Xls.csproj">
+      <Project>{368d1a8c-9469-49e2-a20b-b41c00c0a85d}</Project>
+      <Name>BattleNetShop.Data.Excel.Xls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Model\BattleNetShop.Model.csproj">
       <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>
       <Name>BattleNetShop.Model</Name>

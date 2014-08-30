@@ -6,21 +6,33 @@
     using BattleNetShop.Data.MSSQL;
     using BattleNetShop.Model;
     using BattleNetShop.Data.Excel.Xls;
+    using BattleNetShop.Data.MongoDb;
 
     public class DBGenerationTest
     {
         public static void Main()
         {
-            //var db = new BattleNetShopDbContext();
+            //var db = new BattleNetShopMSSQLDbContext();
 
-            //Console.WriteLine(db.Products.FirstOrDefault());
+            //Console.WriteLine(db.Categories.FirstOrDefault());
 
-            //BattleNetShop.Initial.MongoDBSeed.MongoDBSeed.SeedData();
+            // new MongoDataSeeder().Seed();
 
-            //BattleNetShop.Initial.ZippedExcelFilesSeed.ZippedExcelFilesSeed.SeedData();
+            // var coll = new MongoDbData().GetAllProducts();
 
-            var zipSeeder = new ExcelZippedDataSeeder();
-            zipSeeder.Seed();
+            //var mongo = new MongoDBHandler();
+
+            //mongo.ReadCollection<Product>("Products", p => Console.WriteLine(p.Name));
+
+            //var excelXlsData = new ExcelXlsData();
+            //
+            //var zipSeeder = new ExcelZippedDataSeeder();
+            //
+            //zipSeeder.Seed(1);
+            //
+            //var excelXlsHander = new ExcelXlsHandler();
+            //
+            //excelXlsHander.ReadInitialDataFile("Categories$", row => Console.WriteLine(row[1]));
         }
     }
 }

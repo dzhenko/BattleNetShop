@@ -9,10 +9,16 @@
       <Value Profile="(Default)">BattleNetShop</Value>
     </Setting>
     <Setting Name="MongoDBLocalConnection" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">mongodb://localhost/novCraftDb</Value>
+      <Value Profile="(Default)">mongodb://localhost/battleNetShopDb</Value>
     </Setting>
-    <Setting Name="MongoDBConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">mongodb://localhost/novCraftDb</Value>
+    <Setting Name="MongoDBConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mongodb://localhost/battleNetShopDb</Value>
+    </Setting>
+    <Setting Name="MongoDBAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="MongoDBPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">27017</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -50,13 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BattleNetShopDbContext.cs" />
-    <Compile Include="IBattleNetShopDbContext.cs" />
+    <Compile Include="BattleNetShopMSSQLData.cs" />
+    <Compile Include="BattleNetShopMSSQLDbContext.cs" />
+    <Compile Include="IBattleNetShopMSSQLDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MSSQLSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>MSSQLSettings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BulkOperationsGenericRepository.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IGenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="MSSQLSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MSSQLSettings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -20,7 +20,6 @@
         [Required]
         public string Type { get; set; }
 
-        [Column(TypeName = "ntext")]
         [MaxLength]
         public string Description { get; set; }
 

@@ -64,6 +64,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>ExcelSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ExcelXlsData.cs" />
     <Compile Include="ExcelXlsHandler.cs" />
     <Compile Include="ExcelZippedDataSeeder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +78,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BattleNetShop.Model\BattleNetShop.Model.csproj">
+      <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>
+      <Name>BattleNetShop.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Utils.ZipFileHandler\BattleNetShop.Utils.ZipFileHandler.csproj">
       <Project>{66d9dd05-d06e-454f-ad92-2ac3df7bd8b3}</Project>
       <Name>BattleNetShop.Utils.ZipFileHandler</Name>

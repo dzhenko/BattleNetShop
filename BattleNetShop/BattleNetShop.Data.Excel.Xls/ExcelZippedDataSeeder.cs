@@ -35,7 +35,17 @@
         public void Seed()
         {
             // TODO: Change to 100
-            this.Seed(ExcelSettings.Default.SalesReportsFoldersLocation, 20);
+            this.Seed(20);
+        }
+
+        /// <summary>
+        /// Seeds the default sales reports in the default destination path given number of times.
+        /// </summary>
+        /// <param name="numberOfRecords">The number of sales reports to create</param>
+        public void Seed(int numberOfRecords)
+        {
+            // TODO: Change to 100
+            this.Seed(ExcelSettings.Default.SalesReportsFoldersLocation, numberOfRecords);
         }
 
         /// <summary>
