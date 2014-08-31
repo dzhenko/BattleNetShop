@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using BattleNetShop.Data.Excel.Xls;
     using BattleNetShop.Data.MongoDb;
@@ -76,6 +77,15 @@
             });
 
             MSSQL.SaveChanges();
+        }
+
+        public void Test()
+        {
+            var MSSQL = new BattleNetShopMSSQLData();
+
+            var found = MSSQL.Products.GetById(5);
+
+            Console.WriteLine(found.Purchases.Sum(x=>x.Quantity * x.Sum));
         }
     }
 }

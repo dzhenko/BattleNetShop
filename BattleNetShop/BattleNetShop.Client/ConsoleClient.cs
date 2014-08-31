@@ -6,9 +6,11 @@
     {
         public static void Main()
         {
-            //new DataSeeder().Seed();
+            new DataSeeder().Seed();
 
             new ExcelReportsLoader().Load();
+
+            new ExcelReportsLoader().Test();
         }
     }
 }
