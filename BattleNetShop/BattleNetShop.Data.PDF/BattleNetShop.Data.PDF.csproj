@@ -58,10 +58,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PDFHandler.cs" />
+    <Compile Include="PdfSettings.Designer.cs">
+      <DependentUpon>PdfSettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="PdfSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>PdfSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BattleNetShop.ReportsModel\BattleNetShop.ReportsModel.csproj">
+      <Project>{e4279469-a64d-41e6-adbb-0497853cebfa}</Project>
+      <Name>BattleNetShop.ReportsModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
