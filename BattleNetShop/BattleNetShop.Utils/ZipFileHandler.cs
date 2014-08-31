@@ -1,4 +1,4 @@
-﻿namespace BattleNetShop.Utils.ZipFileHandler
+﻿namespace BattleNetShop.Utils
 {
     using System.IO;
 

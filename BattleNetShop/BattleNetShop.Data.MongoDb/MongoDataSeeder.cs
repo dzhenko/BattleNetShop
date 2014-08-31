@@ -97,8 +97,6 @@
                 });
             });
 
-            Console.WriteLine(allProducts.Count);
-
             mongoHandler.WriteCollection<Product>("Products", allProducts);
         }
     }

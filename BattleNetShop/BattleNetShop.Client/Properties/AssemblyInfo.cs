@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DBGenerationTest")]
+[assembly: AssemblyTitle("BattleNetShop.Client")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DBGenerationTest")]
+[assembly: AssemblyProduct("BattleNetShop.Client")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cd2fb55a-e039-4c3b-9e78-160f3753381e")]
+[assembly: Guid("b48487a4-c660-4ac7-9f1c-9ab0407ab3ba")]
 
 // Version information for an assembly consists of the following four values:
 //

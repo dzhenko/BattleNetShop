@@ -1,5 +1,7 @@
 ﻿namespace BattleNetShop.Logic
 {
+    using System;
+
     using BattleNetShop.Data.Excel.Xls;
     using BattleNetShop.Data.MongoDb;
 
@@ -7,9 +9,11 @@
     {
         public void Seed()
         {
+            Console.WriteLine("Seeding mongo data...");
             new MongoDataSeeder().Seed();
 
-            new ExcelZippedDataSeeder().Seed();
+            Console.WriteLine("Seeding excel data...");
+            new ExcelZippedDataSeeder().Seed(3);
         }
     }
 }

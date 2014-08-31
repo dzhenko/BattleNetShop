@@ -7,8 +7,8 @@
     <ProjectGuid>{66D9DD05-D06E-454F-AD92-2AC3DF7BD8B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleNetShop.Utils.ZipFileHandler</RootNamespace>
-    <AssemblyName>BattleNetShop.Utils.ZipFileHandler</AssemblyName>
+    <RootNamespace>BattleNetShop.Utils</RootNamespace>
+    <AssemblyName>BattleNetShop.Utils</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>

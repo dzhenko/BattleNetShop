@@ -1,5 +1,6 @@
 ﻿namespace BattleNetShop.Logic
 {
+    using System;
     using System.Collections.Generic;
 
     using BattleNetShop.Data.Excel.Xls;
@@ -15,21 +16,25 @@
 
             var mongo = new MongoDbData();
 
+            Console.WriteLine("Adding product categories from MongoDb to MS SQL...");
             foreach (var category in mongo.GetAllProductCategories())
             {
                 MSSQL.ProductCategories.Add(category);
             }
 
+            Console.WriteLine("Adding product details from MongoDb to MS SQL...");
             foreach (var detail in mongo.GetAllProductDetails())
             {
                 MSSQL.ProductDetails.Add(detail);
             }
 
+            Console.WriteLine("Adding vendors from MongoDb to MS SQL...");
             foreach (var vendor in mongo.GetAllVendors())
             {
                 MSSQL.Vendors.Add(vendor);
             }
 
+            Console.WriteLine("Adding products from MongoDb to MS SQL...");
             foreach (var product in mongo.GetAllProducts())
             {
                 MSSQL.Products.Add(product);
@@ -52,9 +57,10 @@
             var dictionaryWithLocations = new Dictionary<string, int>();
             var index = 1;
 
+            Console.WriteLine("Adding purchase locations from Zipped excel reports to MS SQL...");
             foreach (var location in setOfLocations)
             {
-                MSSQL.PurchaseLocations.Add(new PurchaseLocation() 
+                MSSQL.PurchaseLocations.Add(new PurchaseLocation()
                 {
                     Name = location
                 });
@@ -63,6 +69,7 @@
                 index++;
             }
 
+            Console.WriteLine("Adding purchases from Zipped excel reports to MS SQL (be patient)...");
             excel.ReadAllPurchases(dictionaryWithLocations, purchase =>
             {
                 MSSQL.Purchases.Add(purchase);

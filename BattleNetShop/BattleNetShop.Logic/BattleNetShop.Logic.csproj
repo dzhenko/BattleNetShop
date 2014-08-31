@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60E0E31E-1BA4-4310-B488-C5B67ADD02EA}</ProjectGuid>
+    <ProjectGuid>{46C39201-0410-4D64-ABDE-6367B1FB9F85}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BattleNetShop.Logic</RootNamespace>

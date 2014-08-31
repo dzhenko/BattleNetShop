@@ -8,7 +8,7 @@
     using System.Data;
     using System.Data.OleDb;
 
-    using BattleNetShop.Utils.ZipFileHandler;
+    using BattleNetShop.Utils;
     using BattleNetShop.Model;
 
     /// <summary>
@@ -66,16 +66,19 @@
 
                 foreach (var file in Directory.GetFiles(subfolder))
                 {
-                    var slashIndex = file.LastIndexOf('\\') + 1;
-                    var locationName = file.Substring(slashIndex, file.IndexOf('-', slashIndex));
-
-                    excelXlsHander.ReadExcelSheet(file, row =>
+                    if (file.EndsWith(".xls"))
                     {
-                        if (row[0] != DBNull.Value)
+                        var slashIndex = file.LastIndexOf('\\') + 1;
+                        var locationName = file.Substring(slashIndex, file.IndexOf('-', slashIndex));
+
+                        excelXlsHander.ReadExcelSheet(file, row =>
                         {
-                            action((int)(double)row[0], (int)(double)row[1], (decimal)(double)row[2], locationName, date);
-                        }
-                    });
+                            if (row[0] != DBNull.Value)
+                            {
+                                action((int)(double)row[0], (int)(double)row[1], (decimal)(double)row[2], locationName, date);
+                            }
+                        });
+                    }
                 }
             }
 

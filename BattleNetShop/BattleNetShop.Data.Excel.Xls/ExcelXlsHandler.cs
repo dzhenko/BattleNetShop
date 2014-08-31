@@ -8,7 +8,7 @@
     using System.Data;
     using System.Data.OleDb;
 
-    using BattleNetShop.Utils.ZipFileHandler;
+    using BattleNetShop.Utils;
 
     /// <summary>
     /// Holds All operation with the excel files via the standard ADO.NET OleDb.

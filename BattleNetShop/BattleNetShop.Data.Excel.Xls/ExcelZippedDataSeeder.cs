@@ -9,7 +9,7 @@
     using ExcelFile.net;
     using NPOI.HSSF.Util;
 
-    using BattleNetShop.Utils.ZipFileHandler;
+    using BattleNetShop.Utils;
 
     /// <summary>
     /// Class used to create a single file with zipped sales reports.
@@ -34,8 +34,7 @@
         /// </summary>
         public void Seed()
         {
-            // TODO: Change to 100
-            this.Seed(20);
+            this.Seed(100);
         }
 
         /// <summary>
@@ -55,8 +54,6 @@
         /// <param name="numberOfRecords">The number of sales reports to create</param>
         public void Seed(string destinationPath, int numberOfRecords)
         {
-            Console.WriteLine("Seeding excel 2003 sales reports");
-
             GenerateDataToUse();
 
             GenerateAllFolders(destinationPath, numberOfRecords);
@@ -64,21 +61,15 @@
             GenerateZipFile();
 
             CleanUp();
-
-            Console.WriteLine("Done");
         }
 
         private void CleanUp()
         {
-            Console.WriteLine("Deleting temp files...");
-
             Directory.Delete(ExcelSettings.Default.SalesReportsFoldersLocation, true);
         }
 
         private void GenerateZipFile()
         {
-            Console.WriteLine("Zipping files...");
-
             var zip = new ZipFileHandler();
 
             zip.ZipFolder(ExcelSettings.Default.SalesReportsFoldersLocation,
@@ -87,14 +78,10 @@
 
         private void GenerateAllFolders(string destinationPath, int numberOfRecords)
         {
-            Console.WriteLine("Generating sample sales reports...");
-
             var startDate = new DateTime(2014, 1, 1);
 
             for (int i = 0; i < numberOfRecords; i++)
             {
-                Console.WriteLine("Now generating report {0} of {1}", i + 1, numberOfRecords);
-
                 var dateAsString = startDate.ToString("dd-MMM-yyyy");
                 var currentDestinationPath = destinationPath + string.Format(@"\{0}", dateAsString);
 
@@ -114,8 +101,6 @@
 
         private void GenerateDataToUse()
         {
-            Console.WriteLine("Reading sample Products to use...");
-
             var excelHander = new ExcelXlsHandler();
 
             productsWithPrices = new Dictionary<int, double>();
