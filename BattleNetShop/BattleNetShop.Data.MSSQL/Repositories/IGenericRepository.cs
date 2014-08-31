@@ -10,7 +10,7 @@
 
         T Delete(T entity);
 
-        IQueryable Search(Expression<Func<T, bool>> predicate);
+        IQueryable<T> Search(Expression<Func<T, bool>> predicate);
 
         T GetById(int id);
 

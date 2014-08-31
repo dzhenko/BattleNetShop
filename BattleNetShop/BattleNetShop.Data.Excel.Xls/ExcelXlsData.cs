@@ -11,24 +11,13 @@
     using BattleNetShop.Utils;
     using BattleNetShop.Model;
 
-    /// <summary>
-    /// Class holding all xls files data manipulation
-    /// </summary>
-    public class ExcelXlsData
+    public class ExcelXlsData : IExcelXlsData
     {
-        /// <summary>
-        /// Reads every row of every report and performs an action of your choice.
-        /// </summary>
-        /// <param name="action">Action to perform on the returned ProductId, Quantity, UnitPrice, LocationName and Date.</param>
         public void ReadAllPurchases(Action<int, int, decimal, string, DateTime> action)
         {
             this.ReadAllPurchases(ExcelSettings.Default.ZipFileResultLocation, action);
         }
 
-        /// <summary>
-        /// Reads every row of every report and performs an action of your choice.
-        /// </summary>
-        /// <param name="action">Action to perform on the returned ProductId, Quantity, UnitPrice, LocationName and Date.</param>
         public void ReadAllPurchases(IDictionary<string, int> locationsMapping, Action<Purchase> action)
         {
             this.ReadAllPurchases(ExcelSettings.Default.ZipFileResultLocation, (productId, quantity, unitPrice, locationName, date) =>
@@ -44,11 +33,6 @@
                 });
         }
 
-        /// <summary>
-        /// Reads every row of every report and performs an action of your choice.
-        /// </summary>
-        /// <param name="zipFileLocation">The Zip File To Open</param>
-        /// <param name="action">Action to perform on the returned ProductId, Quantity, UnitPrice, LocationName and Date.</param>
         public void ReadAllPurchases(string zipFileLocation, Action<int, int, decimal, string, DateTime> action)
         {
             const string tempFolderName = @"UnzippedSalesReports";
@@ -84,7 +68,5 @@
 
             Directory.Delete(tempFolderName, true);
         }
-
-        
     }
 }

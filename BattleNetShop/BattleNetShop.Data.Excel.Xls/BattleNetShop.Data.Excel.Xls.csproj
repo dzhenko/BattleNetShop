@@ -67,6 +67,7 @@
     <Compile Include="ExcelXlsData.cs" />
     <Compile Include="ExcelXlsHandler.cs" />
     <Compile Include="ExcelZippedDataSeeder.cs" />
+    <Compile Include="IExcelXlsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

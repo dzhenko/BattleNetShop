@@ -101,7 +101,7 @@
             mainTable.SetEdge(0, 0, 6, 2, Edge.Box, BorderStyle.Single, 0.75, Color.Empty);
         }
 
-        public static void FillData(ICollection<ProductInformation> reportRows)
+        public static void FillData(IEnumerable<ProductInformation> reportRows)
         {
             foreach (var reportRow in reportRows)
             {
@@ -131,7 +131,7 @@
                 row.Cells[5].VerticalAlignment = VerticalAlignment.Center;
             }
 
-            double totalSum = FindTotalSum(reportRows);
+            var totalSum = FindTotalSum(reportRows);
             Row totalSumRow = mainTable.AddRow();
             totalSumRow.Height = "1cm";
             totalSumRow.HeadingFormat = true;
@@ -144,9 +144,9 @@
             totalSumRow.Cells[0].MergeRight = 5;
         }
 
-        private static double FindTotalSum(ICollection<ProductInformation> reportRows)
+        private static decimal FindTotalSum(IEnumerable<ProductInformation> reportRows)
         {
-            double totalSum = 0;
+            decimal totalSum = 0;
             foreach (var row in reportRows)
             {
                 totalSum += row.Price * row.Quantity;

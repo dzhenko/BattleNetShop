@@ -5,7 +5,7 @@
 
     public class ProductsReport
     {
-        private ICollection<ProductInformation> products;
+        private IEnumerable<ProductInformation> products;
 
         public ProductsReport()
         {
@@ -13,7 +13,7 @@
         }
         public DateTime Date { get; set; }
 
-        public ICollection<ProductInformation> Products
+        public IEnumerable<ProductInformation> Products
         {
             get
             {

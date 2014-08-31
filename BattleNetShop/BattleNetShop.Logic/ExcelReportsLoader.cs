@@ -11,41 +11,63 @@
 
     public class ExcelReportsLoader
     {
+        private readonly IBattleNetShopMSSQLData msSqlData;
+        private readonly IMongoDbData mongoData;
+        private readonly IExcelXlsData excelXlsData;
+
+        public ExcelReportsLoader()
+            : this(new BattleNetShopMSSQLData(), new MongoDbData(), new ExcelXlsData())
+        {
+        }
+
+        public ExcelReportsLoader(IBattleNetShopMSSQLData msSqlDataToUse, IMongoDbData mongoDbDataToUse, IExcelXlsData excelXlsDataToUse)
+        {
+            this.msSqlData = msSqlDataToUse;
+            this.mongoData = mongoDbDataToUse;
+            this.excelXlsData = excelXlsDataToUse;
+        }
+
         public void Load()
         {
-            var MSSQL = new BattleNetShopMSSQLData();
+            this.LoadDataFromMongo();
 
-            var mongo = new MongoDbData();
+            this.LoadDataFromZippedExcelFile();
 
+            this.msSqlData.SaveChanges();
+        }
+
+        private void LoadDataFromMongo()
+        {
             Console.WriteLine("Adding product categories from MongoDb to MS SQL...");
-            foreach (var category in mongo.GetAllProductCategories())
+            foreach (var category in this.mongoData.GetAllProductCategories())
             {
-                MSSQL.ProductCategories.Add(category);
+                this.msSqlData.ProductCategories.Add(category);
             }
 
             Console.WriteLine("Adding product details from MongoDb to MS SQL...");
-            foreach (var detail in mongo.GetAllProductDetails())
+            foreach (var detail in this.mongoData.GetAllProductDetails())
             {
-                MSSQL.ProductDetails.Add(detail);
+                this.msSqlData.ProductDetails.Add(detail);
             }
 
             Console.WriteLine("Adding vendors from MongoDb to MS SQL...");
-            foreach (var vendor in mongo.GetAllVendors())
+            foreach (var vendor in this.mongoData.GetAllVendors())
             {
-                MSSQL.Vendors.Add(vendor);
+                this.msSqlData.Vendors.Add(vendor);
             }
 
             Console.WriteLine("Adding products from MongoDb to MS SQL...");
-            foreach (var product in mongo.GetAllProducts())
+            foreach (var product in this.mongoData.GetAllProducts())
             {
-                MSSQL.Products.Add(product);
+                this.msSqlData.Products.Add(product);
             }
+        }
 
-            var excel = new ExcelXlsData();
-
+        private void LoadDataFromZippedExcelFile()
+        {
             var setOfLocations = new HashSet<string>();
 
-            excel.ReadAllPurchases((productId, quantity, unitPrice, locationName, date) =>
+            this.excelXlsData.ReadAllPurchases((productId, quantity, unitPrice, locationName, date) =>
             {
                 if (setOfLocations.Contains(locationName))
                 {
@@ -61,7 +83,7 @@
             Console.WriteLine("Adding purchase locations from Zipped excel reports to MS SQL...");
             foreach (var location in setOfLocations)
             {
-                MSSQL.PurchaseLocations.Add(new PurchaseLocation()
+                this.msSqlData.PurchaseLocations.Add(new PurchaseLocation()
                 {
                     Name = location
                 });
@@ -71,21 +93,10 @@
             }
 
             Console.WriteLine("Adding purchases from Zipped excel reports to MS SQL (be patient)...");
-            excel.ReadAllPurchases(dictionaryWithLocations, purchase =>
+            this.excelXlsData.ReadAllPurchases(dictionaryWithLocations, purchase =>
             {
-                MSSQL.Purchases.Add(purchase);
+                this.msSqlData.Purchases.Add(purchase);
             });
-
-            MSSQL.SaveChanges();
-        }
-
-        public void Test()
-        {
-            var MSSQL = new BattleNetShopMSSQLData();
-
-            var found = MSSQL.Products.GetById(5);
-
-            Console.WriteLine(found.Purchases.Sum(x=>x.Quantity * x.Sum));
         }
     }
 }

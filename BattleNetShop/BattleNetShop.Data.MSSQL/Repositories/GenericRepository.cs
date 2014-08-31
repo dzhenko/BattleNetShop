@@ -43,7 +43,7 @@
             return this.context.Set<T>().Find(id);
         }
 
-        public IQueryable Search(Expression<Func<T, bool>> predicate)
+        public IQueryable<T> Search(Expression<Func<T, bool>> predicate)
         {
             return this.context.Set<T>().Where(predicate);
         }

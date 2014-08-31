@@ -12,7 +12,7 @@
             //magic DATE (rows = all products names)
         }
 
-        public void GenerateAllProductsReportForPeriod(ICollection<ProductsReport> reports)
+        public void GenerateAllProductsReportForPeriod(IEnumerable<ProductsReport> reports)
         {
             //magic DATE (rows = all products names)
             PDFMagic.InitDocumentCreation();
@@ -26,12 +26,12 @@
             PDFMagic.RenderDocument();
         }
 
-        public void GenerateProductInfoForDates(ICollection<ProductsReport> productSales)
+        public void GenerateProductInfoForDates(IEnumerable<ProductsReport> productSales)
         {
             // PRoduct (rows = dates)
         }
 
-        public void GenerateProductInfoForLocations(ICollection<ProductsReport> productSales)
+        public void GenerateProductInfoForLocations(IEnumerable<ProductsReport> productSales)
         {
             //product (rows = locations)
         }
@@ -42,7 +42,7 @@
 
         }
 
-        public void GenerateLocationReportForPeriod(ICollection<ProductsReport> reports)
+        public void GenerateLocationReportForPeriod(IEnumerable<ProductsReport> reports)
         {
             //magic
         }

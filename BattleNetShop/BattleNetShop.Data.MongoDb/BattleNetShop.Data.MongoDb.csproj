@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMongoDbData.cs" />
     <Compile Include="MongoDataSeeder.cs" />
     <Compile Include="MongoDbData.cs" />
     <Compile Include="MongoDBHandler.cs" />
