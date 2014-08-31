@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PDFHandler.cs" />
+    <Compile Include="PDFMagic.cs" />
     <Compile Include="PdfSettings.Designer.cs">
       <DependentUpon>PdfSettings.settings</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -66,6 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="PdfSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

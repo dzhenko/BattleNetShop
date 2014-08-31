@@ -19,14 +19,35 @@
 
             report.Products.Add(new ProductInformation()
             {
-                Location = "here",
-                Name = "name",
-                Price = 3,
-                Quantity = 4,
-                Vendor = "gosho"
+                Location = "Realm Netherlands",
+                Name = "Stone of Jordan",
+                Price = 1.4,
+                Quantity = 2,
+                Vendor = "Atanas"
             });
 
-            pdf.GenerateAllProductsReportForDate(report);
+            report.Products.Add(new ProductInformation()
+            {
+                Location = "Realm: Stormwind",
+                Name = "Gold",
+                Price = 0.2,
+                Quantity = 45888,
+                Vendor = "Blizzard"
+            });
+
+            report.Products.Add(new ProductInformation()
+            {
+                Location = "Realm: Black Temple",
+                Name = "Awesome Item 2",
+                Price = 334,
+                Quantity = 45,
+                Vendor = "Gosheto"
+            });
+
+            List<ProductsReport> reportsCollection = new List<ProductsReport>();
+            reportsCollection.Add(report);
+
+            pdf.GenerateAllProductsReportForPeriod(reportsCollection);
         }
     }
 }

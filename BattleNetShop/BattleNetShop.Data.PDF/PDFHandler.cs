@@ -10,12 +10,20 @@
         public void GenerateAllProductsReportForDate(ProductsReport report)
         {
             //magic DATE (rows = all products names)
-            var folderLocation = PdfSettings.Default.ReportsFolder;
         }
 
         public void GenerateAllProductsReportForPeriod(ICollection<ProductsReport> reports)
         {
             //magic DATE (rows = all products names)
+            PDFMagic.InitDocumentCreation();
+            PDFMagic.TableHeader();
+            PDFMagic.Columns(6);
+            PDFMagic.HeaderRows("Specific Date");
+            foreach (var report in reports)
+            {
+                PDFMagic.FillData(report.Products);
+            }
+            PDFMagic.RenderDocument();
         }
 
         public void GenerateProductInfoForDates(ICollection<ProductsReport> productSales)
@@ -31,6 +39,7 @@
         public void GenerateLocationReportForDate(ProductsReport report)
         {
             //magic
+
         }
 
         public void GenerateLocationReportForPeriod(ICollection<ProductsReport> reports)

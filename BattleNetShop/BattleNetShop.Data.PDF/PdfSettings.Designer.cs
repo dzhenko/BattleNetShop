@@ -25,7 +25,7 @@ namespace BattleNetShop.Data.PDF {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\Reports\\PDFReports\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("../../../../Reports/PDFReports/")]
         public string ReportsFolder {
             get {
                 return ((string)(this["ReportsFolder"]));
