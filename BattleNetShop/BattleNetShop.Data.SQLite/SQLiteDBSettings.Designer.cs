@@ -25,7 +25,7 @@ namespace BattleNetShop.Data.SQLite {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\BattleNetShop.Data.SQLite\\SampleData\\Products.txt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\InitialData\\InitialData.xlsx")]
         public string SQLiteDBSampleDataProducts {
             get {
                 return ((string)(this["SQLiteDBSampleDataProducts"]));
@@ -34,19 +34,22 @@ namespace BattleNetShop.Data.SQLite {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\User\\Documents\\")]
-        public string SQLiteDBFileLocation {
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\InitialData\\SQLiteDB\\BattleNetShop.sqlite")]
+        public string SQLiteDBLocation {
             get {
-                return ((string)(this["SQLiteDBFileLocation"]));
+                return ((string)(this["SQLiteDBLocation"]));
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("BattleNetShop.sqlite")]
-        public string SQLiteDBName {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source={0};Version=3;")]
+        public string SQLiteConnectionString {
             get {
-                return ((string)(this["SQLiteDBName"]));
+                return ((string)(this["SQLiteConnectionString"]));
+            }
+            set {
+                this["SQLiteConnectionString"] = value;
             }
         }
     }
