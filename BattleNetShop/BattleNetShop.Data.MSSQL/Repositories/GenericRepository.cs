@@ -38,6 +38,11 @@
             return entity;
         }
 
+        public T GetById(int id)
+        {
+            return this.context.Set<T>().Find(id);
+        }
+
         public IQueryable Search(Expression<Func<T, bool>> predicate)
         {
             return this.context.Set<T>().Where(predicate);
@@ -52,7 +57,6 @@
         {
             this.context.Entry(entity).State = state;
         }
-
 
         public void SaveChanges()
         {

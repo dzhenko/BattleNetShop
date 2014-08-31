@@ -12,6 +12,8 @@
 
         IQueryable Search(Expression<Func<T, bool>> predicate);
 
+        T GetById(int id);
+
         void Detach(T entity);
 
         void SaveChanges();

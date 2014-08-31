@@ -69,7 +69,7 @@
                     if (file.EndsWith(".xls"))
                     {
                         var slashIndex = file.LastIndexOf('\\') + 1;
-                        var locationName = file.Substring(slashIndex, file.IndexOf('-', slashIndex));
+                        var locationName = file.Substring(slashIndex, file.IndexOf("-Purchases-Report", slashIndex) - slashIndex);
 
                         excelXlsHander.ReadExcelSheet(file, row =>
                         {
