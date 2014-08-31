@@ -31,5 +31,17 @@ namespace BattleNetShop.Data.MSSQL {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=BattleNetShop;Integrated Security=True")]
+        public string ConnectionStringExpress {
+            get {
+                return ((string)(this["ConnectionStringExpress"]));
+            }
+            set {
+                this["ConnectionStringExpress"] = value;
+            }
+        }
     }
 }
