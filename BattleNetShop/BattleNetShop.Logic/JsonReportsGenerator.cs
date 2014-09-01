@@ -7,9 +7,9 @@
 
     public class JsonReportsGenerator
     {
-        private Lazy<MsSqlReportsFetcher> msSqlReportsFetcher = new Lazy<MsSqlReportsFetcher>();
+        private readonly Lazy<MsSqlReportsFetcher> msSqlReportsFetcher = new Lazy<MsSqlReportsFetcher>();
 
-        private Lazy<JsonHandler> jsonHandler = new Lazy<JsonHandler>();
+        private readonly Lazy<JsonHandler> jsonHandler = new Lazy<JsonHandler>();
 
         public void Generate()
         {

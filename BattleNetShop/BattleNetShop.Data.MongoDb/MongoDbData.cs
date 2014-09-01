@@ -45,7 +45,7 @@
             return allVendors;
         }
 
-        public void SaveExpenses(ICollection<VendorExpense> allExpenses)
+        public void SaveExpenses(IEnumerable<VendorExpense> allExpenses)
         {
             this.mongoHandler.Value.WriteCollection<VendorExpense>("VendorExpenses", allExpenses);
         }

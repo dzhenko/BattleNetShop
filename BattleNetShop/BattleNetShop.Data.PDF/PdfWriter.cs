@@ -156,7 +156,7 @@
             table.SetEdge(0, 0, 6, 2, Edge.Box, BorderStyle.Single, 0.75, Color.Empty);
         }
 
-        private void FillData(IEnumerable<ProductInformation> reportRows, Table table)
+        private void FillData(IEnumerable<ProductsReportEntry> reportRows, Table table)
         {
             foreach (var reportRow in reportRows)
             {
@@ -199,7 +199,7 @@
             totalSumRow.Cells[0].MergeRight = 5;
         }
 
-        private decimal FindTotalSum(IEnumerable<ProductInformation> reportRows)
+        private decimal FindTotalSum(IEnumerable<ProductsReportEntry> reportRows)
         {
             decimal totalSum = 0;
             foreach (var row in reportRows)

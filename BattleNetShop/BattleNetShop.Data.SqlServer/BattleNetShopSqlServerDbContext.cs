@@ -21,6 +21,8 @@ namespace BattleNetShop.Data.SqlServer
 
         public IDbSet<Vendor> Vendors { get; set; }
 
+        public IDbSet<VendorExpense> VendorExpenses { get; set; }
+
         public IDbSet<ProductDetails> Details { get; set; }
 
         public IDbSet<Purchase> Purchases { get; set; }

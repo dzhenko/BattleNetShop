@@ -19,7 +19,7 @@
             }
         }
 
-        public void WriteCollection<T>(string collectionName, ICollection<T> collectionItems)
+        public void WriteCollection<T>(string collectionName, IEnumerable<T> collectionItems)
         {
             MongoCollection<T> collection = this.database.Value.GetCollection<T>(collectionName);
 

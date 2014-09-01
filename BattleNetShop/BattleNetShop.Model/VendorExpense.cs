@@ -16,6 +16,9 @@
         [Required]
         public string Month { get; set; }
 
+        [NotMapped]
+        public string VendorName { get; set; }
+
         [Required]
         public int VendorId { get; set; }
 

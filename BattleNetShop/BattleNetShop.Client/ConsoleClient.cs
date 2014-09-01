@@ -15,7 +15,9 @@
 
             //// new PdfReportsGenerator().Generate();
 
-            new JsonReportsGenerator().Generate();
+            //// new JsonReportsGenerator().Generate();
+
+            new XmlReportsHandler().Generate();
         }
     }
 }

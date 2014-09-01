@@ -33,6 +33,6 @@
         /// Saves the givven sales expenses in the database.
         /// </summary>
         /// <param name="allExpenses">Collection of expenses to save in the database.</param>
-        void SaveExpenses(ICollection<VendorExpense> allExpenses);
+        void SaveExpenses(IEnumerable<VendorExpense> allExpenses);
     }
 }

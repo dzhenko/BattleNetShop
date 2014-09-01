@@ -5,16 +5,16 @@
 
     public class ProductsReport
     {
-        private IEnumerable<ProductInformation> products;
+        private IEnumerable<ProductsReportEntry> products;
 
         public ProductsReport()
         {
-            this.products = new List<ProductInformation>();
+            this.products = new List<ProductsReportEntry>();
         }
 
         public DateTime Date { get; set; }
 
-        public IEnumerable<ProductInformation> Products
+        public IEnumerable<ProductsReportEntry> Products
         {
             get
             {

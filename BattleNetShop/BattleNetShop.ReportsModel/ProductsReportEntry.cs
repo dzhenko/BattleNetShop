@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class ProductInformation
+    public class ProductsReportEntry
     {
         public int ProductId { get; set; }
 

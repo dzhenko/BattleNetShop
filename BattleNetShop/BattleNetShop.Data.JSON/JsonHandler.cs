@@ -10,12 +10,12 @@
 
     public class JsonHandler
     {
-        public void GenerateJsonFileReport(ProductInformation report)
+        public void GenerateJsonFileReport(ProductsReportEntry report)
         {
             this.GenerateJsonFileReport(JsonSettings.Default.ReportsDestinationFolder, report);
         }
         
-        public void GenerateJsonFileReport(string saveDirectory, ProductInformation productReport)
+        public void GenerateJsonFileReport(string saveDirectory, ProductsReportEntry productReport)
         {
             if (!Directory.Exists(saveDirectory))
             {

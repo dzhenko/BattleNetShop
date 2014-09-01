@@ -30,6 +30,12 @@
            this.GenerateLocationReportForPeriod(1, new[] { new DateTime(2014, 1, 1), new DateTime(2014, 1, 2), new DateTime(2014, 1, 3) });
         }
 
+        public void GenerateAllProductsInformation()
+        {
+            var reports = msSqlReportsFetcher.Value.GetAllProductInformations();
+            pdfHandler.Value.GenerateAllProductsInformation(reports);
+        }
+
         public void GenerateAllProductsReportForDate(DateTime date)
         {
             var reports = msSqlReportsFetcher.Value.GetAllProductsReportForDate(date);

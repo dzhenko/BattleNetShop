@@ -9,7 +9,7 @@
     using BattleNetShop.Model;
     using BattleNetShop.ReportsModel;
 
-    public class MsSqlReportsFetcher
+    internal class MsSqlReportsFetcher
     {
         private readonly IBattleNetShopSqlServerData msSqlData;
 
@@ -23,13 +23,13 @@
             this.msSqlData = msSqlDataToUse;
         }
 
-        public IEnumerable<ProductInformation> GetAllProductInformations()
+        public IEnumerable<ProductsReportEntry> GetAllProductInformations()
         {
             return this.msSqlData.Purchases
                 .All()
                 .GroupBy(purchase => purchase.ProductId)
                 .OrderBy(gr => gr.Key)
-                .Select(gr => new ProductInformation
+                .Select(gr => new ProductsReportEntry
                 {
                     Name = gr.Min(p => p.Product.Name),
                     Price = gr.Average(p => p.UnitPrice),
@@ -44,8 +44,8 @@
             var allProductInformations = this.msSqlData.Purchases
                 .Search(purchase => purchase.Date == date)
                 .GroupBy(purchase => purchase.Product.Name)
-                .OrderByDescending(gr => gr.Key)
-                .Select(gr => new ProductInformation
+                .OrderBy(gr => gr.Min(p => p.ProductId))
+                .Select(gr => new ProductsReportEntry
                 {
                     Name = gr.Key,
                     Price = gr.Average(purchase => purchase.UnitPrice),
@@ -81,15 +81,17 @@
             return this.msSqlData.Purchases
                 .Search(purchase => purchase.Product.Name == productName)
                 .GroupBy(purchase => purchase.Date)
-                .OrderBy(gr => gr.Key)
+                .OrderBy(gr => gr.Min(p => p.ProductId))
                 .Select(gr => new ProductsReport 
                 {
                    Date = gr.Key,
-                   Products = gr.Select(g => new ProductInformation
+                   Products = gr.Select(g => new ProductsReportEntry
                    {
                        Name = productName,
                        Price = g.UnitPrice,
-                       Quantity = g.Quantity
+                       Quantity = g.Quantity,
+                       ProductId = gr.Min(purchase => purchase.ProductId),
+                       Vendor = gr.Min(purchase => purchase.Product.Vendor.Name),
                    })
                 });
         }
@@ -109,15 +111,17 @@
             return this.msSqlData.Purchases
                 .Search(purchase => purchase.Product.Name == productName)
                 .GroupBy(purchase => purchase.Location.Name)
-                .OrderBy(gr => gr.Key)
+                .OrderBy(gr => gr.Min(p => p.ProductId))
                 .Select(gr => new ProductsReport
                 {
-                    Products = gr.Select(g => new ProductInformation
+                    Products = gr.Select(g => new ProductsReportEntry
                     {
                         Name = productName,
                         Price = g.UnitPrice,
                         Quantity = g.Quantity,
-                        Location = g.Location.Name
+                        Location = g.Location.Name,
+                        ProductId = gr.Min(purchase => purchase.ProductId),
+                        Vendor = gr.Min(purchase => purchase.Product.Vendor.Name),
                     })
                 });
         }
@@ -138,12 +142,14 @@
                 .Search(purchase => purchase.Location.Name == locationName)
                 .Where(purchase => purchase.Date == date)
                 .GroupBy(purchase => purchase.Product.Name)
-                .OrderByDescending(gr => gr.Key)
-                .Select(gr => new ProductInformation
+                .OrderBy(gr => gr.Min(p => p.ProductId))
+                .Select(gr => new ProductsReportEntry
                 {
                     Name = gr.Key,
                     Price = gr.Average(purchase => purchase.UnitPrice),
-                    Quantity = gr.Count()
+                    Quantity = gr.Count(),
+                    ProductId = gr.Min(purchase => purchase.ProductId),
+                    Vendor = gr.Min(purchase => purchase.Product.Vendor.Name),
                 });
 
             return new ProductsReport()
@@ -166,6 +172,21 @@
         public IEnumerable<ProductsReport> GetLocationReportForPeriod(string locationName, IEnumerable<DateTime> dates)
         {
             return dates.Select(d => this.GetLocationReportForDate(locationName, d));
+        }
+
+        public IQueryable<LocationReport> GetAllLocationsReport()
+        {
+            return this.msSqlData.Purchases.All()
+                .GroupBy(purchase => purchase.Location.Name)
+                .Select(gr => new LocationReport
+                {
+                    LocationName = gr.Key,
+                    Entries = gr.GroupBy(g => g.Date).Select(group => new LocationReportEntry()
+                    {
+                        Date = group.Key,
+                        TotalSum = group.Sum(g => g.Quantity * g.UnitPrice)
+                    })
+                });
         }
     }
 }

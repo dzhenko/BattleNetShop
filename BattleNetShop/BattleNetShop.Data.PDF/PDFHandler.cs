@@ -10,6 +10,11 @@
     {
         private Lazy<PdfWriter> pdfWriter = new Lazy<PdfWriter>();
 
+        public void GenerateAllProductsInformation(IEnumerable<ProductsReportEntry> productInformations)
+        {
+            // magic DATE (rows = all products names)
+        }
+
         public void GenerateAllProductsReportForDate(ProductsReport report)
         {
             // magic DATE (rows = all products names)
