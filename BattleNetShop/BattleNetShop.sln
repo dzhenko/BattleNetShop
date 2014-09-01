@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30626.0
+VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Model", "BattleNetShop.Model\BattleNetShop.Model.csproj", "{0144DE51-520F-4226-8AEA-ACCD5CEEF6BF}"
 EndProject
@@ -57,6 +57,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.ReportsModel", "BattleNetShop.ReportsModel\BattleNetShop.ReportsModel.csproj", "{E4279469-A64D-41E6-ADBB-0497853CEBFA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Data.SqlServer", "BattleNetShop.Data.SqlServer\BattleNetShop.Data.SqlServer.csproj", "{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XlsxReport", "XlsxReport\XlsxReport.csproj", "{17BB45A3-2567-47F5-90DB-EC9E1142CFCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -136,6 +138,10 @@ Global
 		{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17BB45A3-2567-47F5-90DB-EC9E1142CFCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BB45A3-2567-47F5-90DB-EC9E1142CFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BB45A3-2567-47F5-90DB-EC9E1142CFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BB45A3-2567-47F5-90DB-EC9E1142CFCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,5 +165,6 @@ Global
 		{46C39201-0410-4D64-ABDE-6367B1FB9F85} = {D7412688-EE28-4D60-A0ED-ACCC9E06CF12}
 		{E4279469-A64D-41E6-ADBB-0497853CEBFA} = {E56A96E2-42E6-441D-B21A-ABFA5FF28410}
 		{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A} = {073B0B16-B559-45A6-A8CE-83A6D863255E}
+		{17BB45A3-2567-47F5-90DB-EC9E1142CFCC} = {28B9F19D-9442-4007-82A7-BC7395933077}
 	EndGlobalSection
 EndGlobal
