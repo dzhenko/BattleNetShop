@@ -174,7 +174,7 @@
                 row.Cells[2].AddParagraph(reportRow.Price.ToString());
                 row.Cells[2].Format.Alignment = ParagraphAlignment.Center;
                 row.Cells[2].VerticalAlignment = VerticalAlignment.Center;
-                row.Cells[3].AddParagraph(reportRow.Vendor);
+                row.Cells[3].AddParagraph("Blizzard");
                 row.Cells[3].Format.Alignment = ParagraphAlignment.Center;
                 row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
                 row.Cells[4].AddParagraph(reportRow.Location);

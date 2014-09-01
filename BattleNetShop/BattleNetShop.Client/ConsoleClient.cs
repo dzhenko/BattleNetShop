@@ -14,6 +14,8 @@
             //// new ExcelReportsLoader().Load();
 
             //// new PdfReportsGenerator().Generate();
+
+            new JsonReportsGenerator().Generate();
         }
     }
 }

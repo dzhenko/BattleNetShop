@@ -1,12 +1,24 @@
 ﻿namespace BattleNetShop.Logic
 {
+    using System;
+    using System.Linq;
+
+    using BattleNetShop.Data.Json;
+
     public class JsonReportsGenerator
     {
+        private Lazy<MsSqlReportsFetcher> msSqlReportsFetcher = new Lazy<MsSqlReportsFetcher>();
+
+        private Lazy<JsonHandler> jsonHandler = new Lazy<JsonHandler>();
+
         public void Generate()
         {
-            // var jsonHandler = new JsonData();
+            var allProductsInformation = msSqlReportsFetcher.Value.GetAllProductInformations();
 
-            // jsonHandler.GenerateJSONFileReport();
+            foreach (var report in allProductsInformation)
+            {
+                jsonHandler.Value.GenerateJsonFileReport(report);
+            }
         }
     }
 }
