@@ -7,12 +7,12 @@ namespace BattleNetShop.Data.SqlServer
     using BattleNetShop.Model;
     using BattleNetShop.Data.SqlServer.Migrations;
 
-    public class BattleNetShopMSSQLDbContext : DbContext, IBattleNetShopMSSQLDbContext
+    public class BattleNetShopSqlServerDbContext : DbContext, IBattleNetShopSqlServerDbContext
     {
-        public BattleNetShopMSSQLDbContext()
+        public BattleNetShopSqlServerDbContext()
             : base(MSSQLSettings.Default.ConnectionString)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BattleNetShopMSSQLDbContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BattleNetShopSqlServerDbContext, Configuration>());
         }
 
         public IDbSet<Product> Products { get; set; }

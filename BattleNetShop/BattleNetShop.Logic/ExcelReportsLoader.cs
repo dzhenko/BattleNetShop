@@ -11,16 +11,16 @@
 
     public class ExcelReportsLoader
     {
-        private readonly IBattleNetShopMSSQLData msSqlData;
+        private readonly IBattleNetShopSqlServerData msSqlData;
         private readonly IMongoDbData mongoData;
         private readonly IExcelXlsData excelXlsData;
 
         public ExcelReportsLoader()
-            : this(new BattleNetShopMSSQLData(), new MongoDbData(), new ExcelXlsData())
+            : this(new BattleNetShopSqlServerData(), new MongoDbData(), new ExcelXlsData())
         {
         }
 
-        public ExcelReportsLoader(IBattleNetShopMSSQLData msSqlDataToUse, IMongoDbData mongoDbDataToUse, IExcelXlsData excelXlsDataToUse)
+        public ExcelReportsLoader(IBattleNetShopSqlServerData msSqlDataToUse, IMongoDbData mongoDbDataToUse, IExcelXlsData excelXlsDataToUse)
         {
             this.msSqlData = msSqlDataToUse;
             this.mongoData = mongoDbDataToUse;

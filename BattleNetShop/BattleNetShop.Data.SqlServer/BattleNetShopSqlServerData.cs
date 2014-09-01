@@ -5,19 +5,19 @@
     using System;
     using System.Collections.Generic;
 
-    public class BattleNetShopMSSQLData : IBattleNetShopMSSQLData
+    public class BattleNetShopSqlServerData : IBattleNetShopSqlServerData
     {
-        private IBattleNetShopMSSQLDbContext context;
+        private IBattleNetShopSqlServerDbContext context;
         private IDictionary<Type, object> repositories;
 
-        public BattleNetShopMSSQLData(IBattleNetShopMSSQLDbContext battleNetShopMSSQLDbContext)
+        public BattleNetShopSqlServerData(IBattleNetShopSqlServerDbContext battleNetShopMSSQLDbContext)
         {
             this.context = battleNetShopMSSQLDbContext;
             this.repositories = new Dictionary<Type, object>();
         }
 
-        public BattleNetShopMSSQLData()
-            : this(new BattleNetShopMSSQLDbContext())
+        public BattleNetShopSqlServerData()
+            : this(new BattleNetShopSqlServerDbContext())
         {
         }
 

@@ -3,7 +3,7 @@
     using BattleNetShop.Data.SqlServer.Repositories;
     using BattleNetShop.Model;
 
-    public interface IBattleNetShopMSSQLData
+    public interface IBattleNetShopSqlServerData
     {
         IGenericRepository<Product> Products { get; }
 

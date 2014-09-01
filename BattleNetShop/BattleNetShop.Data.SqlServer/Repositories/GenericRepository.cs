@@ -7,19 +7,19 @@
 
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private IBattleNetShopMSSQLDbContext context;
+        private IBattleNetShopSqlServerDbContext context;
 
-        public GenericRepository(IBattleNetShopMSSQLDbContext battleNetShopMSSQLDbContext)
+        public GenericRepository(IBattleNetShopSqlServerDbContext battleNetShopMSSQLDbContext)
         {
             this.context = battleNetShopMSSQLDbContext;
         }
 
         public GenericRepository()
-            : this(new BattleNetShopMSSQLDbContext())
+            : this(new BattleNetShopSqlServerDbContext())
         {
         }
 
-        protected IBattleNetShopMSSQLDbContext Context
+        protected IBattleNetShopSqlServerDbContext Context
         {
             get
             {

@@ -50,10 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BattleNetShopMSSQLData.cs" />
-    <Compile Include="BattleNetShopMSSQLDbContext.cs" />
-    <Compile Include="IBattleNetShopMSSQLData.cs" />
-    <Compile Include="IBattleNetShopMSSQLDbContext.cs" />
+    <Compile Include="BattleNetShopSqlServerData.cs" />
+    <Compile Include="BattleNetShopSqlServerDbContext.cs" />
+    <Compile Include="IBattleNetShopSqlServerData.cs" />
+    <Compile Include="IBattleNetShopSqlServerDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MSSQLSettings.Designer.cs">
       <AutoGen>True</AutoGen>

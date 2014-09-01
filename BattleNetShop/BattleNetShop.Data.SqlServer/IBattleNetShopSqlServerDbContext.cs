@@ -5,7 +5,7 @@
 
     using BattleNetShop.Model;
 
-    public interface IBattleNetShopMSSQLDbContext
+    public interface IBattleNetShopSqlServerDbContext
     {
         Database Database { get; }
 

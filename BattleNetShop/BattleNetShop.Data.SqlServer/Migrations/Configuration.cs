@@ -5,7 +5,7 @@ namespace BattleNetShop.Data.SqlServer.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<BattleNetShopMSSQLDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<BattleNetShopSqlServerDbContext>
     {
         public Configuration()
         {
@@ -17,7 +17,7 @@ namespace BattleNetShop.Data.SqlServer.Migrations
             this.ContextKey = "BattleNetShop.Data.BattleNetShopDbContext";
         }
 
-        protected override void Seed(BattleNetShopMSSQLDbContext context)
+        protected override void Seed(BattleNetShopSqlServerDbContext context)
         {
             // TODO: Seed with initial data from excel AddOrUpdate()
         }

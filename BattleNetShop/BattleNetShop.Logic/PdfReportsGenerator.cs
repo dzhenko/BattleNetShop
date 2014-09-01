@@ -10,14 +10,14 @@
 
     public class PdfReportsGenerator
     {
-        private readonly IBattleNetShopMSSQLData msSqlData;
+        private readonly IBattleNetShopSqlServerData msSqlData;
 
         public PdfReportsGenerator()
-            : this(new BattleNetShopMSSQLData())
+            : this(new BattleNetShopSqlServerData())
         {
         }
 
-        public PdfReportsGenerator(IBattleNetShopMSSQLData msSqlDataToUse)
+        public PdfReportsGenerator(IBattleNetShopSqlServerData msSqlDataToUse)
         {
             this.msSqlData = msSqlDataToUse;
         }
