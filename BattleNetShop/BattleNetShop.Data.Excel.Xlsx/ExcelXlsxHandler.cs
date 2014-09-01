@@ -1,22 +1,48 @@
 ﻿namespace BattleNetShop.Data.Excel.Xlsx
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     using ClosedXML.Excel;
 
-    using System.Collections.Generic;
-    
+    using BattleNetShop.Data.MySql;
+    using BattleNetShop.Data.SqLite;
+
+    /// <summary>
+    /// Uses ClosedXML library from nuget to generate xlsx files
+    /// </summary>
     public class ExcelXlsxHandler
     {
-        // Tuple<string, ICollection<Tuple<int, string, string, int, decimal>> will become a class
-        // Task 6 output
-        public void GenerateProductsReport(ICollection<Tuple<int, string, string, int, decimal>> allReports, string fileName)
+        // TODO: move to main logic, use IQueryable?
+        public ICollection<FinancialResultReportRecord> GenerateVendorsFinancialResultReport(ICollection<ProductsTaxes> productsTaxes, ICollection<Salereport> salesReport)
         {
-            throw new NotImplementedException();
+            var salesJoinedWithTaxesGroupedByVendor = salesReport
+                    .Join(productsTaxes,
+                        (s => s.ProductName),
+                        (pt => pt.ProductName),
+                        (s, pt) => new { VendorName = s.VendorName, TotalIncome = s.TotalIncomes, TotalIncomeWithTax = s.TotalIncomes * (pt.Tax / 100) })
+                    .GroupBy(s => s.VendorName)
+                    .Select(sg => new { VendorName = sg.Key, TotalIncomes = sg.Sum(s => s.TotalIncome), TotalIncomeWithTax = sg.Sum(s => s.TotalIncomeWithTax)});
+
+            var result = new LinkedList<FinancialResultReportRecord>();
+            foreach (var row in salesJoinedWithTaxesGroupedByVendor)
+            {
+                var reportRecord = new FinancialResultReportRecord();
+                reportRecord.VendorName = row.VendorName;
+                reportRecord.Incomes = row.TotalIncomes;
+                reportRecord.Taxes = (decimal)row.TotalIncomeWithTax;
+                reportRecord.FinancialBalance = (decimal)(reportRecord.Incomes - reportRecord.Taxes);
+
+                result.AddLast(reportRecord);
+            }
+
+            return result;
         }
 
-        public void GenerateVendorsFinancialResultsReport(ICollection<Tuple<string, decimal, decimal, decimal>> reportData, string fileName)
-        {
-            // TODO: Get expenses as well?
+        // Task 6 output
+        public void GenerateVendorsFinancialResultFile(ICollection<FinancialResultReportRecord> reportData, string fileName)
+        {            
             var wb = new XLWorkbook();
             var ws = wb.Worksheets.Add("Financial Balance");
 
@@ -24,7 +50,7 @@
             ws.Cell("B2").Value = "Vendor";
             ws.Cell("C2").Value = "Incomes";
             ws.Cell("D2").Value = "Taxes";
-            ws.Cell("E2").Value = "Financial Result";
+            ws.Cell("E2").Value = "Financial Balance";
 
             var rngTable = ws.Range("B2:E2");
             rngTable
@@ -38,12 +64,12 @@
                 string vendorCell = "B" + rowCount;
                 string incomesCell = "C" + rowCount;
                 string taxesCell = "D" + rowCount;
-                string finacialResultCell = "E" + rowCount;
-                ws.Cell(vendorCell).Value = row.Item1;
-                ws.Cell(incomesCell).Value = row.Item2;
-                ws.Cell(taxesCell).Value = row.Item3;
-                ws.Cell(finacialResultCell).Value = row.Item4;
-                ws.Cell(vendorCell).Value = row.Item1;
+                string finacialBalanceCell = "E" + rowCount;
+
+                ws.Cell(vendorCell).Value = row.VendorName;
+                ws.Cell(incomesCell).Value = row.Incomes;
+                ws.Cell(taxesCell).Value = row.Taxes;
+                ws.Cell(finacialBalanceCell).Value = row.FinancialBalance;
 
                 rowCount++;
             }

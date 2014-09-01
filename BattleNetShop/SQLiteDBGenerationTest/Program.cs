@@ -14,7 +14,7 @@
             var productsTaxes = sqliteData.ReadProductTaxes();
             foreach (var item in productsTaxes)
             {
-                Console.WriteLine(item.Item1 + "\t" + item.Item2);
+                Console.WriteLine(item.ProductName + "\t" + item.Tax);
             }
         }
     }

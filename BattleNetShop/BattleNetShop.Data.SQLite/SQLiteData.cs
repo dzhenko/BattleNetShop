@@ -19,19 +19,18 @@
             this.handler = handler;
         }
 
-        // Tuple<string, ICollection<Tuple<string, decimal>> will become a class
         // Task 6 input
-        public ICollection<Tuple<string, float>> ReadProductTaxes()
+        public ICollection<ProductsTaxes> ReadProductTaxes()
         {
             SQLiteCommand command = new SQLiteCommand("SELECT * FROM ProductsTaxes", this.handler.Connection);
             SQLiteDataReader reader = command.ExecuteReader();
 
-            var productsWithTaxes = new LinkedList<Tuple<string, float>>();
+            var productsWithTaxes = new LinkedList<ProductsTaxes>();
             using (reader)
             {
                 while (reader.Read())
                 {
-                    productsWithTaxes.AddLast(new Tuple<string, float>(reader[0].ToString(), float.Parse(reader[1].ToString())));
+                    productsWithTaxes.AddLast(new ProductsTaxes(reader[0].ToString(), float.Parse(reader[1].ToString())));
                 }
             }
 

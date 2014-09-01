@@ -52,6 +52,14 @@
       <Project>{b4f6260d-0ab0-450d-9462-e510a78b013b}</Project>
       <Name>BattleNetShop.Data.Excel.Xlsx</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Data.MySql\BattleNetShop.Data.MySql.csproj">
+      <Project>{d6221064-bb1e-42f6-9941-5ed8f551ccbd}</Project>
+      <Name>BattleNetShop.Data.MySql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Data.SQLite\BattleNetShop.Data.SqLite.csproj">
+      <Project>{718af6a2-9b4b-4b6c-b931-7760d17000c0}</Project>
+      <Name>BattleNetShop.Data.SqLite</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
