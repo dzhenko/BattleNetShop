@@ -23,6 +23,22 @@
             this.msSqlData = msSqlDataToUse;
         }
 
+        public IEnumerable<ProductInformation> GetAllProductInformations()
+        {
+            return this.msSqlData.Purchases
+                .All()
+                .GroupBy(purchase => purchase.ProductId)
+                .OrderBy(gr => gr.Key)
+                .Select(gr => new ProductInformation
+                {
+                    Name = gr.Min(p => p.Product.Name),
+                    Price = gr.Average(p => p.UnitPrice),
+                    ProductId = gr.Key,
+                    Quantity = gr.Sum(g => g.Quantity),
+                    Vendor = gr.Min(p => p.Product.Vendor.Name)
+                });
+        }
+
         public ProductsReport GetAllProductsReportForDate(DateTime date)
         {
             var allProductInformations = this.msSqlData.Purchases
@@ -33,6 +49,8 @@
                 {
                     Name = gr.Key,
                     Price = gr.Average(purchase => purchase.UnitPrice),
+                    ProductId = gr.Min(purchase => purchase.ProductId),
+                    Vendor = gr.Min(purchase => purchase.Product.Vendor.Name),
                     Quantity = gr.Count()
                 });
 
@@ -48,17 +66,17 @@
             return dates.Select(d => this.GetAllProductsReportForDate(d));
         }
 
-        public IEnumerable<ProductsReport> GetProductInfoForDates(int productId)
+        public IEnumerable<ProductsReport> GetProductInformationForDates(int productId)
         {
-            return this.GetProductInfoForDates(this.msSqlData.Products.GetById(productId).Name);
+            return this.GetProductInformationForDates(this.msSqlData.Products.GetById(productId).Name);
         }
 
-        public IEnumerable<ProductsReport> GetProductInfoForDates(Product product)
+        public IEnumerable<ProductsReport> GetProductInformationForDates(Product product)
         {
-            return this.GetProductInfoForDates(product.Name);
+            return this.GetProductInformationForDates(product.Name);
         }
 
-        public IEnumerable<ProductsReport> GetProductInfoForDates(string productName)
+        public IEnumerable<ProductsReport> GetProductInformationForDates(string productName)
         {
             return this.msSqlData.Purchases
                 .Search(purchase => purchase.Product.Name == productName)
@@ -76,17 +94,17 @@
                 });
         }
 
-        public IEnumerable<ProductsReport> GetProductInfoForLocations(int productId)
+        public IEnumerable<ProductsReport> GetProductInformationForLocations(int productId)
         {
-            return this.GetProductInfoForDates(this.msSqlData.Products.GetById(productId).Name);
+            return this.GetProductInformationForDates(this.msSqlData.Products.GetById(productId).Name);
         }
 
-        public IEnumerable<ProductsReport> GetProductInfoForLocations(Product product)
+        public IEnumerable<ProductsReport> GetProductInformationForLocations(Product product)
         {
-            return this.GetProductInfoForDates(product.Name);
+            return this.GetProductInformationForDates(product.Name);
         }
 
-        public IEnumerable<ProductsReport> GetProductInfoForLocations(string productName)
+        public IEnumerable<ProductsReport> GetProductInformationForLocations(string productName)
         {
             return this.msSqlData.Purchases
                 .Search(purchase => purchase.Product.Name == productName)

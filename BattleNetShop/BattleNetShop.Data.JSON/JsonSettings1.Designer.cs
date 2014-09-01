@@ -25,7 +25,7 @@ namespace BattleNetShop.Data.Json {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\Reports\\JSONReports\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\Reports\\JsonReports\\")]
         public string ReportsDestinationFolder {
             get {
                 return ((string)(this["ReportsDestinationFolder"]));

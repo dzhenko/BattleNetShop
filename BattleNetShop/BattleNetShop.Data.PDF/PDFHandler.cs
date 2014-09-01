@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using BattleNetShop.ReportsModel;
 
@@ -16,6 +17,10 @@
 
         public void GenerateAllProductsReportForPeriod(IEnumerable<ProductsReport> reports)
         {
+            // remove this when magic is done
+            reports.ToList();
+            return;
+
             // magic DATE (rows = all products names)
             foreach (var report in reports)
             {
@@ -25,11 +30,19 @@
 
         public void GenerateProductInfoForDates(IEnumerable<ProductsReport> productSales)
         {
+            // remove this when magic is done
+            productSales.ToList();
+            return;
+
             // PRoduct (rows = dates)
         }
 
         public void GenerateProductInfoForLocations(IEnumerable<ProductsReport> productSales)
         {
+            // remove this when magic is done
+            productSales.ToList();
+            return;
+
             // product (rows = locations)
         }
 
@@ -40,6 +53,10 @@
 
         public void GenerateLocationReportForPeriod(IEnumerable<ProductsReport> reports)
         {
+            // remove this when magic is done
+            reports.ToList();
+            return;
+
             // magic
         }
     }

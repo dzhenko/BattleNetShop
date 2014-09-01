@@ -44,37 +44,37 @@
 
         public void GenerateProductInfoForDates(int productId)
         {
-            var reports = msSqlReportsFetcher.Value.GetProductInfoForDates(productId);
+            var reports = msSqlReportsFetcher.Value.GetProductInformationForDates(productId);
             pdfHandler.Value.GenerateProductInfoForDates(reports);
         }
 
         public void GenerateProductInfoForDates(Product product)
         {
-            var reports = msSqlReportsFetcher.Value.GetProductInfoForDates(product);
+            var reports = msSqlReportsFetcher.Value.GetProductInformationForDates(product);
             pdfHandler.Value.GenerateProductInfoForDates(reports);
         }
 
         public void GenerateProductInfoForDates(string productName)
         {
-            var reports = msSqlReportsFetcher.Value.GetProductInfoForDates(productName);
+            var reports = msSqlReportsFetcher.Value.GetProductInformationForDates(productName);
             pdfHandler.Value.GenerateProductInfoForDates(reports);
         }
 
         public void GenerateProductInfoForLocations(int productId)
         {
-            var reports = msSqlReportsFetcher.Value.GetProductInfoForLocations(productId);
+            var reports = msSqlReportsFetcher.Value.GetProductInformationForLocations(productId);
             pdfHandler.Value.GenerateProductInfoForLocations(reports);
         }
 
         public void GenerateProductInfoForLocations(Product product)
         {
-            var reports = msSqlReportsFetcher.Value.GetProductInfoForLocations(product);
+            var reports = msSqlReportsFetcher.Value.GetProductInformationForLocations(product);
             pdfHandler.Value.GenerateProductInfoForLocations(reports);
         }
 
         public void GenerateProductInfoForLocations(string productName)
         {
-            var reports = msSqlReportsFetcher.Value.GetProductInfoForLocations(productName);
+            var reports = msSqlReportsFetcher.Value.GetProductInformationForLocations(productName);
             pdfHandler.Value.GenerateProductInfoForLocations(reports);
         }
 
