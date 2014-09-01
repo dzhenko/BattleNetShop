@@ -58,7 +58,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.ReportsModel"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Data.SqlServer", "BattleNetShop.Data.SqlServer\BattleNetShop.Data.SqlServer.csproj", "{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XlsxReport", "XlsxReport\XlsxReport.csproj", "{17BB45A3-2567-47F5-90DB-EC9E1142CFCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateXlsxReportTest", "XlsxReport\GenerateXlsxReportTest.csproj", "{17BB45A3-2567-47F5-90DB-EC9E1142CFCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
