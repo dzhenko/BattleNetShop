@@ -24,6 +24,7 @@
             {
                 return this.products;
             }
+
             set
             {
                 this.products = value;

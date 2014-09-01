@@ -3,10 +3,8 @@
     using System;
     using System.Collections.Generic;
 
-    using MongoDB.Driver;
-
-    using BattleNetShop.Model;
     using BattleNetShop.Data.Excel.Xls;
+    using BattleNetShop.Model;
 
     public class MongoDataSeeder
     {
@@ -18,8 +16,8 @@
         /// </summary>
         public void Seed()
         {
-            mongoHandler = new MongoDbHandler();
-            excelHandler = new ExcelXlsHandler();
+            this.mongoHandler = new MongoDbHandler();
+            this.excelHandler = new ExcelXlsHandler();
 
             this.SeedVendors();
 
@@ -34,7 +32,7 @@
         {
             var allVendors = new List<Vendor>();
 
-            excelHandler.ReadInitialDataFile("Vendors$", row =>
+            this.excelHandler.ReadInitialDataFile("Vendors$", row =>
                 {
                     allVendors.Add(new Vendor 
                     {
@@ -43,14 +41,14 @@
                     });
                 });
 
-            mongoHandler.WriteCollection<Vendor>("Vendors", allVendors);
+            this.mongoHandler.WriteCollection<Vendor>("Vendors", allVendors);
         }
 
         private void SeedCategories()
         {
             var allCategories = new List<ProductCategory>();
 
-            excelHandler.ReadInitialDataFile("Categories$", row =>
+            this.excelHandler.ReadInitialDataFile("Categories$", row =>
             {
                 allCategories.Add(new ProductCategory
                 {
@@ -59,14 +57,14 @@
                 });
             });
 
-            mongoHandler.WriteCollection<ProductCategory>("ProductCategories", allCategories);
+            this.mongoHandler.WriteCollection<ProductCategory>("ProductCategories", allCategories);
         }
 
         private void SeedDetails()
         {
             var allDetails = new List<ProductDetails>();
 
-            excelHandler.ReadInitialDataFile("ProductDetails$", row =>
+            this.excelHandler.ReadInitialDataFile("ProductDetails$", row =>
             {
                 allDetails.Add(new ProductDetails
                 {
@@ -76,14 +74,14 @@
                 });
             });
 
-            mongoHandler.WriteCollection<ProductDetails>("ProductDetails", allDetails);
+            this.mongoHandler.WriteCollection<ProductDetails>("ProductDetails", allDetails);
         }
 
         private void SeedProducts()
         {
             var allProducts = new List<Product>();
 
-            excelHandler.ReadInitialDataFile("Products$", row =>
+            this.excelHandler.ReadInitialDataFile("Products$", row =>
             {
                 allProducts.Add(new Product
                 {
@@ -97,7 +95,7 @@
                 });
             });
 
-            mongoHandler.WriteCollection<Product>("Products", allProducts);
+            this.mongoHandler.WriteCollection<Product>("Products", allProducts);
         }
     }
 }

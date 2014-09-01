@@ -52,6 +52,7 @@
         {
             // Get the predefined style Normal.
             Style style = document.Styles["Normal"];
+
             // Because all styles are derived from Normal, the next line changes the 
             // font of the whole document. Or, more exactly, it changes the font of
             // all styles and paragraphs that do not redefine the font.
@@ -184,7 +185,7 @@
                 row.Cells[5].VerticalAlignment = VerticalAlignment.Center;
             }
 
-            var totalSum = FindTotalSum(reportRows);
+            var totalSum = this.FindTotalSum(reportRows);
             Row totalSumRow = table.AddRow();
             totalSumRow.Height = "1cm";
             totalSumRow.HeadingFormat = true;
@@ -204,6 +205,7 @@
             {
                 totalSum += row.Price * row.Quantity;
             }
+
             return totalSum;
         }
 

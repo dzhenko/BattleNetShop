@@ -15,9 +15,11 @@ using System.ComponentModel.DataAnnotations.Schema;
         public DateTime Date { get; set; }
 
         public int ProductId { get; set; }
+
         public virtual Product Product { get; set; }
         
         public int LocationId { get; set; }
+
         public virtual PurchaseLocation Location { get; set; }
 
         [NotMapped]

@@ -26,6 +26,7 @@
             {
                 return this.vendorExpenses;
             }
+
             set
             {
                 this.vendorExpenses = value;
@@ -38,12 +39,11 @@
             {
                 return this.products;
             }
+
             set
             {
                 this.products = value;
             }
         }
-
-
     }
 }

@@ -5,11 +5,8 @@
     using System.Globalization;
     using System.IO;
 
-    using System.Data;
-    using System.Data.OleDb;
-
-    using BattleNetShop.Utils;
     using BattleNetShop.Model;
+    using BattleNetShop.Utils;
 
     public class ExcelXlsData : IExcelXlsData
     {
@@ -35,15 +32,15 @@
 
         public void ReadAllPurchases(string zipFileLocation, Action<int, int, decimal, string, DateTime> action)
         {
-            const string tempFolderName = @"UnzippedSalesReports";
+            const string TempFolderName = @"UnzippedSalesReports";
 
             var excelXlsHander = new ExcelXlsHandler();
 
             var zip = new ZipFileHandler();
 
-            zip.UnzipFolder(zipFileLocation, tempFolderName);
+            zip.UnzipFolder(zipFileLocation, TempFolderName);
 
-            foreach (var subfolder in Directory.GetDirectories(tempFolderName))
+            foreach (var subfolder in Directory.GetDirectories(TempFolderName))
             {
                 var dateAsString = subfolder.Substring(subfolder.LastIndexOf('\\') + 1);
                 var date = DateTime.ParseExact(dateAsString, "dd-MMM-yyyy", CultureInfo.InvariantCulture);
@@ -66,7 +63,7 @@
                 }
             }
 
-            Directory.Delete(tempFolderName, true);
+            Directory.Delete(TempFolderName, true);
         }
     }
 }

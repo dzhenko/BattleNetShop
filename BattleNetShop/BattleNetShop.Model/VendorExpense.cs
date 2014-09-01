@@ -18,6 +18,7 @@
 
         [Required]
         public int VendorId { get; set; }
+
         public virtual Vendor Vendor { get; set; }
     }
 }

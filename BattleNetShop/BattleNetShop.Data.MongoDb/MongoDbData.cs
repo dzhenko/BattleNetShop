@@ -3,8 +3,6 @@
     using System;
     using System.Collections.Generic;
 
-    using MongoDB.Driver;
-
     using BattleNetShop.Model;
 
     public class MongoDbData : IMongoDbData
@@ -15,7 +13,7 @@
         {
             var allProducts = new List<Product>();
 
-            mongoHandler.Value.ReadCollection<Product>("Products", p => allProducts.Add(p));
+            this.mongoHandler.Value.ReadCollection<Product>("Products", p => allProducts.Add(p));
 
             return allProducts;
         }
@@ -24,7 +22,7 @@
         {
             var allProductDetails = new List<ProductDetails>();
 
-            mongoHandler.Value.ReadCollection<ProductDetails>("ProductDetails", pd => allProductDetails.Add(pd));
+            this.mongoHandler.Value.ReadCollection<ProductDetails>("ProductDetails", pd => allProductDetails.Add(pd));
 
             return allProductDetails;
         }
@@ -33,7 +31,7 @@
         {
             var allProductCategories = new List<ProductCategory>();
 
-            mongoHandler.Value.ReadCollection<ProductCategory>("ProductCategories", pc => allProductCategories.Add(pc));
+            this.mongoHandler.Value.ReadCollection<ProductCategory>("ProductCategories", pc => allProductCategories.Add(pc));
 
             return allProductCategories;
         }
@@ -42,14 +40,14 @@
         {
             var allVendors = new List<Vendor>();
 
-            mongoHandler.Value.ReadCollection<Vendor>("Vendors", pc => allVendors.Add(pc));
+            this.mongoHandler.Value.ReadCollection<Vendor>("Vendors", pc => allVendors.Add(pc));
 
             return allVendors;
         }
 
         public void SaveExpenses(ICollection<VendorExpense> allExpenses)
         {
-            mongoHandler.Value.WriteCollection<VendorExpense>("VendorExpenses", allExpenses);
+            this.mongoHandler.Value.WriteCollection<VendorExpense>("VendorExpenses", allExpenses);
         }
     }
 }

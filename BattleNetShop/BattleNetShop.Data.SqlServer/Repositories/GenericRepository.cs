@@ -5,14 +5,14 @@
     using System.Linq;
     using System.Linq.Expressions;
 
-    public class GenericRepository<T> : IGenericRepository<T> where T: class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private IBattleNetShopMSSQLDbContext context;
 
         public GenericRepository(IBattleNetShopMSSQLDbContext battleNetShopMSSQLDbContext)
-	    {
+        {
             this.context = battleNetShopMSSQLDbContext;
-	    }
+        }
 
         public GenericRepository()
             : this(new BattleNetShopMSSQLDbContext())
@@ -53,14 +53,14 @@
             this.ChangeState(entity, EntityState.Detached);
         }
 
-        private void ChangeState(T entity, EntityState state)
-        {
-            this.context.Entry(entity).State = state;
-        }
-
         public void SaveChanges()
         {
             this.context.SaveChanges();
+        }
+
+        private void ChangeState(T entity, EntityState state)
+        {
+            this.context.Entry(entity).State = state;
         }
     }
 }

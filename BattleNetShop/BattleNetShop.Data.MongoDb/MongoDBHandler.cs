@@ -5,15 +5,13 @@
 
     using MongoDB.Driver;
 
-    using BattleNetShop.Model;
-
-    class MongoDbHandler
+    internal class MongoDbHandler
     {
         private Lazy<MongoDatabase> database = new Lazy<MongoDatabase>(CreateConnection);
 
         public void ReadCollection<T>(string collectionName, Action<T> action)
         {
-            var cursor = database.Value.GetCollection(collectionName).FindAllAs<T>();
+            var cursor = this.database.Value.GetCollection(collectionName).FindAllAs<T>();
 
             foreach (var category in cursor)
             {
@@ -23,7 +21,7 @@
 
         public void WriteCollection<T>(string collectionName, ICollection<T> collectionItems)
         {
-            MongoCollection<T> collection = database.Value.GetCollection<T>(collectionName);
+            MongoCollection<T> collection = this.database.Value.GetCollection<T>(collectionName);
 
             foreach (var item in collectionItems)
             {

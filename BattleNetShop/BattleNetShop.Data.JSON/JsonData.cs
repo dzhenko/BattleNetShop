@@ -16,7 +16,7 @@
         
         public void GenerateJSONFileReport(string saveDirectory, JsonReport report)
         {
-            using (var writer = File.CreateText(String.Format("{0}{1}.json", saveDirectory, report.ProductID)))
+            using (var writer = File.CreateText(string.Format("{0}{1}.json", saveDirectory, report.ProductID)))
             {
                 writer.Write(JsonConvert.SerializeObject(report));
             }

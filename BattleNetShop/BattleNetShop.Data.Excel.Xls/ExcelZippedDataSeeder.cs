@@ -3,8 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Data.OleDb;
-    using System.Data;
 
     using ExcelFile.net;
     using NPOI.HSSF.Util;
@@ -16,17 +14,17 @@
     /// </summary>
     public class ExcelZippedDataSeeder
     {
+        private readonly Random random;
+
         private Dictionary<int, double> productsWithPrices;
         private List<string> purchaseLocations;
-
-        private readonly Random random;
 
         /// <summary>
         /// Creates instance of the Excel Zipped Data Seeder.
         /// </summary>
         public ExcelZippedDataSeeder()
         {
-            random = new Random();
+            this.random = new Random();
         }
 
         /// <summary>
@@ -54,13 +52,13 @@
         /// <param name="numberOfRecords">The number of sales reports to create</param>
         public void Seed(string destinationPath, int numberOfRecords)
         {
-            GenerateDataToUse();
+            this.GenerateDataToUse();
 
-            GenerateAllFolders(destinationPath, numberOfRecords);
+            this.GenerateAllFolders(destinationPath, numberOfRecords);
 
-            GenerateZipFile();
+            this.GenerateZipFile();
 
-            CleanUp();
+            this.CleanUp();
         }
 
         private void CleanUp()
@@ -87,12 +85,12 @@
 
                 Directory.CreateDirectory(currentDestinationPath);
 
-                foreach (var location in purchaseLocations)
+                foreach (var location in this.purchaseLocations)
                 {
                     var currentFilePath = currentDestinationPath 
                         + string.Format(@"\{0}-Purchases-Report-{1}.xls", location, dateAsString);
 
-                    WriteFile(currentFilePath, location);
+                    this.WriteFile(currentFilePath, location);
                 }
 
                 startDate = startDate.AddDays(1);
@@ -103,14 +101,14 @@
         {
             var excelHander = new ExcelXlsHandler();
 
-            productsWithPrices = new Dictionary<int, double>();
+            this.productsWithPrices = new Dictionary<int, double>();
 
             excelHander.ReadExcelSheet(ExcelSettings.Default.InitialProductsFileLocation, "Products$", reader =>
             {
                 productsWithPrices.Add((int)(double)reader["Id"], (double)reader["Base Price"]);
             });
 
-            purchaseLocations = new List<string>();
+            this.purchaseLocations = new List<string>();
 
             excelHander.ReadExcelSheet(ExcelSettings.Default.InitialProductsFileLocation, "Locations$", reader =>
             {
@@ -133,32 +131,32 @@
 
             excel.Row().Cell("ProductId").Cell("Quantity").Cell("Unit Price").Cell("Sum");
 
-            var totalRows = random.Next(15, 30);
+            var totalRows = this.random.Next(15, 30);
             var totalSum = 0.0;
 
             for (int i = 0; i < totalRows / 2; i++)
             {
-                var index = random.Next(1, 27);
-                var quantity = random.Next(1, 10);
-                var price = Math.Round(productsWithPrices[index] * (1 + (random.Next(5, 25) / 100.0)),2);
-                excel.Row().Cell(index).Cell(quantity).Cell(price).Cell((quantity * price));
+                var index = this.random.Next(1, 27);
+                var quantity = this.random.Next(1, 10);
+                var price = Math.Round(this.productsWithPrices[index] * (1 + (this.random.Next(5, 25) / 100.0)), 2);
+                excel.Row().Cell(index).Cell(quantity).Cell(price).Cell(quantity * price);
             }
 
             for (int i = 0; i < totalRows / 2; i++)
             {
-                var index = random.Next(34, 45);
-                var quantity = random.Next(25, 95);
-                var price = Math.Round(productsWithPrices[index] * (1 + (random.Next(5, 25) / 100.0)));
-                excel.Row().Cell(index).Cell(quantity).Cell(price).Cell((quantity * price));
+                var index = this.random.Next(34, 45);
+                var quantity = this.random.Next(25, 95);
+                var price = Math.Round(this.productsWithPrices[index] * (1 + (this.random.Next(5, 25) / 100.0)));
+                excel.Row().Cell(index).Cell(quantity).Cell(price).Cell(quantity * price);
             }
 
-            var characterIndex = random.Next(27,34);
-            var characterPrice = Math.Round(productsWithPrices[characterIndex] * (1 + (random.Next(5, 25) / 100.0)),2);
+            var characterIndex = this.random.Next(27, 34);
+            var characterPrice = Math.Round(this.productsWithPrices[characterIndex] * (1 + (this.random.Next(5, 25) / 100.0)), 2);
             excel.Row().Cell(characterIndex).Cell(1).Cell(characterPrice).Cell(characterPrice);
             totalSum += characterPrice;
 
-            var accountIndex = random.Next(45, 51);
-            var accountPrice = Math.Round(productsWithPrices[accountIndex] * (1 + (random.Next(5, 25) / 100.0)));
+            var accountIndex = this.random.Next(45, 51);
+            var accountPrice = Math.Round(this.productsWithPrices[accountIndex] * (1 + (this.random.Next(5, 25) / 100.0)));
             excel.Row().Cell(accountIndex).Cell(1).Cell(accountPrice).Cell(accountPrice);
             totalSum += accountPrice;
 

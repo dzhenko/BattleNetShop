@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleNetShop.Data.Xml
+﻿namespace BattleNetShop.Data.Xml
 {
+    using System;
+    using System.Collections.Generic;
+
     public class XMLHandler
     {
         // Tuple<string, ICollection<Tuple<DateTime, decimal>>> will become a class

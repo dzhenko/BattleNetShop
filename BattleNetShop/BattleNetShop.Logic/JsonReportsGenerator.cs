@@ -1,12 +1,10 @@
-﻿using BattleNetShop.Data.Json;
-using BattleNetShop.Data.Pdf;
-namespace BattleNetShop.Logic
+﻿namespace BattleNetShop.Logic
 {
     public class JsonReportsGenerator
     {
         public void Generate()
         {
-            var jsonHandler = new JsonData();
+            // var jsonHandler = new JsonData();
 
             // jsonHandler.GenerateJSONFileReport();
         }

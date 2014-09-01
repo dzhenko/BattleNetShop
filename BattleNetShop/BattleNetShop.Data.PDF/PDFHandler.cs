@@ -7,20 +7,19 @@
 
     public class PdfHandler
     {
-
         private Lazy<PdfWriter> pdfWriter = new Lazy<PdfWriter>();
 
         public void GenerateAllProductsReportForDate(ProductsReport report)
         {
-            //magic DATE (rows = all products names)
+            // magic DATE (rows = all products names)
         }
 
         public void GenerateAllProductsReportForPeriod(IEnumerable<ProductsReport> reports)
         {
-            //magic DATE (rows = all products names)
+            // magic DATE (rows = all products names)
             foreach (var report in reports)
             {
-                pdfWriter.Value.GenerateReport(report, "Specific Date");
+                this.pdfWriter.Value.GenerateReport(report, "Specific Date");
             }
         }
 
@@ -31,18 +30,17 @@
 
         public void GenerateProductInfoForLocations(IEnumerable<ProductsReport> productSales)
         {
-            //product (rows = locations)
+            // product (rows = locations)
         }
 
         public void GenerateLocationReportForDate(ProductsReport report)
         {
-            //magic
-
+            // magic
         }
 
         public void GenerateLocationReportForPeriod(IEnumerable<ProductsReport> reports)
         {
-            //magic
+            // magic
         }
     }
 }

@@ -18,12 +18,15 @@
         public string Name { get; set; }
 
         public int VendorId { get; set; }
+
         public virtual Vendor Vendor { get; set; }
 
         public int CategoryId { get; set; }
+
         public virtual ProductCategory Category { get; set; }
 
         public int DetailsId { get; set; }
+
         public virtual ProductDetails Details { get; set; }
 
         public ProductMeasure Measure { get; set; }
@@ -36,6 +39,7 @@
             {
                 return this.purchases;
             }
+
             set
             {
                 this.purchases = value;

@@ -25,6 +25,7 @@
             {
                 return this.purchases;
             }
+
             set
             {
                 this.purchases = value;

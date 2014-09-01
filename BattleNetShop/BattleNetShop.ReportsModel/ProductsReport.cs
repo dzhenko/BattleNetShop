@@ -11,6 +11,7 @@
         {
             this.products = new List<ProductInformation>();
         }
+
         public DateTime Date { get; set; }
 
         public IEnumerable<ProductInformation> Products
