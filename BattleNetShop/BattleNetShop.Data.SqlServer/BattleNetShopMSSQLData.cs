@@ -1,6 +1,6 @@
-﻿namespace BattleNetShop.Data.MSSQL
+﻿namespace BattleNetShop.Data.SqlServer
 {
-    using BattleNetShop.Data.MSSQL.Repositories;
+    using BattleNetShop.Data.SqlServer.Repositories;
     using BattleNetShop.Model;
     using System;
     using System.Collections.Generic;

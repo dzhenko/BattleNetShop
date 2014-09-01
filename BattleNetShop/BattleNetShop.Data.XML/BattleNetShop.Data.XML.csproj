@@ -7,8 +7,8 @@
     <ProjectGuid>{AC1E7F6D-E06E-4CEC-8D08-9C4E3C23A70C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleNetShop.Data.XML</RootNamespace>
-    <AssemblyName>BattleNetShop.Data.XML</AssemblyName>
+    <RootNamespace>BattleNetShop.Data.Xml</RootNamespace>
+    <AssemblyName>BattleNetShop.Data.Xml</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

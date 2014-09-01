@@ -10,7 +10,7 @@
 
     public class MongoDataSeeder
     {
-        private MongoDBHandler mongoHandler;
+        private MongoDbHandler mongoHandler;
         private ExcelXlsHandler excelHandler;
 
         /// <summary>
@@ -18,7 +18,7 @@
         /// </summary>
         public void Seed()
         {
-            mongoHandler = new MongoDBHandler();
+            mongoHandler = new MongoDbHandler();
             excelHandler = new ExcelXlsHandler();
 
             this.SeedVendors();

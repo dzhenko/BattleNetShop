@@ -7,8 +7,8 @@
     <ProjectGuid>{193E18DE-7F43-4786-977D-2BB26D65A7B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleNetShop.Data.JSON</RootNamespace>
-    <AssemblyName>BattleNetShop.Data.JSON</AssemblyName>
+    <RootNamespace>BattleNetShop.Data.Json</RootNamespace>
+    <AssemblyName>BattleNetShop.Data.Json</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -59,20 +59,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JSONHandler.cs" />
-    <Compile Include="JSONReport.cs" />
-    <Compile Include="JSONSettings.Designer.cs">
+    <Compile Include="JsonData.cs" />
+    <Compile Include="JsonSettings1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>JSONSettings.settings</DependentUpon>
+      <DependentUpon>JsonSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="JSONSettings.settings">
+    <None Include="JsonSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>JSONSettings.Designer.cs</LastGenOutput>
+      <LastGenOutput>JsonSettings1.Designer.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -80,6 +79,10 @@
     <ProjectReference Include="..\BattleNetShop.Data.MySql\BattleNetShop.Data.MySql.csproj">
       <Project>{d6221064-bb1e-42f6-9941-5ed8f551ccbd}</Project>
       <Name>BattleNetShop.Data.MySql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.ReportsModel\BattleNetShop.ReportsModel.csproj">
+      <Project>{e4279469-a64d-41e6-adbb-0497853cebfa}</Project>
+      <Name>BattleNetShop.ReportsModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

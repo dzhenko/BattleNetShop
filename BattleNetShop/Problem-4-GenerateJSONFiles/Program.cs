@@ -5,12 +5,12 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using BattleNetShop.Data.JSON;
+    using BattleNetShop.Data.Json;
     class Program
     {
         static void Main()
         {
-            new JSONHandler().GenerateJSONFileReports();
+            //new JSONHandler().GenerateJSONFileReports();
         }
     }
 }

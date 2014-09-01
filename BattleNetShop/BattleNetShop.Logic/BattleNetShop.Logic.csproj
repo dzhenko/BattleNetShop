@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="DataSeeder.cs" />
     <Compile Include="ExcelReportsLoader.cs" />
+    <Compile Include="JsonReportsGenerator.cs" />
     <Compile Include="PdfReportsGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,17 +50,25 @@
       <Project>{368d1a8c-9469-49e2-a20b-b41c00c0a85d}</Project>
       <Name>BattleNetShop.Data.Excel.Xls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Data.JSON\BattleNetShop.Data.Json.csproj">
+      <Project>{193e18de-7f43-4786-977d-2bb26d65a7b0}</Project>
+      <Name>BattleNetShop.Data.Json</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Data.MongoDb\BattleNetShop.Data.MongoDb.csproj">
       <Project>{801fd9f8-9891-443f-8688-d00472d6a65f}</Project>
       <Name>BattleNetShop.Data.MongoDb</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BattleNetShop.Data.MSSQL\BattleNetShop.Data.MSSQL.csproj">
-      <Project>{6bf7172a-e7db-42c5-8122-6d6b65eaff5a}</Project>
-      <Name>BattleNetShop.Data.MSSQL</Name>
+    <ProjectReference Include="..\BattleNetShop.Data.MySql\BattleNetShop.Data.MySql.csproj">
+      <Project>{d6221064-bb1e-42f6-9941-5ed8f551ccbd}</Project>
+      <Name>BattleNetShop.Data.MySql</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BattleNetShop.Data.PDF\BattleNetShop.Data.PDF.csproj">
+    <ProjectReference Include="..\BattleNetShop.Data.PDF\BattleNetShop.Data.Pdf.csproj">
       <Project>{6244a825-a67d-454d-b96e-8f63d804a8eb}</Project>
-      <Name>BattleNetShop.Data.PDF</Name>
+      <Name>BattleNetShop.Data.Pdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Data.SqlServer\BattleNetShop.Data.SqlServer.csproj">
+      <Project>{6bf7172a-e7db-42c5-8122-6d6b65eaff5a}</Project>
+      <Name>BattleNetShop.Data.SqlServer</Name>
     </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Model\BattleNetShop.Model.csproj">
       <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>

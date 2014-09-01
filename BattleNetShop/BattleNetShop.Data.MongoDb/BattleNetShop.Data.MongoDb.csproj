@@ -50,11 +50,11 @@
     <Compile Include="IMongoDbData.cs" />
     <Compile Include="MongoDataSeeder.cs" />
     <Compile Include="MongoDbData.cs" />
-    <Compile Include="MongoDBHandler.cs" />
-    <Compile Include="MongoDBSettings.Designer.cs">
+    <Compile Include="MongoDbHandler.cs" />
+    <Compile Include="MongoDbSettings1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>MongoDBSettings.settings</DependentUpon>
+      <DependentUpon>MongoDbSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,9 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="MongoDBSettings.settings">
+    <None Include="MongoDbSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>MongoDBSettings.Designer.cs</LastGenOutput>
+      <LastGenOutput>MongoDbSettings1.Designer.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

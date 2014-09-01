@@ -13,11 +13,11 @@ namespace BattleNetShop.Data.MongoDb {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
-    internal sealed partial class MongoDBSettings : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class MongoDbSettings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static MongoDBSettings defaultInstance = ((MongoDBSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new MongoDBSettings())));
+        private static MongoDbSettings defaultInstance = ((MongoDbSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new MongoDbSettings())));
         
-        public static MongoDBSettings Default {
+        public static MongoDbSettings Default {
             get {
                 return defaultInstance;
             }

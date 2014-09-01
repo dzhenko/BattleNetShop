@@ -1,11 +1,11 @@
-﻿namespace BattleNetShop.Data.SQLite
+﻿namespace BattleNetShop.Data.SqLite
 {
     using System;
     using System.Collections.Generic;
     using System.Data.SQLite;
     using System.IO;
 
-    public class SQLiteHandler : IDisposable
+    public class SqLiteHandler : IDisposable
     {
         private SQLiteConnection connection;
 
@@ -17,15 +17,15 @@
             }
         }
 
-        public SQLiteHandler()
+        public SqLiteHandler()
         {
-            string dbLocation = SQLiteDBSettings.Default.SQLiteDBLocation;
+            string dbLocation = SqLiteDbSettings.Default.SQLiteDBLocation;
             if (!File.Exists(dbLocation))
             {
                 SQLiteConnection.CreateFile(dbLocation);
             }
 
-            string connectionString = String.Format(SQLiteDBSettings.Default.SQLiteConnectionString, dbLocation);
+            string connectionString = String.Format(SqLiteDbSettings.Default.SQLiteConnectionString, dbLocation);
             this.connection = new SQLiteConnection(connectionString);
             this.connection.Open();
         }

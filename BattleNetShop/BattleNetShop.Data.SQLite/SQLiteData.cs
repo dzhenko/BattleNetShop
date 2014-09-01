@@ -1,20 +1,20 @@
-﻿namespace BattleNetShop.Data.SQLite
+﻿namespace BattleNetShop.Data.SqLite
 {
     using System;
     using System.Collections.Generic;
     using System.Data.SQLite;
     using System.Linq;
 
-    public class SQLiteData
+    public class SqLiteData
     {
-        private SQLiteHandler handler;
+        private SqLiteHandler handler;
 
-        public SQLiteData()
-            : this(new SQLiteHandler())
+        public SqLiteData()
+            : this(new SqLiteHandler())
         {
         }
 
-        public SQLiteData(SQLiteHandler handler)
+        public SqLiteData(SqLiteHandler handler)
         {
             this.handler = handler;
         }

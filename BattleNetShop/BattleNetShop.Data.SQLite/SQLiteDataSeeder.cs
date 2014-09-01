@@ -1,4 +1,4 @@
-﻿namespace BattleNetShop.Data.SQLite
+﻿namespace BattleNetShop.Data.SqLite
 {
     using System;
     using System.Collections.Generic;
@@ -7,18 +7,18 @@
 
     using BattleNetShop.Data.Excel.Xls;
 
-    public class SQLiteDataSeeder
+    public class SqLiteDataSeeder
     {
         private static int maxTaxAmount = 30;
 
-        private SQLiteHandler handler;
+        private SqLiteHandler handler;
 
-        public SQLiteDataSeeder()
-            : this(new SQLiteHandler())
+        public SqLiteDataSeeder()
+            : this(new SqLiteHandler())
         {
         }
 
-        public SQLiteDataSeeder(SQLiteHandler handler)
+        public SqLiteDataSeeder(SqLiteHandler handler)
         {
             this.handler = handler;
         }

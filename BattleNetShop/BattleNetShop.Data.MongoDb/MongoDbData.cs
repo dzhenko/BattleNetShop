@@ -9,7 +9,7 @@
 
     public class MongoDbData : IMongoDbData
     {
-        private Lazy<MongoDBHandler> mongoHandler = new Lazy<MongoDBHandler>();
+        private Lazy<MongoDbHandler> mongoHandler = new Lazy<MongoDbHandler>();
 
         public ICollection<Product> GetAllProducts()
         {

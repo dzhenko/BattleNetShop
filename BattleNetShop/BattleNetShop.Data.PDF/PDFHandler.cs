@@ -1,12 +1,15 @@
-﻿namespace BattleNetShop.Data.PDF
+﻿namespace BattleNetShop.Data.Pdf
 {
     using System;
     using System.Collections.Generic;
 
     using BattleNetShop.ReportsModel;
 
-    public class PDFHandler
+    public class PdfHandler
     {
+
+        private Lazy<PdfWriter> pdfWriter = new Lazy<PdfWriter>();
+
         public void GenerateAllProductsReportForDate(ProductsReport report)
         {
             //magic DATE (rows = all products names)
@@ -15,15 +18,10 @@
         public void GenerateAllProductsReportForPeriod(IEnumerable<ProductsReport> reports)
         {
             //magic DATE (rows = all products names)
-            PDFMagic.InitDocumentCreation();
-            PDFMagic.TableHeader();
-            PDFMagic.Columns(6);
-            PDFMagic.HeaderRows("Specific Date");
             foreach (var report in reports)
             {
-                PDFMagic.FillData(report.Products);
+                pdfWriter.Value.GenerateReport(report, "Specific Date");
             }
-            PDFMagic.RenderDocument();
         }
 
         public void GenerateProductInfoForDates(IEnumerable<ProductsReport> productSales)

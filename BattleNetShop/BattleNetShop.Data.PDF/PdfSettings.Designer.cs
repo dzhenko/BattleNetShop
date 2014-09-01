@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BattleNetShop.Data.PDF {
+namespace BattleNetShop.Data.Pdf {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -4,11 +4,8 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using BattleNetShop.Data.Excel.Xls;
-    using BattleNetShop.Data.MongoDb;
-    using BattleNetShop.Data.MSSQL;
-    using BattleNetShop.Data.PDF;
-    using BattleNetShop.Model;
+    using BattleNetShop.Data.SqlServer;
+
     using BattleNetShop.ReportsModel;
 
     public class PdfReportsGenerator

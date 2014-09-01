@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BattleNetShop.Data.MSSQL {
+namespace BattleNetShop.Data.SqlServer {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

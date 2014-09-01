@@ -7,8 +7,8 @@
     <ProjectGuid>{6244A825-A67D-454D-B96E-8F63D804A8EB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleNetShop.Data.PDF</RootNamespace>
-    <AssemblyName>BattleNetShop.Data.PDF</AssemblyName>
+    <RootNamespace>BattleNetShop.Data.Pdf</RootNamespace>
+    <AssemblyName>BattleNetShop.Data.Pdf</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -57,8 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PDFHandler.cs" />
-    <Compile Include="PDFMagic.cs" />
+    <Compile Include="PdfHandler.cs" />
+    <Compile Include="PdfWriter.cs" />
     <Compile Include="PdfSettings.Designer.cs">
       <DependentUpon>PdfSettings.settings</DependentUpon>
       <AutoGen>True</AutoGen>

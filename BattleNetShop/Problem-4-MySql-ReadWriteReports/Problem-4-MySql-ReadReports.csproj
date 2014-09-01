@@ -65,9 +65,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BattleNetShop.Data.JSON\BattleNetShop.Data.JSON.csproj">
+    <ProjectReference Include="..\BattleNetShop.Data.JSON\BattleNetShop.Data.Json.csproj">
       <Project>{193e18de-7f43-4786-977d-2bb26d65a7b0}</Project>
-      <Name>BattleNetShop.Data.JSON</Name>
+      <Name>BattleNetShop.Data.Json</Name>
     </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Data.MySql\BattleNetShop.Data.MySql.csproj">
       <Project>{d6221064-bb1e-42f6-9941-5ed8f551ccbd}</Project>

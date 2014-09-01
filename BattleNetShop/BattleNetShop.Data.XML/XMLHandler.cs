@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleNetShop.Data.XML
+namespace BattleNetShop.Data.Xml
 {
     public class XMLHandler
     {

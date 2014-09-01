@@ -48,9 +48,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BattleNetShop.Data.SQLite\BattleNetShop.Data.SQLite.csproj">
+    <ProjectReference Include="..\BattleNetShop.Data.SQLite\BattleNetShop.Data.SqLite.csproj">
       <Project>{718af6a2-9b4b-4b6c-b931-7760d17000c0}</Project>
-      <Name>BattleNetShop.Data.SQLite</Name>
+      <Name>BattleNetShop.Data.SqLite</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿namespace BattleNetShop.Data.MSSQL.Repositories
+﻿namespace BattleNetShop.Data.SqlServer.Repositories
 {
     using System;
     using System.Data.Entity;

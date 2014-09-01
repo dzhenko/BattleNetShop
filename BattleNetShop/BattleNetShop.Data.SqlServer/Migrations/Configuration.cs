@@ -1,4 +1,4 @@
-namespace BattleNetShop.Data.MSSQL.Migrations
+namespace BattleNetShop.Data.SqlServer.Migrations
 {
     using System;
     using System.Data.Entity;

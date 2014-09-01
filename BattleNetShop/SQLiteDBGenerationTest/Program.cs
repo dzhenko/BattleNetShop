@@ -1,16 +1,16 @@
 ﻿namespace SQLiteDBGenerationTest
 {
     using System;
-    using BattleNetShop.Data.SQLite;
+    using BattleNetShop.Data.SqLite;
 
     class SQLiteDBGenerationTest
     {
         static void Main()
         {
-            SQLiteDataSeeder seeder = new SQLiteDataSeeder();
+            SqLiteDataSeeder seeder = new SqLiteDataSeeder();
             seeder.CreateSQLiteTableProductsTaxes();
             seeder.SeedTableProductsTaxes();
-            SQLiteData sqliteData = new SQLiteData();
+            SqLiteData sqliteData = new SqLiteData();
             var productsTaxes = sqliteData.ReadProductTaxes();
             foreach (var item in productsTaxes)
             {

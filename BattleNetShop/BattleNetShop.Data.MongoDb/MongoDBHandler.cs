@@ -7,7 +7,7 @@
 
     using BattleNetShop.Model;
 
-    class MongoDBHandler
+    class MongoDbHandler
     {
         private Lazy<MongoDatabase> database = new Lazy<MongoDatabase>(CreateConnection);
 
@@ -35,13 +35,13 @@
         {
             // Create server settings to pass connection string, timeout, etc.
             MongoServerSettings settings = new MongoServerSettings();
-            settings.Server = new MongoServerAddress(MongoDBSettings.Default.MongoDBAddress, MongoDBSettings.Default.MongoDBPort);
+            settings.Server = new MongoServerAddress(MongoDbSettings.Default.MongoDBAddress, MongoDbSettings.Default.MongoDBPort);
 
             // Create server object to communicate with our server
             MongoServer server = new MongoServer(settings);
 
             // Get our database instance to reach collections and data
-            var database = server.GetDatabase(MongoDBSettings.Default.MongoDBName);
+            var database = server.GetDatabase(MongoDbSettings.Default.MongoDBName);
 
             return database;
         }

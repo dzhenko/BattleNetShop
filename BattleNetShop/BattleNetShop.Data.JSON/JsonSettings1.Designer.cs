@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BattleNetShop.Data.JSON {
+namespace BattleNetShop.Data.Json {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
-    internal sealed partial class JSONSettings : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class JsonSettings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static JSONSettings defaultInstance = ((JSONSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new JSONSettings())));
+        private static JsonSettings defaultInstance = ((JsonSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new JsonSettings())));
         
-        public static JSONSettings Default {
+        public static JsonSettings Default {
             get {
                 return defaultInstance;
             }

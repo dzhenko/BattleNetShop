@@ -48,9 +48,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BattleNetShop.Data.JSON\BattleNetShop.Data.JSON.csproj">
+    <ProjectReference Include="..\BattleNetShop.Data.JSON\BattleNetShop.Data.Json.csproj">
       <Project>{193e18de-7f43-4786-977d-2bb26d65a7b0}</Project>
-      <Name>BattleNetShop.Data.JSON</Name>
+      <Name>BattleNetShop.Data.Json</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
