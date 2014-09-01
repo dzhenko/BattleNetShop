@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30324.0
+VisualStudioVersion = 12.0.30626.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Model", "BattleNetShop.Model\BattleNetShop.Model.csproj", "{0144DE51-520F-4226-8AEA-ACCD5CEEF6BF}"
 EndProject

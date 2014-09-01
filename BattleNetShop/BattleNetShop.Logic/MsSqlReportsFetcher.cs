@@ -51,7 +51,7 @@
                     Price = gr.Average(purchase => purchase.UnitPrice),
                     ProductId = gr.Min(purchase => purchase.ProductId),
                     Vendor = gr.Min(purchase => purchase.Product.Vendor.Name),
-                    Quantity = gr.Count()
+                    Quantity = gr.Sum(p => p.Quantity)
                 });
 
             return new ProductsReport()
@@ -61,49 +61,14 @@
             };
         }
 
-        public IEnumerable<ProductsReport> GetAllProductsReportForPeriod(IEnumerable<DateTime> dates)
-        {
-            return dates.Select(d => this.GetAllProductsReportForDate(d));
-        }
-
-        public IEnumerable<ProductsReport> GetProductInformationForDates(int productId)
-        {
-            return this.GetProductInformationForDates(this.msSqlData.Products.GetById(productId).Name);
-        }
-
-        public IEnumerable<ProductsReport> GetProductInformationForDates(Product product)
-        {
-            return this.GetProductInformationForDates(product.Name);
-        }
-
-        public IEnumerable<ProductsReport> GetProductInformationForDates(string productName)
-        {
-            return this.msSqlData.Purchases
-                .Search(purchase => purchase.Product.Name == productName)
-                .GroupBy(purchase => purchase.Date)
-                .OrderBy(gr => gr.Min(p => p.ProductId))
-                .Select(gr => new ProductsReport 
-                {
-                   Date = gr.Key,
-                   Products = gr.Select(g => new ProductsReportEntry
-                   {
-                       Name = productName,
-                       Price = g.UnitPrice,
-                       Quantity = g.Quantity,
-                       ProductId = gr.Min(purchase => purchase.ProductId),
-                       Vendor = gr.Min(purchase => purchase.Product.Vendor.Name),
-                   })
-                });
-        }
-
         public IEnumerable<ProductsReport> GetProductInformationForLocations(int productId)
         {
-            return this.GetProductInformationForDates(this.msSqlData.Products.GetById(productId).Name);
+            return this.GetProductInformationForLocations(this.msSqlData.Products.GetById(productId).Name);
         }
 
         public IEnumerable<ProductsReport> GetProductInformationForLocations(Product product)
         {
-            return this.GetProductInformationForDates(product.Name);
+            return this.GetProductInformationForLocations(product.Name);
         }
 
         public IEnumerable<ProductsReport> GetProductInformationForLocations(string productName)
@@ -147,9 +112,10 @@
                 {
                     Name = gr.Key,
                     Price = gr.Average(purchase => purchase.UnitPrice),
-                    Quantity = gr.Count(),
+                    Quantity = gr.Sum(g => g.Quantity),
                     ProductId = gr.Min(purchase => purchase.ProductId),
                     Vendor = gr.Min(purchase => purchase.Product.Vendor.Name),
+                    Location = locationName
                 });
 
             return new ProductsReport()
@@ -159,19 +125,36 @@
             };
         }
 
-        public IEnumerable<ProductsReport> GetLocationReportForPeriod(PurchaseLocation location, IEnumerable<DateTime> dates)
+        public ProductsReport GetTotalLocationReport(PurchaseLocation location)
         {
-            return this.GetLocationReportForPeriod(location.Name, dates);
+            return this.GetTotalLocationReport(location.Name);
         }
 
-        public IEnumerable<ProductsReport> GetLocationReportForPeriod(int LocationId, IEnumerable<DateTime> dates)
+        public ProductsReport GetTotalLocationReport(int locationId)
         {
-            return this.GetLocationReportForPeriod(this.msSqlData.PurchaseLocations.GetById(LocationId).Name, dates);
+            return this.GetTotalLocationReport(this.msSqlData.PurchaseLocations.GetById(locationId).Name);
         }
 
-        public IEnumerable<ProductsReport> GetLocationReportForPeriod(string locationName, IEnumerable<DateTime> dates)
+        public ProductsReport GetTotalLocationReport(string locationName)
         {
-            return dates.Select(d => this.GetLocationReportForDate(locationName, d));
+            var allProductInformations = this.msSqlData.Purchases
+                .Search(purchase => purchase.Location.Name == locationName)
+                .GroupBy(purchase => purchase.Product.Name)
+                .OrderBy(gr => gr.Min(p => p.ProductId))
+                .Select(gr => new ProductsReportEntry
+                {
+                    Name = gr.Key,
+                    Price = gr.Average(purchase => purchase.UnitPrice),
+                    Quantity = gr.Sum(g => g.Quantity),
+                    ProductId = gr.Min(purchase => purchase.ProductId),
+                    Vendor = gr.Min(purchase => purchase.Product.Vendor.Name),
+                    Location = locationName
+                });
+
+            return new ProductsReport()
+            {
+                Products = allProductInformations
+            };
         }
 
         public IQueryable<LocationReport> GetAllLocationsReport()

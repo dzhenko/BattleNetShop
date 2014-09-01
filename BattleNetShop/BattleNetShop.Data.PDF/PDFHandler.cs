@@ -10,59 +10,48 @@
     {
         private Lazy<PdfWriter> pdfWriter = new Lazy<PdfWriter>();
 
-        public void GenerateAllProductsInformation(IEnumerable<ProductsReportEntry> productInformations)
+        public void GenerateAllProductsInformation(ProductsReport productInformations)
         {
-            // magic DATE (rows = all products names)
+            // dont touch :)
+            this.pdfWriter.Value.GenerateReport(productInformations, "All products Report");
         }
 
         public void GenerateAllProductsReportForDate(ProductsReport report)
         {
-            // magic DATE (rows = all products names)
+            // dont touch :)
+            var date = report.Date.ToString("dd MMM yyyy");
+            this.pdfWriter.Value.GenerateReport(report, "All products Report for " + date);
         }
 
-        public void GenerateAllProductsReportForPeriod(IEnumerable<ProductsReport> reports)
+        public void GenerateProductInfoForLocations(IEnumerable<ProductsReport> reports)
         {
-            // remove this when magic is done
-            reports.ToList();
-            return;
-
-            // magic DATE (rows = all products names)
-            foreach (var report in reports)
+            var reportsAsOne = new ProductsReport() 
             {
-                this.pdfWriter.Value.GenerateReport(report, "BattleNetShop Aggregated Sales Report");
-            }
-        }
+                Products = reports.Select( x=> new ProductsReportEntry() 
+                {
+                    Location = x.Products.Min(p => p.Location),
+                    Name = x.Products.Min(p => p.Name),
+                    Price = x.Products.Min(p => p.Price),
+                    ProductId = x.Products.Min(p => p.ProductId),
+                    Vendor = x.Products.Min(p => p.Vendor),
+                    Quantity = x.Products.Sum(p => p.Quantity)
+                })
+            };
 
-        public void GenerateProductInfoForDates(IEnumerable<ProductsReport> productSales)
-        {
-            // remove this when magic is done
-            productSales.ToList();
-            return;
-
-            // PRoduct (rows = dates)
-        }
-
-        public void GenerateProductInfoForLocations(IEnumerable<ProductsReport> productSales)
-        {
-            // remove this when magic is done
-            productSales.ToList();
-            return;
-
-            // product (rows = locations)
+            this.pdfWriter.Value.GenerateReport(reportsAsOne, "Single Product " +reportsAsOne.Products.First().Name+ " Report by Locations");
         }
 
         public void GenerateLocationReportForDate(ProductsReport report)
         {
-            // magic
+            // dont touch :)
+            var date = report.Date.ToString("dd MMM yyyy");
+            this.pdfWriter.Value.GenerateReport(report, "All products Report for Realm " + report.Products.First().Location + " at " + date);
         }
 
-        public void GenerateLocationReportForPeriod(IEnumerable<ProductsReport> reports)
+        public void GenerateTotalLocationReport(ProductsReport report)
         {
-            // remove this when magic is done
-            reports.ToList();
-            return;
-
-            // magic
+            // dont touch :)
+            this.pdfWriter.Value.GenerateReport(report, "All products Report for Realm " + report.Products.First().Location);
         }
     }
 }

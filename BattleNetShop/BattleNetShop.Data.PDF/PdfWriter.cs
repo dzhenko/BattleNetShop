@@ -15,34 +15,53 @@
 
     public class PdfWriter
     {
-        public void GenerateReport(ProductsReport report, string reportHeader)
+        public void GenerateReport(ProductsReport report, string fileName)
         {
-            this.GenerateReport(report, PdfSettings.Default.ReportsFolder, reportHeader);
+            this.GenerateReport(report, PdfSettings.Default.ReportsFolder, fileName);
         }
 
-        public void GenerateReport(ProductsReport report, string destinationFolder, string reportHeader)
+        public void GenerateReport(ProductsReport report, string destinationFolder, string fileName)
         {
-            var document = this.CreateDocument();
+            var document = this.CreateDocument(fileName);
 
             this.DefineStyles(document);
 
-            var table = this.TableHeader(document);
+            var table = this.TableHeader(document, fileName);
 
-            this.Columns(6, table);
+            this.Columns(table);
 
-            this.HeaderRows(reportHeader, table);
+            var useName = true;
+            var useDate = true;
 
-            this.FillData(report.Products, table);
+            if (fileName.Contains("Realm"))
+            {
+                useName = true;
+            }
 
-            this.RenderDocument(document, destinationFolder);
+            if (fileName.Contains("Date"))
+            {
+                useName = false;
+            }
+
+            if (fileName.Contains("Single"))
+            {
+                useName = false;
+                useDate = false;
+            }
+
+            this.HeaderRows(table, useName, useDate);
+
+            this.FillData(report, table, useName, useDate);
+
+            this.RenderDocument(document, destinationFolder, fileName);
         }
 
-        private Document CreateDocument()
+        private Document CreateDocument(string filename)
         {
             var theDocument = new Document();
 
-            theDocument.Info.Title = "BattleNet Sales Report";
-            theDocument.Info.Author = "BattleNetShop Sales Report";
+            theDocument.Info.Title = filename;
+            theDocument.Info.Author = "Telerik Sharpshooter DB Team";
             theDocument.Info.Subject = "This is the description of the document";
             theDocument.Info.Keywords = "Blizzard, BattleNet, Diablo, Warcraft, Sales, Items";
 
@@ -78,15 +97,15 @@
             style.ParagraphFormat.TabStops.AddTabStop("16cm", TabAlignment.Right);
         }
 
-        private Table TableHeader(Document document)
+        private Table TableHeader(Document document, string fileName)
         {
             // Each MigraDoc document needs at least one section.
             Section section = document.AddSection();
 
             // Create Header
             Paragraph paragraph = section.Headers.Primary.AddParagraph();
-            paragraph.AddText("Team SharpShooter - TelerikAcademy 2014");
-            paragraph.Format.Font.Size = 18;
+            paragraph.AddText(fileName);
+            paragraph.Format.Font.Size = 14;
             paragraph.Format.Alignment = ParagraphAlignment.Center;
 
             // Create the item table
@@ -101,64 +120,55 @@
             return mainTable;
         }
 
-        private void Columns(int colCount, Table table)
+        private void Columns(Table table)
         {
             // Before you can add a row, you must define the columns
             var column = table.AddColumn("5.5cm");
             column.Format.Alignment = ParagraphAlignment.Center;
 
-            for (int i = 0; i < colCount - 1; i++)
+            for (int i = 0; i < 4; i++)
             {
                 table.AddColumn("2cm").Format.Alignment = ParagraphAlignment.Right;
             }
         }
 
-        private void HeaderRows(string reportTitle, Table table)
+        private void HeaderRows(Table table, bool useName, bool useDate)
         {
-            // Create the header of the table
-            Row row = table.AddRow();
+            var row = table.AddRow();
             row.Height = "1cm";
             row.HeadingFormat = true;
             row.Format.Alignment = ParagraphAlignment.Center;
             row.Format.Font.Bold = true;
             row.Shading.Color = Colors.LightGray;
-            row.Cells[0].AddParagraph(reportTitle);
-            row.Cells[0].Format.Font.Bold = true;
-            row.Cells[0].Format.Alignment = ParagraphAlignment.Center;
-            row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
-            row.Cells[0].MergeRight = 5;
 
-            row = table.AddRow();
-            row.Height = "1cm";
-            row.HeadingFormat = true;
-            row.Format.Alignment = ParagraphAlignment.Center;
-            row.Format.Font.Bold = true;
-            row.Shading.Color = Colors.LightGray;
-            row.Cells[0].AddParagraph("Product");
+            row.Cells[0].AddParagraph(useName ? "Product" : useDate ? "Date" : "Location");
             row.Cells[0].Format.Alignment = ParagraphAlignment.Center;
             row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
-            row.Cells[1].AddParagraph("Quantity");
+
+            row.Cells[1].AddParagraph("Vendor");
             row.Cells[1].Format.Alignment = ParagraphAlignment.Center;
             row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
+
             row.Cells[2].AddParagraph("Unit Price");
             row.Cells[2].Format.Alignment = ParagraphAlignment.Center;
             row.Cells[2].VerticalAlignment = VerticalAlignment.Center;
-            row.Cells[3].AddParagraph("Vendor");
+
+            row.Cells[3].AddParagraph("Quantity");
             row.Cells[3].Format.Alignment = ParagraphAlignment.Center;
             row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
-            row.Cells[4].AddParagraph("Location");
+
+            row.Cells[4].AddParagraph("Sum");
             row.Cells[4].Format.Alignment = ParagraphAlignment.Center;
             row.Cells[4].VerticalAlignment = VerticalAlignment.Center;
-            row.Cells[5].AddParagraph("Sum");
-            row.Cells[5].Format.Alignment = ParagraphAlignment.Center;
-            row.Cells[5].VerticalAlignment = VerticalAlignment.Center;
 
-            table.SetEdge(0, 0, 6, 2, Edge.Box, BorderStyle.Single, 0.75, Color.Empty);
+            table.SetEdge(0, 0, 5, 1, Edge.Box, BorderStyle.Single, 0.75, Color.Empty);
         }
 
-        private void FillData(IEnumerable<ProductsReportEntry> reportRows, Table table)
+        private void FillData(ProductsReport productReport, Table table, bool useName, bool useDate)
         {
-            foreach (var reportRow in reportRows)
+            var productReportEntries = productReport.Products;
+
+            foreach (var reportRow in productReportEntries)
             {
                 Row row = table.AddRow();
                 row.Height = "1cm";
@@ -166,27 +176,29 @@
                 row.Format.Alignment = ParagraphAlignment.Center;
                 row.Format.Font.Bold = true;
                 row.Shading.Color = Colors.YellowGreen;
-                row.Cells[0].AddParagraph(reportRow.Name);
+
+                row.Cells[0].AddParagraph(useName ? reportRow.Name : useDate ? productReport.Date.ToString("dd-MMM-yyyy") : reportRow.Location);
                 row.Cells[0].Format.Alignment = ParagraphAlignment.Center;
                 row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
-                row.Cells[1].AddParagraph(reportRow.Quantity.ToString());
+
+                row.Cells[1].AddParagraph(reportRow.Vendor);
                 row.Cells[1].Format.Alignment = ParagraphAlignment.Center;
                 row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
+
                 row.Cells[2].AddParagraph(reportRow.Price.ToString());
                 row.Cells[2].Format.Alignment = ParagraphAlignment.Center;
                 row.Cells[2].VerticalAlignment = VerticalAlignment.Center;
-                row.Cells[3].AddParagraph("Blizzard");
+
+                row.Cells[3].AddParagraph(reportRow.Quantity.ToString());
                 row.Cells[3].Format.Alignment = ParagraphAlignment.Center;
                 row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
-                row.Cells[4].AddParagraph(reportRow.Location);
+
+                row.Cells[4].AddParagraph(reportRow.Total.ToString());
                 row.Cells[4].Format.Alignment = ParagraphAlignment.Center;
                 row.Cells[4].VerticalAlignment = VerticalAlignment.Center;
-                row.Cells[5].AddParagraph((reportRow.Quantity * reportRow.Price).ToString());
-                row.Cells[5].Format.Alignment = ParagraphAlignment.Center;
-                row.Cells[5].VerticalAlignment = VerticalAlignment.Center;
             }
 
-            var totalSum = this.FindTotalSum(reportRows);
+            var totalSum = productReportEntries.Sum(x => x.Total);
             Row totalSumRow = table.AddRow();
             totalSumRow.Height = "1cm";
             totalSumRow.HeadingFormat = true;
@@ -196,21 +208,10 @@
             totalSumRow.Cells[0].AddParagraph("Total: " + totalSum.ToString());
             totalSumRow.Cells[0].Format.Alignment = ParagraphAlignment.Right;
             totalSumRow.Cells[0].VerticalAlignment = VerticalAlignment.Center;
-            totalSumRow.Cells[0].MergeRight = 5;
+            totalSumRow.Cells[0].MergeRight = 4;
         }
 
-        private decimal FindTotalSum(IEnumerable<ProductsReportEntry> reportRows)
-        {
-            decimal totalSum = 0;
-            foreach (var row in reportRows)
-            {
-                totalSum += row.Price * row.Quantity;
-            }
-
-            return totalSum;
-        }
-
-        private void RenderDocument(Document document, string destinationFolder)
+        private void RenderDocument(Document document, string destinationFolder, string fileName)
         {
             if (!Directory.Exists(destinationFolder))
             {
@@ -223,10 +224,10 @@
 
             pdfRenderer.RenderDocument();
 
-            string fileName = "BattleNet-Sales-Report.pdf";
-            pdfRenderer.PdfDocument.Save(destinationFolder + fileName);
+            pdfRenderer.PdfDocument.Save(destinationFolder + fileName + ".pdf");
 
-            Process.Start(fileName);
+            // TODO: Needed ?
+            //Process.Start(fileName);
         }
     }
 }

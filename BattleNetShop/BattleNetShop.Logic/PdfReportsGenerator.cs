@@ -17,53 +17,27 @@
 
         public void Generate()
         {
-           this.GenerateAllProductsReportForDate(new DateTime(2014, 1, 1));
-
-           this.GenerateAllProductsReportForPeriod(new[] { new DateTime(2014, 1, 1), new DateTime(2014, 1, 2), new DateTime(2014, 1, 3) });
-
-           this.GenerateProductInfoForDates("Shako");
-
-           this.GenerateProductInfoForLocations("Shako");
-           
-           this.GenerateLocationReportForDate(1, new DateTime(2014, 1, 1));
-           
-           this.GenerateLocationReportForPeriod(1, new[] { new DateTime(2014, 1, 1), new DateTime(2014, 1, 2), new DateTime(2014, 1, 3) });
+            this.GenerateAllProductsInformation();
+            
+            this.GenerateAllProductsReportForDate(new DateTime(2014, 1, 1));
+            
+            this.GenerateProductInfoForLocations("Shako");
+            
+            this.GenerateLocationReportForDate(1, new DateTime(2014, 1, 1));
+            
+            this.GenerateTotalLocationReport(1);
         }
 
         public void GenerateAllProductsInformation()
         {
             var reports = msSqlReportsFetcher.Value.GetAllProductInformations();
-            pdfHandler.Value.GenerateAllProductsInformation(reports);
+            pdfHandler.Value.GenerateAllProductsInformation(new ProductsReport() { Products = reports });
         }
 
         public void GenerateAllProductsReportForDate(DateTime date)
         {
             var reports = msSqlReportsFetcher.Value.GetAllProductsReportForDate(date);
             pdfHandler.Value.GenerateAllProductsReportForDate(reports);
-        }
-
-        public void GenerateAllProductsReportForPeriod(IEnumerable<DateTime> dates)
-        {
-            var reports = msSqlReportsFetcher.Value.GetAllProductsReportForPeriod(dates);
-            pdfHandler.Value.GenerateAllProductsReportForPeriod(reports);
-        }
-
-        public void GenerateProductInfoForDates(int productId)
-        {
-            var reports = msSqlReportsFetcher.Value.GetProductInformationForDates(productId);
-            pdfHandler.Value.GenerateProductInfoForDates(reports);
-        }
-
-        public void GenerateProductInfoForDates(Product product)
-        {
-            var reports = msSqlReportsFetcher.Value.GetProductInformationForDates(product);
-            pdfHandler.Value.GenerateProductInfoForDates(reports);
-        }
-
-        public void GenerateProductInfoForDates(string productName)
-        {
-            var reports = msSqlReportsFetcher.Value.GetProductInformationForDates(productName);
-            pdfHandler.Value.GenerateProductInfoForDates(reports);
         }
 
         public void GenerateProductInfoForLocations(int productId)
@@ -80,7 +54,7 @@
 
         public void GenerateProductInfoForLocations(string productName)
         {
-            var reports = msSqlReportsFetcher.Value.GetProductInformationForLocations(productName);
+            var reports = msSqlReportsFetcher.Value.GetProductInformationForLocations(productName).ToList();
             pdfHandler.Value.GenerateProductInfoForLocations(reports);
         }
 
@@ -102,22 +76,22 @@
             pdfHandler.Value.GenerateLocationReportForDate(reports);
         }
 
-        public void GenerateLocationReportForPeriod(PurchaseLocation location, IEnumerable<DateTime> dates)
+        public void GenerateTotalLocationReport(PurchaseLocation location)
         {
-            var reports = msSqlReportsFetcher.Value.GetLocationReportForPeriod(location, dates);
-            pdfHandler.Value.GenerateLocationReportForPeriod(reports);
+            var reports = msSqlReportsFetcher.Value.GetTotalLocationReport(location);
+            pdfHandler.Value.GenerateTotalLocationReport(reports);
         }
 
-        public void GenerateLocationReportForPeriod(int LocationId, IEnumerable<DateTime> dates)
+        public void GenerateTotalLocationReport(int locationId)
         {
-            var reports = msSqlReportsFetcher.Value.GetLocationReportForPeriod(LocationId, dates);
-            pdfHandler.Value.GenerateLocationReportForPeriod(reports);
+            var reports = msSqlReportsFetcher.Value.GetTotalLocationReport(locationId);
+            pdfHandler.Value.GenerateTotalLocationReport(reports);
         }
 
-        public void GenerateLocationReportForPeriod(string locationName, IEnumerable<DateTime> dates)
+        public void GenerateTotalLocationReport(string locationName)
         {
-            var reports = msSqlReportsFetcher.Value.GetLocationReportForPeriod(locationName, dates);
-            pdfHandler.Value.GenerateLocationReportForPeriod(reports);
+            var reports = msSqlReportsFetcher.Value.GetTotalLocationReport(locationName);
+            pdfHandler.Value.GenerateTotalLocationReport(reports);
         }
     }
 }
