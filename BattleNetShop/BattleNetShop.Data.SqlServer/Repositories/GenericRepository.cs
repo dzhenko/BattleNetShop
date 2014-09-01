@@ -19,14 +19,11 @@
         {
         }
 
-        protected IBattleNetShopSqlServerDbContext Context
+        public IQueryable<T> All()
         {
-            get
-            {
-                return this.context;
-            }
+            return this.context.Set<T>().AsQueryable();
         }
-
+        
         public void Add(T entity)
         {
             this.ChangeState(entity, EntityState.Added);

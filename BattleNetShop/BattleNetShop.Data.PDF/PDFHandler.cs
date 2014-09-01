@@ -19,7 +19,7 @@
             // magic DATE (rows = all products names)
             foreach (var report in reports)
             {
-                this.pdfWriter.Value.GenerateReport(report, "Specific Date");
+                this.pdfWriter.Value.GenerateReport(report, "BattleNetShop Aggregated Sales Report");
             }
         }
 

@@ -121,7 +121,7 @@
             row.Format.Alignment = ParagraphAlignment.Center;
             row.Format.Font.Bold = true;
             row.Shading.Color = Colors.LightGray;
-            row.Cells[0].AddParagraph("BattleNetShop Aggregated Sales Report");
+            row.Cells[0].AddParagraph(reportTitle);
             row.Cells[0].Format.Font.Bold = true;
             row.Cells[0].Format.Alignment = ParagraphAlignment.Center;
             row.Cells[0].VerticalAlignment = VerticalAlignment.Center;

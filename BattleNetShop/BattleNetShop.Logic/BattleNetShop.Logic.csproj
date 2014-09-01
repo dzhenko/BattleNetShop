@@ -42,6 +42,7 @@
     <Compile Include="DataSeeder.cs" />
     <Compile Include="ExcelReportsLoader.cs" />
     <Compile Include="JsonReportsGenerator.cs" />
+    <Compile Include="MsSqlReportsFetcher.cs" />
     <Compile Include="PdfReportsGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
