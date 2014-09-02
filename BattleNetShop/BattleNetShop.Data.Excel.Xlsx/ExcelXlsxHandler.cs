@@ -60,12 +60,6 @@
             ws.Cell("E2").Value = "Taxes";
             ws.Cell("F2").Value = "Financial Balance";
 
-            var rngTable = ws.Range("B2:F2");
-            rngTable
-                .Style
-                .Font.SetBold()
-                .Fill.SetBackgroundColor(XLColor.IndiaGreen)
-                .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             int rowCount = 3;
             foreach (var row in reportData)
             {
@@ -83,6 +77,10 @@
 
                 rowCount++;
             }
+
+            var tableRange = ws.Range("B2", "F" + rowCount);
+            var finBalanceTable = tableRange.CreateTable();
+            finBalanceTable.Theme = XLTableTheme.TableStyleMedium16;
 
             ws.Columns().AdjustToContents();
             wb.SaveAs(XlsxSettings.Default.GenerateReportDirectory + fileName);

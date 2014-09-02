@@ -47,7 +47,7 @@
 
             var xlsxHandler = new ExcelXlsxHandler();
             var reportData = xlsxHandler.GenerateVendorsFinancialResultReport(productsTaxes, salesReport, expensesReport);
-            xlsxHandler.GenerateVendorsFinancialResultFile(reportData, "test.xlsx");
+            xlsxHandler.GenerateVendorsFinancialResultFile(reportData, "FinancialBalanceResults.xlsx");
         }
     }
 }
