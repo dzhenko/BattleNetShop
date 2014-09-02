@@ -8,14 +8,14 @@
 
     using BattleNetShop.Data.MySql;
     using BattleNetShop.Data.SqLite;
+    using BattleNetShop.Model;
 
     /// <summary>
     /// Uses ClosedXML library from nuget to generate xlsx files
     /// </summary>
     public class ExcelXlsxHandler
     {
-        // TODO: move to main logic, use IQueryable?
-        public ICollection<FinancialResultReportRecord> GenerateVendorsFinancialResultReport(ICollection<ProductsTaxes> productsTaxes, ICollection<Salereport> salesReport)
+        public ICollection<FinancialResultReportRecord> GenerateVendorsFinancialResultReport(ICollection<ProductsTaxes> productsTaxes, ICollection<Salereport> salesReport, ICollection<VendorExpense> vendorsExpenses)
         {
             var salesJoinedWithTaxesGroupedByVendor = salesReport
                     .Join(productsTaxes,
@@ -25,14 +25,21 @@
                     .GroupBy(s => s.VendorName)
                     .Select(sg => new { VendorName = sg.Key, TotalIncomes = sg.Sum(s => s.TotalIncome), TotalIncomeWithTax = sg.Sum(s => s.TotalIncomeWithTax)});
 
+            var vendorFinancialInfoJoinedWithExpenses = salesJoinedWithTaxesGroupedByVendor
+                    .Join(vendorsExpenses,
+                        (f => f.VendorName),
+                        (e => e.VendorName),
+                        (f, e) => new { VendorName = f.VendorName, TotalIncomes = f.TotalIncomes, TotalIncomeWithTax = f.TotalIncomeWithTax, Expenses = e.Ammount });
+
             var result = new LinkedList<FinancialResultReportRecord>();
-            foreach (var row in salesJoinedWithTaxesGroupedByVendor)
+            foreach (var row in vendorFinancialInfoJoinedWithExpenses)
             {
                 var reportRecord = new FinancialResultReportRecord();
                 reportRecord.VendorName = row.VendorName;
                 reportRecord.Incomes = row.TotalIncomes;
+                reportRecord.Expenses = (decimal)row.Expenses;
                 reportRecord.Taxes = (decimal)row.TotalIncomeWithTax;
-                reportRecord.FinancialBalance = (decimal)(reportRecord.Incomes - reportRecord.Taxes);
+                reportRecord.FinancialBalance = (decimal)(reportRecord.Incomes - reportRecord.Taxes - reportRecord.Expenses);
 
                 result.AddLast(reportRecord);
             }
@@ -49,10 +56,11 @@
             //Columns
             ws.Cell("B2").Value = "Vendor";
             ws.Cell("C2").Value = "Incomes";
-            ws.Cell("D2").Value = "Taxes";
-            ws.Cell("E2").Value = "Financial Balance";
+            ws.Cell("D2").Value = "Expenses";
+            ws.Cell("E2").Value = "Taxes";
+            ws.Cell("F2").Value = "Financial Balance";
 
-            var rngTable = ws.Range("B2:E2");
+            var rngTable = ws.Range("B2:F2");
             rngTable
                 .Style
                 .Font.SetBold()
@@ -63,11 +71,13 @@
             {
                 string vendorCell = "B" + rowCount;
                 string incomesCell = "C" + rowCount;
-                string taxesCell = "D" + rowCount;
-                string finacialBalanceCell = "E" + rowCount;
+                string expensesCell = "D" + rowCount;
+                string taxesCell = "E" + rowCount;
+                string finacialBalanceCell = "F" + rowCount;
 
                 ws.Cell(vendorCell).Value = row.VendorName;
                 ws.Cell(incomesCell).Value = row.Incomes;
+                ws.Cell(expensesCell).Value = row.Expenses;
                 ws.Cell(taxesCell).Value = row.Taxes;
                 ws.Cell(finacialBalanceCell).Value = row.FinancialBalance;
 

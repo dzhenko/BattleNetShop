@@ -39,6 +39,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.OpenAccess, Version=2014.2.711.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.2.711.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -59,6 +61,10 @@
     <ProjectReference Include="..\BattleNetShop.Data.SQLite\BattleNetShop.Data.SqLite.csproj">
       <Project>{718af6a2-9b4b-4b6c-b931-7760d17000c0}</Project>
       <Name>BattleNetShop.Data.SqLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Model\BattleNetShop.Model.csproj">
+      <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>
+      <Name>BattleNetShop.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

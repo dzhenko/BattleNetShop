@@ -7,6 +7,7 @@
     using BattleNetShop.Data.Excel.Xlsx;
     using BattleNetShop.Data.SqLite;
     using BattleNetShop.Data.MySql;
+    using BattleNetShop.Model;
     
     class Program
     {
@@ -20,10 +21,6 @@
             var productsTaxes = sqliteData.ReadProductTaxes();
             //Get MySQL data
             var salesReport = new List<Salereport>();
-
-            //Get VendorExpensses <string, decimal>
-            //magic
-
             for (int i = 0; i < productsTaxes.Count; i++)
             {
                 salesReport.Add(new Salereport()
@@ -36,8 +33,20 @@
                 });
             }
 
+            //Get VendorExpensses <string, decimal>
+            //magic
+            var expensesReport = new List<VendorExpense>();
+            for (int i = 0; i < productsTaxes.Count; i++)
+            {
+                expensesReport.Add(new VendorExpense()
+                {
+                    VendorName = "Vendor#" + i.ToString(),
+                    Ammount = i * 10
+                });
+            }
+
             var xlsxHandler = new ExcelXlsxHandler();
-            var reportData = xlsxHandler.GenerateVendorsFinancialResultReport(productsTaxes, salesReport);
+            var reportData = xlsxHandler.GenerateVendorsFinancialResultReport(productsTaxes, salesReport, expensesReport);
             xlsxHandler.GenerateVendorsFinancialResultFile(reportData, "test.xlsx");
         }
     }
