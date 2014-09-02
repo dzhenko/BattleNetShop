@@ -9,14 +9,15 @@
     {
         public static void Main()
         {
-            //// new DataSeeder().Seed();
+            new DataSeeder().Seed();
 
-            //// new ExcelReportsLoader().Load();
+            new ExcelReportsLoader().Load();
 
-            new PdfReportsGenerator().Generate();
+            //new PdfReportsGenerator().Generate();
 
-            new JsonReportsGenerator().Generate();
-            
+            //new JsonReportsGenerator().Generate();
+
+            new MySQLLoader().Load();
             //// new XmlReportsHandler().Generate();
         }
     }

@@ -10,7 +10,7 @@ namespace BattleNetShop.Data.SqlServer
     public class BattleNetShopSqlServerDbContext : DbContext, IBattleNetShopSqlServerDbContext
     {
         public BattleNetShopSqlServerDbContext()
-            : base(MSSQLSettings.Default.ConnectionString)
+            : base(MSSQLSettings.Default.ConnectionStringExpress)
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<BattleNetShopSqlServerDbContext, Configuration>());
         }
