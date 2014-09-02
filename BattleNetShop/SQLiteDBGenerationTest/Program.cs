@@ -8,7 +8,7 @@
         static void Main()
         {
             SqLiteDataSeeder seeder = new SqLiteDataSeeder();
-            seeder.CreateSQLiteTableProductsTaxes();
+            seeder.CreateSQLiteTableProductsTaxesIfNotExist();
             seeder.SeedTableProductsTaxes();
             SqLiteData sqliteData = new SqLiteData();
             var productsTaxes = sqliteData.ReadProductTaxes();

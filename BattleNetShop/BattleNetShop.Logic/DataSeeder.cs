@@ -4,6 +4,7 @@
 
     using BattleNetShop.Data.Excel.Xls;
     using BattleNetShop.Data.MongoDb;
+    using BattleNetShop.Data.SqLite;
 
     public class DataSeeder
     {
@@ -14,6 +15,12 @@
 
             Console.WriteLine("Seeding excel data...");
             new ExcelZippedDataSeeder().Seed(3);
+
+            Console.WriteLine("Seeding SQLite data...");
+            var sqlSeeder = new SqLiteDataSeeder();
+            sqlSeeder.CreateSQLiteTableProductsTaxesIfNotExist();
+            sqlSeeder.DeleteOldRecordsFromProductsTaxes();
+            sqlSeeder.SeedTableProductsTaxes();
         }
     }
 }

@@ -23,7 +23,7 @@
             this.handler = handler;
         }
 
-        public void CreateSQLiteTableProductsTaxes()
+        public void CreateSQLiteTableProductsTaxesIfNotExist()
         {
             string createTableSql = "CREATE TABLE IF NOT EXISTS ProductsTaxes (ProductName NVARCHAR(50), Tax REAL)";
             SQLiteCommand createTableCommand = new SQLiteCommand(createTableSql, this.handler.Connection);
@@ -45,6 +45,14 @@
                 command.Parameters.AddWithValue("@tax", tax);
                 command.ExecuteNonQuery();
             }
+        }
+
+        public void DeleteOldRecordsFromProductsTaxes()
+        {
+            string addCommandSql = "DELETE FROM ProductsTaxes";
+            SQLiteCommand command = new SQLiteCommand(addCommandSql, this.handler.Connection);
+            var xlsHandler = new ExcelXlsHandler();
+            command.ExecuteNonQuery();
         }
     }
 }

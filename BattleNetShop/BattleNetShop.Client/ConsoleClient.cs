@@ -19,6 +19,7 @@
 
             new MySqlReportsLoader().Load();
             //// new XmlReportsHandler().Generate();
+            new ExcelXLSXReportGenerator().GenerateVendorsFinancialResultReport();
         }
     }
 }
