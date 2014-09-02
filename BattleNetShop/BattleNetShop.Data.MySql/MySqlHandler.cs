@@ -27,10 +27,7 @@
             using (var connection = new BattleNetShopMySqlDbContext())
             {
                 connection.Add(report);
-
                 connection.SaveChanges();
-
-                Console.WriteLine("REPORT SUCCESSFULLY RECORDED TO MYSQL!");
             }
         }
     }

@@ -21,7 +21,9 @@
             var productsTaxes = sqliteData.ReadProductTaxes();
             //Get MySQL data
             var salesReport = new List<Salereport>();
-            for (int i = 0; i < productsTaxes.Count; i++)
+            var expensesReport = new List<VendorExpense>();
+            int i = 0;
+            foreach (var productTax in productsTaxes)
             {
                 salesReport.Add(new Salereport()
                 {
@@ -31,20 +33,19 @@
                     TotalQuantitySold = i + 10,
                     TotalIncomes = i * 10
                 });
-            }
 
-            //Get VendorExpensses <string, decimal>
-            //magic
-            var expensesReport = new List<VendorExpense>();
-            for (int i = 0; i < productsTaxes.Count; i++)
-            {
                 expensesReport.Add(new VendorExpense()
                 {
                     VendorName = "Vendor#" + i.ToString(),
                     Ammount = i * 10
                 });
+
+                i++;
             }
 
+            //Get VendorExpensses <string, decimal>
+            //magic
+            
             var xlsxHandler = new ExcelXlsxHandler();
             var reportData = xlsxHandler.GenerateVendorsFinancialResultReport(productsTaxes, salesReport, expensesReport);
             xlsxHandler.GenerateVendorsFinancialResultFile(reportData, "FinancialBalanceResults.xlsx");

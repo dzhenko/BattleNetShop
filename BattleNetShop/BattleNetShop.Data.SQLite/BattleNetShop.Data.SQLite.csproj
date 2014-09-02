@@ -59,7 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductsTaxes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqLiteData.cs" />
     <Compile Include="SqLiteDataSeeder.cs" />
@@ -80,7 +79,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SampleData\Products.txt" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -92,6 +90,10 @@
     <ProjectReference Include="..\BattleNetShop.Data.Excel.Xls\BattleNetShop.Data.Excel.Xls.csproj">
       <Project>{368d1a8c-9469-49e2-a20b-b41c00c0a85d}</Project>
       <Name>BattleNetShop.Data.Excel.Xls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Model\BattleNetShop.Model.csproj">
+      <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>
+      <Name>BattleNetShop.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

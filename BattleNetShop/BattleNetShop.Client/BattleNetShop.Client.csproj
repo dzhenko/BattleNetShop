@@ -48,6 +48,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.OpenAccess, Version=2014.2.711.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.2.711.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleClient.cs" />
@@ -58,6 +60,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BattleNetShop.Data.MySql\BattleNetShop.Data.MySql.csproj">
+      <Project>{d6221064-bb1e-42f6-9941-5ed8f551ccbd}</Project>
+      <Name>BattleNetShop.Data.MySql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Logic\BattleNetShop.Logic.csproj">
       <Project>{46c39201-0410-4d64-abde-6367b1fb9f85}</Project>
       <Name>BattleNetShop.Logic</Name>

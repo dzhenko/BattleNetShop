@@ -1,5 +1,6 @@
 ﻿namespace BattleNetShop.Data.SqLite
 {
+    using BattleNetShop.Model;
     using System;
     using System.Collections.Generic;
     using System.Data.SQLite;
@@ -20,17 +21,17 @@
         }
 
         // Task 6 input
-        public ICollection<ProductsTaxes> ReadProductTaxes()
+        public IEnumerable<ProductTax> ReadProductTaxes()
         {
             SQLiteCommand command = new SQLiteCommand("SELECT * FROM ProductsTaxes", this.handler.Connection);
             SQLiteDataReader reader = command.ExecuteReader();
 
-            var productsWithTaxes = new LinkedList<ProductsTaxes>();
+            var productsWithTaxes = new LinkedList<ProductTax>();
             using (reader)
             {
                 while (reader.Read())
                 {
-                    productsWithTaxes.AddLast(new ProductsTaxes(reader[0].ToString(), float.Parse(reader[1].ToString())));
+                    productsWithTaxes.AddLast(new ProductTax(reader[0].ToString(), float.Parse(reader[1].ToString())));
                 }
             }
 
