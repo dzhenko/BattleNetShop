@@ -13,7 +13,6 @@
     {
         public void GenerateAllLocationsReport(IEnumerable<LocationReport> locationReports)
         {
-            // TODO moove some functionality to XmlHandler
             XmlDocument report = new XmlDocument();
             XmlDeclaration xmlDeclaration = report.CreateXmlDeclaration("1.0", "UTF-8", null);
             XmlElement root = report.CreateElement("sales");
@@ -33,6 +32,7 @@
                     sale.AppendChild(summary);
                 }
             }
+
             report.Save("../../../../Reports/XmlReports/XML-all-locations-report.xml");
         }
         /*
@@ -64,29 +64,47 @@
             sampleVendorExpense.Ammount = 70000;
             sampleVendorExpense.VendorName = "Blizzard";*/
 
-            // TODO moove to method in XMLHandler that returns XmlNodeList vendorNodesList
+            string filePath = "../../../../InitialData/";
+            string fileName = "VendorExpensesInitialData.xml";
             XmlDocument doc = new XmlDocument();
-            doc.Load("../../../../InitialData/VendorExpensesInitialData.xml");
-            // TODO don't select root node
-            XmlNode root = doc.SelectSingleNode("/expenses-by-month");
-            XmlNodeList vendorNodesList = root.SelectNodes("vendor");
+
+            doc.Load(filePath + fileName);
+            XmlNodeList vendorNodesList = doc.SelectNodes("/expenses-by-month/vendor");
+
             foreach (XmlNode vendorNode in vendorNodesList)
             {
-                //VendorExpense vendorExpense = new VendorExpense();
                 string vendorName = vendorNode.Attributes.GetNamedItem("name").Value;
+                if (string.IsNullOrEmpty(vendorName))
+                {
+                    throw new ArgumentNullException("Vendor name cannot be empty!");
+                }
                 XmlNodeList vendorExpenses = vendorNode.SelectNodes("expenses");
                 foreach (XmlNode expense in vendorExpenses)
                 {
                     VendorExpense vendorExpense = new VendorExpense();
                     vendorExpense.VendorName = vendorName;
-                    // TODO validate
-                    vendorExpense.Ammount = decimal.Parse(expense.InnerText, CultureInfo.InvariantCulture);
-                    vendorExpense.Date = DateTime.ParseExact(expense.Attributes.GetNamedItem("month").Value, "MMM-yyyy", CultureInfo.InvariantCulture);
+
+                    decimal parsedAmmount = 0;
+                    if (!decimal.TryParse(expense.InnerText, NumberStyles.Any, CultureInfo.InvariantCulture,
+                        out parsedAmmount))
+                    {
+                        throw new FormatException("Unable to parse expenses ammount in" + fileName + "! Parse string: " + expense.InnerText);
+                    }
+
+                    vendorExpense.Ammount = parsedAmmount;
+
+                    DateTime parsedDate = new DateTime();
+                    if (!DateTime.TryParseExact(expense.Attributes.GetNamedItem("month").Value, "MMM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None,
+                        out parsedDate))
+                    {
+                        throw new FormatException("Unable to parse date from expenses entry in" + fileName + "! Parse string: " + expense.Attributes.GetNamedItem("month").Value);
+                    }
+
+                    vendorExpense.Date = parsedDate;
                     allVendorExpenses.Add(vendorExpense);
                 }
             }
 
-            
             return allVendorExpenses;
         }
 
