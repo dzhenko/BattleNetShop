@@ -62,6 +62,10 @@
       <Project>{718af6a2-9b4b-4b6c-b931-7760d17000c0}</Project>
       <Name>BattleNetShop.Data.SqLite</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.Logic\BattleNetShop.Logic.csproj">
+      <Project>{46c39201-0410-4d64-abde-6367b1fb9f85}</Project>
+      <Name>BattleNetShop.Logic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Model\BattleNetShop.Model.csproj">
       <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>
       <Name>BattleNetShop.Model</Name>

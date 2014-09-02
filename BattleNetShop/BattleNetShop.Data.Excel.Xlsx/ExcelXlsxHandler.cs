@@ -16,41 +16,6 @@
     /// </summary>
     public class ExcelXlsxHandler
     {
-        public FinancialResultReport GenerateVendorsFinancialResultReport(IEnumerable<ProductTax> productsTaxes, IEnumerable<Salereport> salesReport, IEnumerable<VendorExpense> vendorsExpenses)
-        {
-            var salesJoinedWithTaxesGroupedByVendor = salesReport
-                    .Join(productsTaxes,
-                        (s => s.ProductName),
-                        (pt => pt.ProductName),
-                        (s, pt) => new { VendorName = s.VendorName, TotalIncome = s.TotalIncomes, TotalIncomeWithTax = s.TotalIncomes * (pt.Tax / 100) })
-                    .GroupBy(s => s.VendorName)
-                    .Select(sg => new { VendorName = sg.Key, TotalIncomes = sg.Sum(s => s.TotalIncome), TotalIncomeWithTax = sg.Sum(s => s.TotalIncomeWithTax)});
-
-            var vendorFinancialInfoJoinedWithExpenses = salesJoinedWithTaxesGroupedByVendor
-                    .Join(vendorsExpenses,
-                        (f => f.VendorName),
-                        (e => e.VendorName),
-                        (f, e) => new { VendorName = f.VendorName, TotalIncomes = f.TotalIncomes, TotalIncomeWithTax = f.TotalIncomeWithTax, Expenses = e.Ammount });
-
-            var reportData = new LinkedList<FinancialResultReportEntry>();
-            foreach (var row in vendorFinancialInfoJoinedWithExpenses)
-            {
-                var reportRecord = new FinancialResultReportEntry();
-                reportRecord.VendorName = row.VendorName;
-                reportRecord.Incomes = row.TotalIncomes;
-                reportRecord.Expenses = (decimal)row.Expenses;
-                reportRecord.Taxes = (decimal)row.TotalIncomeWithTax;
-                reportRecord.FinancialBalance = (decimal)(reportRecord.Incomes - reportRecord.Taxes - reportRecord.Expenses);
-
-                reportData.AddLast(reportRecord);
-            }
-
-            var result = new FinancialResultReport();
-            result.Report = reportData;
-            return result;
-        }
-
-        // Task 6 output
         public void GenerateVendorsFinancialResultFile(FinancialResultReport reportData, string fileName)
         {            
             var wb = new XLWorkbook();

@@ -17,7 +17,7 @@
 
             //new JsonReportsGenerator().Generate();
 
-            new MySQLLoader().Load();
+            new MySqlReportsLoader().Load();
             //// new XmlReportsHandler().Generate();
         }
     }
