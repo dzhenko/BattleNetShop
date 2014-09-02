@@ -9,13 +9,14 @@
     using BattleNetShop.Data.MySql;
     using BattleNetShop.Data.SqLite;
     using BattleNetShop.Model;
+    using BattleNetShop.ReportsModel;
 
     /// <summary>
     /// Uses ClosedXML library from nuget to generate xlsx files
     /// </summary>
     public class ExcelXlsxHandler
     {
-        public ICollection<FinancialResultReportRecord> GenerateVendorsFinancialResultReport(ICollection<ProductsTaxes> productsTaxes, ICollection<Salereport> salesReport, ICollection<VendorExpense> vendorsExpenses)
+        public FinancialResultReport GenerateVendorsFinancialResultReport(ICollection<ProductsTaxes> productsTaxes, ICollection<Salereport> salesReport, ICollection<VendorExpense> vendorsExpenses)
         {
             var salesJoinedWithTaxesGroupedByVendor = salesReport
                     .Join(productsTaxes,
@@ -31,24 +32,26 @@
                         (e => e.VendorName),
                         (f, e) => new { VendorName = f.VendorName, TotalIncomes = f.TotalIncomes, TotalIncomeWithTax = f.TotalIncomeWithTax, Expenses = e.Ammount });
 
-            var result = new LinkedList<FinancialResultReportRecord>();
+            var reportData = new LinkedList<FinancialResultReportEntry>();
             foreach (var row in vendorFinancialInfoJoinedWithExpenses)
             {
-                var reportRecord = new FinancialResultReportRecord();
+                var reportRecord = new FinancialResultReportEntry();
                 reportRecord.VendorName = row.VendorName;
                 reportRecord.Incomes = row.TotalIncomes;
                 reportRecord.Expenses = (decimal)row.Expenses;
                 reportRecord.Taxes = (decimal)row.TotalIncomeWithTax;
                 reportRecord.FinancialBalance = (decimal)(reportRecord.Incomes - reportRecord.Taxes - reportRecord.Expenses);
 
-                result.AddLast(reportRecord);
+                reportData.AddLast(reportRecord);
             }
 
+            var result = new FinancialResultReport();
+            result.Report = reportData;
             return result;
         }
 
         // Task 6 output
-        public void GenerateVendorsFinancialResultFile(ICollection<FinancialResultReportRecord> reportData, string fileName)
+        public void GenerateVendorsFinancialResultFile(FinancialResultReport reportData, string fileName)
         {            
             var wb = new XLWorkbook();
             var ws = wb.Worksheets.Add("Financial Balance");
@@ -61,7 +64,7 @@
             ws.Cell("F2").Value = "Financial Balance";
 
             int rowCount = 3;
-            foreach (var row in reportData)
+            foreach (var row in reportData.Report)
             {
                 string vendorCell = "B" + rowCount;
                 string incomesCell = "C" + rowCount;

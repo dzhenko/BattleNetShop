@@ -66,6 +66,10 @@
       <Project>{0144de51-520f-4226-8aea-accd5ceef6bf}</Project>
       <Name>BattleNetShop.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BattleNetShop.ReportsModel\BattleNetShop.ReportsModel.csproj">
+      <Project>{e4279469-a64d-41e6-adbb-0497853cebfa}</Project>
+      <Name>BattleNetShop.ReportsModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

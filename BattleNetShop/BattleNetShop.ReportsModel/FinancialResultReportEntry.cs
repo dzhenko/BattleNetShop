@@ -1,12 +1,9 @@
-﻿namespace BattleNetShop.Data.Excel.Xlsx
+﻿namespace BattleNetShop.ReportsModel
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
 
-    public class FinancialResultReportRecord
+    public class FinancialResultReportEntry
     {
-        // TODO: add expenses ?
         public string VendorName { get; set; }
 
         public decimal Incomes { get; set; }
