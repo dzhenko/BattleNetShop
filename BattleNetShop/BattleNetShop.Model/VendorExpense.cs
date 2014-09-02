@@ -9,12 +9,12 @@
     public class VendorExpense
     {
         public int Id { get; set; }
-
+            
         [Required]
         public decimal Ammount { get; set; }
 
         [Required]
-        public string Month { get; set; }
+        public DateTime Date { get; set; }
 
         [NotMapped]
         public string VendorName { get; set; }

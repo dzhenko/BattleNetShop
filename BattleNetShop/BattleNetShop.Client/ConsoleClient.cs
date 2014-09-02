@@ -13,11 +13,11 @@
 
             //// new ExcelReportsLoader().Load();
 
-            //// new PdfReportsGenerator().Generate();
+            new PdfReportsGenerator().Generate();
 
-            //// new JsonReportsGenerator().Generate();
-
-            new XmlReportsHandler().Generate();
+            new JsonReportsGenerator().Generate();
+            
+            //// new XmlReportsHandler().Generate();
         }
     }
 }

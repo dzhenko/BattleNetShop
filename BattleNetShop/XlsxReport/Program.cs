@@ -20,6 +20,10 @@
             var productsTaxes = sqliteData.ReadProductTaxes();
             //Get MySQL data
             var salesReport = new List<Salereport>();
+
+            //Get VendorExpensses <string, decimal>
+            //magic
+
             for (int i = 0; i < productsTaxes.Count; i++)
             {
                 salesReport.Add(new Salereport()
