@@ -6,14 +6,12 @@
     using BattleNetShop.ReportsModel;
     using System.Xml;
     using System.Globalization;
-    using BattleNetShop.Logic;
 
     public class XmlData : IXmlData
     {
         public IEnumerable<VendorExpense> GetAllVendorExpenses()
         {
             var allVendorExpenses = new List<VendorExpense>();
-            IBattleNetShopSqlServerData msSqlData;
 
             // foreach vendor name
                 // foreach expense
