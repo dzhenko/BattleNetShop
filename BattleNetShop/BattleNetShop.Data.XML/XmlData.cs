@@ -59,10 +59,34 @@
         {
             var allVendorExpenses = new List<VendorExpense>();
 
-            var sampleVendorExpense = new VendorExpense();
+            /*var sampleVendorExpense = new VendorExpense();
             sampleVendorExpense.Date = DateTime.ParseExact("Jan-2014", "MMM yyyy", CultureInfo.InvariantCulture);
             sampleVendorExpense.Ammount = 70000;
-            sampleVendorExpense.VendorName = "Blizzard";
+            sampleVendorExpense.VendorName = "Blizzard";*/
+
+            // TODO moove to method in XMLHandler that returns XmlNodeList vendorNodesList
+            XmlDocument doc = new XmlDocument();
+            doc.Load("../../../../InitialData/VendorExpensesInitialData.xml");
+            // TODO don't select root node
+            XmlNode root = doc.SelectSingleNode("/expenses-by-month");
+            XmlNodeList vendorNodesList = root.SelectNodes("vendor");
+            foreach (XmlNode vendorNode in vendorNodesList)
+            {
+                //VendorExpense vendorExpense = new VendorExpense();
+                string vendorName = vendorNode.Attributes.GetNamedItem("name").Value;
+                XmlNodeList vendorExpenses = vendorNode.SelectNodes("expenses");
+                foreach (XmlNode expense in vendorExpenses)
+                {
+                    VendorExpense vendorExpense = new VendorExpense();
+                    vendorExpense.VendorName = vendorName;
+                    // TODO validate
+                    vendorExpense.Ammount = decimal.Parse(expense.InnerText, CultureInfo.InvariantCulture);
+                    vendorExpense.Date = DateTime.ParseExact(expense.Attributes.GetNamedItem("month").Value, "MMM-yyyy", CultureInfo.InvariantCulture);
+                    allVendorExpenses.Add(vendorExpense);
+                }
+            }
+
+            
             return allVendorExpenses;
         }
 
