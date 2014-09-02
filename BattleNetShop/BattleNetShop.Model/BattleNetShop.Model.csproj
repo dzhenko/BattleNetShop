@@ -52,6 +52,7 @@
     <Compile Include="ProductCategory.cs" />
     <Compile Include="ProductDetails.cs" />
     <Compile Include="ProductMeasure.cs" />
+    <Compile Include="ProductTax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchase.cs" />
     <Compile Include="PurchaseLocation.cs" />

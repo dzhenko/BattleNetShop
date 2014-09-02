@@ -16,7 +16,7 @@
     /// </summary>
     public class ExcelXlsxHandler
     {
-        public FinancialResultReport GenerateVendorsFinancialResultReport(ICollection<ProductsTaxes> productsTaxes, ICollection<Salereport> salesReport, ICollection<VendorExpense> vendorsExpenses)
+        public FinancialResultReport GenerateVendorsFinancialResultReport(IEnumerable<ProductTax> productsTaxes, IEnumerable<Salereport> salesReport, IEnumerable<VendorExpense> vendorsExpenses)
         {
             var salesJoinedWithTaxesGroupedByVendor = salesReport
                     .Join(productsTaxes,

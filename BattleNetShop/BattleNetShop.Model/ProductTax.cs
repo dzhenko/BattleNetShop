@@ -1,10 +1,10 @@
-﻿namespace BattleNetShop.Data.SqLite
+﻿namespace BattleNetShop.Model
 {
     using System;
 
-    public class ProductsTaxes
+    public class ProductTax
     {
-        public ProductsTaxes(string productName, float tax)
+        public ProductTax(string productName, float tax)
         {
             this.ProductName = productName;
             this.Tax = tax;
