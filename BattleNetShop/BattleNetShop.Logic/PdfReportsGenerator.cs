@@ -48,11 +48,11 @@
             pdfHandler.Value.GenerateProductInfoForLocations(reports);
         }
 
-        public void GenerateProductInfoForLocations(Product product)
-        {
-            var reports = msSqlReportsFetcher.Value.GetProductInformationForLocations(product);
-            pdfHandler.Value.GenerateProductInfoForLocations(reports);
-        }
+        //public void GenerateProductInfoForLocations(Product product)
+        //{
+        //    var reports = msSqlReportsFetcher.Value.GetProductInformationForLocations(product);
+        //    pdfHandler.Value.GenerateProductInfoForLocations(reports);
+        //}
 
         public void GenerateProductInfoForLocations(string productName)
         {
@@ -60,11 +60,11 @@
             pdfHandler.Value.GenerateProductInfoForLocations(reports);
         }
 
-        public void GenerateLocationReportForDate(PurchaseLocation location, DateTime date)
-        {
-            var reports = msSqlReportsFetcher.Value.GetLocationReportForDate(location, date);
-            pdfHandler.Value.GenerateLocationReportForDate(reports);
-        }
+        //public void GenerateLocationReportForDate(PurchaseLocation location, DateTime date)
+        //{
+        //    var reports = msSqlReportsFetcher.Value.GetLocationReportForDate(location, date);
+        //    pdfHandler.Value.GenerateLocationReportForDate(reports);
+        //}
 
         public void GenerateLocationReportForDate(int locationId, DateTime date)
         {
@@ -78,11 +78,11 @@
             pdfHandler.Value.GenerateLocationReportForDate(reports);
         }
 
-        public void GenerateTotalLocationReport(PurchaseLocation location)
-        {
-            var reports = msSqlReportsFetcher.Value.GetTotalLocationReport(location);
-            pdfHandler.Value.GenerateTotalLocationReport(reports);
-        }
+        //public void GenerateTotalLocationReport(PurchaseLocation location)
+        //{
+        //    var reports = msSqlReportsFetcher.Value.GetTotalLocationReport(location);
+        //    pdfHandler.Value.GenerateTotalLocationReport(reports);
+        //}
 
         public void GenerateTotalLocationReport(int locationId)
         {

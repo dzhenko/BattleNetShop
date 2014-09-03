@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Client.Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Data.SqLiteDb", "BattleNetShop.Data.SqLiteDb\BattleNetShop.Data.SqLiteDb.csproj", "{4FA0AF97-3A91-41BA-A36C-CE9B10266AAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleNetShop.Client.Wpf", "BattleNetShop.Client.Wpf\BattleNetShop.Client.Wpf.csproj", "{A3215D3D-0F74-47E2-A703-690389EEC54A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,10 @@ Global
 		{4FA0AF97-3A91-41BA-A36C-CE9B10266AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FA0AF97-3A91-41BA-A36C-CE9B10266AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FA0AF97-3A91-41BA-A36C-CE9B10266AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3215D3D-0F74-47E2-A703-690389EEC54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3215D3D-0F74-47E2-A703-690389EEC54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3215D3D-0F74-47E2-A703-690389EEC54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3215D3D-0F74-47E2-A703-690389EEC54A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,5 +135,6 @@ Global
 		{6BF7172A-E7DB-42C5-8122-6D6B65EAFF5A} = {073B0B16-B559-45A6-A8CE-83A6D863255E}
 		{9D8B7252-85E3-4E35-8D6A-FAE63D5BBDBA} = {7E508921-CD1D-4FEB-8025-7E54B3F5CFF4}
 		{4FA0AF97-3A91-41BA-A36C-CE9B10266AAB} = {073B0B16-B559-45A6-A8CE-83A6D863255E}
+		{A3215D3D-0F74-47E2-A703-690389EEC54A} = {7E508921-CD1D-4FEB-8025-7E54B3F5CFF4}
 	EndGlobalSection
 EndGlobal
