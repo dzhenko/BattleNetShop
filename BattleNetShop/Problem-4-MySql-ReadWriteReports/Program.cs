@@ -10,16 +10,16 @@
     {
         static void Main()
         {
-            var mysqlReporter = new MySqlHandler();
-            mysqlReporter.ReadAllReports(report => 
-            {
-                Console.WriteLine("ID: {0}", report.Product_id);
-                Console.WriteLine("ProductName: {0}", report.ProductName);
-                Console.WriteLine("VendorName: {0}", report.VendorName);
-                Console.WriteLine("Total Quantity Sold: {0}", report.TotalQuantitySold);
-                Console.WriteLine("Total Incomes: {0}", report.TotalIncomes);
-                Console.WriteLine("------------------------");
-            });
+            //var mysqlReporter = new BattleNetShopMySqlData();
+            //mysqlReporter.ReadAllReports(report => 
+            //{
+            //    Console.WriteLine("ID: {0}", report.Product_id);
+            //    Console.WriteLine("ProductName: {0}", report.ProductName);
+            //    Console.WriteLine("VendorName: {0}", report.VendorName);
+            //    Console.WriteLine("Total Quantity Sold: {0}", report.TotalQuantitySold);
+            //    Console.WriteLine("Total Incomes: {0}", report.TotalIncomes);
+            //    Console.WriteLine("------------------------");
+            //});
         }
     }
 }

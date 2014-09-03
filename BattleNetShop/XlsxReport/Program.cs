@@ -14,8 +14,8 @@
     {
         static void Main()
         {
-            var generator = new ExcelXLSXReportGenerator();
-            generator.GenerateVendorsFinancialResultReport();
+            var generator = new ExcelReportGenerator();
+            generator.Generate();
 
             ////Get SQLite data
             //SqLiteDataSeeder seeder = new SqLiteDataSeeder();

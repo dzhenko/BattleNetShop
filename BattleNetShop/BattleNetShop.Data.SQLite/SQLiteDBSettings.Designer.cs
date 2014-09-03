@@ -34,7 +34,7 @@ namespace BattleNetShop.Data.SqLite {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\InitialData\\SQLiteDB\\BattleNetShop.sqlite")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\DataSources\\SqLiteDb.sqlite")]
         public string SQLiteDBLocation {
             get {
                 return ((string)(this["SQLiteDBLocation"]));
@@ -44,12 +44,24 @@ namespace BattleNetShop.Data.SqLite {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source={0};Version=3;")]
-        public string SQLiteConnectionString {
+        public string SQLiteConnectionStringFormat {
             get {
-                return ((string)(this["SQLiteConnectionString"]));
+                return ((string)(this["SQLiteConnectionStringFormat"]));
             }
             set {
-                this["SQLiteConnectionString"] = value;
+                this["SQLiteConnectionStringFormat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=..\\..\\..\\..\\DataSources\\SqLiteDb.sqlite;Version=3;")]
+        public string SqLiteConnectionString {
+            get {
+                return ((string)(this["SqLiteConnectionString"]));
+            }
+            set {
+                this["SqLiteConnectionString"] = value;
             }
         }
     }

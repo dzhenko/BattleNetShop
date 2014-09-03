@@ -10,15 +10,15 @@
     using BattleNetShop.Data.SqLite;
     using BattleNetShop.Model;
 
-    public class ExcelXLSXReportGenerator
+    public class ExcelReportGenerator
     {
-        private readonly Lazy<MySqlReportsFetcher> mySqlFetcher = new Lazy<MySqlReportsFetcher>();
+        private readonly Lazy<BattleNetShopMySqlData> mySqlData = new Lazy<BattleNetShopMySqlData>();
         private readonly Lazy<SqLiteData> sqliteData = new Lazy<SqLiteData>();
         private readonly Lazy<ExcelXlsxHandler> xlsxHandler = new Lazy<ExcelXlsxHandler>();
 
-        public void GenerateVendorsFinancialResultReport()
+        public void Generate()
         {
-            var salesReport = this.mySqlFetcher.Value.GetSaleReport();
+            var salesReport = this.mySqlData.Value.LoadReports();
             var productsTaxes = this.sqliteData.Value.ReadProductTaxes();
             // TODO: get expenses
             var vendorsExpenses = new LinkedList<VendorExpense>();

@@ -57,11 +57,10 @@
   <ItemGroup>
     <Compile Include="DataSeeder.cs" />
     <Compile Include="ExcelReportsLoader.cs" />
-    <Compile Include="ExcelXLSXReportGenerator.cs" />
+    <Compile Include="ExcelReportGenerator.cs" />
     <Compile Include="JsonReportsGenerator.cs" />
     <Compile Include="MsSqlReportsFetcher.cs" />
     <Compile Include="MySqlReportsLoader.cs" />
-    <Compile Include="MySqlReportsFetcher.cs" />
     <Compile Include="PdfReportsGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlReportsHandler.cs" />

@@ -56,12 +56,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleNetShopMySqlSalesReportRepository.cs" />
     <Compile Include="EntitiesModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
-    <Compile Include="MySqlHandler.cs" />
+    <Compile Include="IBattleNetShopMySqlSalesReportRepository.cs" />
+    <Compile Include="BattleNetShopMySqlData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Salereport.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>

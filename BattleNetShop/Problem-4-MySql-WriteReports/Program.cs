@@ -10,15 +10,15 @@
     {
         static void Main()
         {
-            var reportWriter = new MySqlHandler();
-            reportWriter.WriteReport(new Salereport
-                {
-                    Product_id = 122,
-                    ProductName = "aidee",
-                    TotalIncomes = 9999,
-                    TotalQuantitySold = 9,
-                    VendorName = "Ivan"
-                });
+            //var reportWriter = new BattleNetShopMySqlData();
+            //reportWriter.WriteReport(new Salereport
+            //    {
+            //        Product_id = 122,
+            //        ProductName = "aidee",
+            //        TotalIncomes = 9999,
+            //        TotalQuantitySold = 9,
+            //        VendorName = "Ivan"
+            //    });
         }
     }
 }

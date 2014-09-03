@@ -17,10 +17,7 @@
             new ExcelZippedDataSeeder().Seed(3);
 
             Console.WriteLine("Seeding SQLite data...");
-            var sqlSeeder = new SqLiteDataSeeder();
-            sqlSeeder.CreateSQLiteTableProductsTaxesIfNotExist();
-            sqlSeeder.DeleteOldRecordsFromProductsTaxes();
-            sqlSeeder.SeedTableProductsTaxes();
+            new SqLiteDataSeeder().Seed();
         }
     }
 }

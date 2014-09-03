@@ -7,7 +7,6 @@
     using BattleNetShop.Model;
     using BattleNetShop.ReportsModel;
     using System.Xml;
-    using System.Globalization;
 
     public class XmlData : IXmlData
     {
