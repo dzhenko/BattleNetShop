@@ -29,6 +29,14 @@
 
         public void Load()
         {
+            Console.WriteLine("Adding data to MS SQL...");
+
+            if (this.msSqlData.Products.GetById(1) != null)
+            {
+                Console.WriteLine("Data already exists - aborting...");
+                return;
+            }
+
             this.LoadDataFromMongo();
 
             this.LoadDataFromZippedExcelFile();

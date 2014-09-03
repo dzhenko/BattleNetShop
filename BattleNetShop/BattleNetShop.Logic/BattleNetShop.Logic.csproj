@@ -57,10 +57,10 @@
   <ItemGroup>
     <Compile Include="DataSeeder.cs" />
     <Compile Include="ExcelReportsLoader.cs" />
-    <Compile Include="ExcelReportGenerator.cs" />
+    <Compile Include="ExcelXlsxReportGenerator.cs" />
     <Compile Include="JsonReportsGenerator.cs" />
     <Compile Include="MsSqlReportsFetcher.cs" />
-    <Compile Include="MySqlReportsLoader.cs" />
+    <Compile Include="MySqlReportsSaver.cs" />
     <Compile Include="PdfReportsGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlReportsHandler.cs" />
@@ -90,9 +90,9 @@
       <Project>{6244a825-a67d-454d-b96e-8f63d804a8eb}</Project>
       <Name>BattleNetShop.Data.Pdf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BattleNetShop.Data.SQLite\BattleNetShop.Data.SqLite.csproj">
-      <Project>{718af6a2-9b4b-4b6c-b931-7760d17000c0}</Project>
-      <Name>BattleNetShop.Data.SqLite</Name>
+    <ProjectReference Include="..\BattleNetShop.Data.SqLiteDb\BattleNetShop.Data.SqLiteDb.csproj">
+      <Project>{4fa0af97-3a91-41ba-a36c-ce9b10266aab}</Project>
+      <Name>BattleNetShop.Data.SqLiteDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\BattleNetShop.Data.SqlServer\BattleNetShop.Data.SqlServer.csproj">
       <Project>{6bf7172a-e7db-42c5-8122-6d6b65eaff5a}</Project>

@@ -23,9 +23,18 @@
             return this.salesReportRepository.All();
         }
 
+        public void DeleteAllReports()
+        {
+            this.salesReportRepository.DeleteAllReports();
+
+            this.salesReportRepository.SaveChanges();
+        }
+
         public void SaveReports(IEnumerable<Salereport> reports)
         {
             this.salesReportRepository.AddMany(reports);
+
+            this.salesReportRepository.SaveChanges();
         }
     }
 }

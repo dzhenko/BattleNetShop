@@ -171,5 +171,21 @@
                     })
                 });
         }
+
+        public CategorySalesReport GetSalesByCategory()
+        {
+            var entries =
+                    this.msSqlData.Purchases.All()
+                    .GroupBy(p => p.Product.Category.Name)
+                    .Select(gr => new CategorySalesReportEntry()
+                    {
+                        Category = gr.Select(p => p.Product.Category.Name).FirstOrDefault(),
+                        Quantity = gr.Sum(p => p.Quantity),
+                        TotalAmountSold = gr.Sum(p => p.Quantity * p.UnitPrice)
+                    });
+        
+            var resultReport = new CategorySalesReport() { Report = entries };
+            return resultReport;
+        }
     }
 }

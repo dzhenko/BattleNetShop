@@ -1,14 +1,10 @@
-﻿namespace BattleNetShop.Data.Excel.Xlsx
+﻿﻿namespace BattleNetShop.Data.Excel.Xlsx
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
 
     using ClosedXML.Excel;
 
-    using BattleNetShop.Data.MySql;
-    using BattleNetShop.Data.SqLite;
-    using BattleNetShop.Model;
     using BattleNetShop.ReportsModel;
 
     /// <summary>
@@ -46,12 +42,44 @@
                 rowCount++;
             }
 
-            var tableRange = ws.Range("B2", "F" + rowCount);
+            var tableRange = ws.Range("B2", "F" + (rowCount - 1));
             var finBalanceTable = tableRange.CreateTable();
             finBalanceTable.Theme = XLTableTheme.TableStyleMedium16;
 
             ws.Columns().AdjustToContents();
-            wb.SaveAs(XlsxSettings.Default.GenerateReportDirectory + fileName);
+            wb.SaveAs(XlsxSettings.Default.SaveDirectory + fileName);
+        }
+
+        public void GenerateSalesPerCategoryResultFile(CategorySalesReport reportData, string fileName)
+        {
+            var wb = new XLWorkbook();
+            var ws = wb.Worksheets.Add("Sales per Category");
+
+            //Columns
+            ws.Cell("B2").Value = "Category";
+            ws.Cell("C2").Value = "Quantity";
+            ws.Cell("D2").Value = "Amount Sold";
+
+            int rowCount = 3;
+            foreach (var row in reportData.Report)
+            {
+                string categoryCell = "B" + rowCount;
+                string quantityCell = "C" + rowCount;
+                string totalAmountCell = "D" + rowCount;
+
+                ws.Cell(categoryCell).Value = row.Category;
+                ws.Cell(quantityCell).Value = row.Quantity;
+                ws.Cell(totalAmountCell).Value = row.TotalAmountSold;
+
+                rowCount++;
+            }
+
+            var tableRange = ws.Range("B2", "D" + (rowCount - 1));
+            var finBalanceTable = tableRange.CreateTable();
+            finBalanceTable.Theme = XLTableTheme.TableStyleMedium16;
+
+            ws.Columns().AdjustToContents();
+            wb.SaveAs(XlsxSettings.Default.SaveDirectory + fileName);
         }
     }
 }

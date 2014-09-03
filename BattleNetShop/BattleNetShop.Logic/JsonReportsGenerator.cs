@@ -13,6 +13,8 @@
 
         public void Generate()
         {
+            Console.WriteLine("Generating JSON reports...");
+
             var allProductsInformation = msSqlReportsFetcher.Value.GetAllProductInformations();
 
             foreach (var report in allProductsInformation)

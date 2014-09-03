@@ -9,6 +9,8 @@
 
         void AddMany(IEnumerable<Salereport> entities);
 
+        void DeleteAllReports();
+
         IQueryable<Salereport> All();
 
         void SaveChanges();

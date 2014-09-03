@@ -17,6 +17,8 @@
 
         public void Generate()
         {
+            Console.WriteLine("Generating PDF reports...");
+
             this.GenerateAllProductsInformation();
             
             this.GenerateAllProductsReportForDate(new DateTime(2014, 1, 1));

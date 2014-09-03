@@ -27,6 +27,11 @@
             this.context.Add(entities);
         }
 
+        public void DeleteAllReports()
+        {
+            this.context.Delete(this.context.Salereports);
+        }
+
         public IQueryable<Salereport> All()
         {
             return this.context.Salereports;

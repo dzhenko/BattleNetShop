@@ -4,7 +4,7 @@
 
     using BattleNetShop.Data.Excel.Xls;
     using BattleNetShop.Data.MongoDb;
-    using BattleNetShop.Data.SqLite;
+    using BattleNetShop.Data.SqLiteDb;
 
     public class DataSeeder
     {

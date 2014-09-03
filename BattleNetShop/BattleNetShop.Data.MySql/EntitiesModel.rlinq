@@ -76,7 +76,12 @@
     <CodeGenerationSettings>
       <MappingDefinitionType>Xml</MappingDefinitionType>
     </CodeGenerationSettings>
-    <SchemaUpdateSettings />
+    <SchemaUpdateSettings>
+      <NamePrefix>qweqwe</NamePrefix>
+      <ExecuteScript>true</ExecuteScript>
+      <DeploymentProject>BattleNetShop.Data.MySql</DeploymentProject>
+      <DeploymentDirectory>Properties\</DeploymentDirectory>
+    </SchemaUpdateSettings>
     <BackendConfigurationSettings>
       <BackendConfiguration>
         <Backend>MySql</Backend>

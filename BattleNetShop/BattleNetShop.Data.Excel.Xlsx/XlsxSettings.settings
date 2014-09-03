@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BattleNetShop.Data.Excel.Xlsx" GeneratedClassName="XlsxSettings">
   <Profiles />
   <Settings>
-    <Setting Name="GenerateReportDirectory" Type="System.String" Scope="Application">
+    <Setting Name="SaveDirectory" Type="System.String" Scope="Application">
       <Value Profile="(Default)">../../../../Reports/XlsxReports/</Value>
     </Setting>
   </Settings>

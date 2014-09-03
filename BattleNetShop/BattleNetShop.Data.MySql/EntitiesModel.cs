@@ -22,7 +22,7 @@ using BattleNetShop.Data.MySql;
 
 namespace BattleNetShop.Data.MySql	
 {
-    public partial class BattleNetShopMySqlDbContext : OpenAccessContext, IBattleNetShopMySqlDbContextUnitOfWork
+	public partial class BattleNetShopMySqlDbContext : OpenAccessContext, IBattleNetShopMySqlDbContextUnitOfWork
 	{
 		private static string connectionStringName = @"MySqlConnection";
 			

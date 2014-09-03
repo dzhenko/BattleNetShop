@@ -17,6 +17,7 @@
         public void Seed()
         {
             this.mongoHandler = new MongoDbHandler();
+
             this.excelHandler = new ExcelXlsHandler();
 
             this.SeedVendors();
