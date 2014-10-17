@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<sales>
+  <location name="Aerie Peak">
+    <summary date="01-Jan-2014" total-sum="31620.85" />
+    <summary date="02-Jan-2014" total-sum="22695.85" />
+    <summary date="03-Jan-2014" total-sum="31607.72" />
+  </location>
+  <location name="Area 52">
+    <summary date="01-Jan-2014" total-sum="17252.99" />
+    <summary date="02-Jan-2014" total-sum="32385.13" />
+    <summary date="03-Jan-2014" total-sum="42605.06" />
+  </location>
+  <location name="Arthas">
+    <summary date="01-Jan-2014" total-sum="21091.74" />
+    <summary date="02-Jan-2014" total-sum="31028.94" />
+    <summary date="03-Jan-2014" total-sum="29782.03" />
+  </location>
+  <location name="Azeroth">
+    <summary date="01-Jan-2014" total-sum="10885.94" />
+    <summary date="02-Jan-2014" total-sum="41921.69" />
+    <summary date="03-Jan-2014" total-sum="27415.00" />
+  </location>
+  <location name="Bleeding Hollo">
+    <summary date="01-Jan-2014" total-sum="23028.39" />
+    <summary date="02-Jan-2014" total-sum="23896.39" />
+    <summary date="03-Jan-2014" total-sum="17459.86" />
+  </location>
+  <location name="Darkspear">
+    <summary date="01-Jan-2014" total-sum="35116.01" />
+    <summary date="02-Jan-2014" total-sum="14342.84" />
+    <summary date="03-Jan-2014" total-sum="16017.45" />
+  </location>
+  <location name="Emerald Dream">
+    <summary date="01-Jan-2014" total-sum="26828.93" />
+    <summary date="02-Jan-2014" total-sum="29387.15" />
+    <summary date="03-Jan-2014" total-sum="18645.61" />
+  </location>
+  <location name="Fake Bulgarian Server">
+    <summary date="01-Jan-2014" total-sum="18620.08" />
+    <summary date="02-Jan-2014" total-sum="39330.56" />
+    <summary date="03-Jan-2014" total-sum="43573.54" />
+  </location>
+  <location name="Illidan">
+    <summary date="01-Jan-2014" total-sum="42130.69" />
+    <summary date="02-Jan-2014" total-sum="29458.35" />
+    <summary date="03-Jan-2014" total-sum="22749.16" />
+  </location>
+  <location name="Kel'Thuzad">
+    <summary date="01-Jan-2014" total-sum="42596.35" />
+    <summary date="02-Jan-2014" total-sum="30154.26" />
+    <summary date="03-Jan-2014" total-sum="10704.34" />
+  </location>
+  <location name="Kil'jaeden">
+    <summary date="01-Jan-2014" total-sum="38108.22" />
+    <summary date="02-Jan-2014" total-sum="37898.01" />
+    <summary date="03-Jan-2014" total-sum="9649.76" />
+  </location>
+  <location name="Lightbringer">
+    <summary date="01-Jan-2014" total-sum="31579.72" />
+    <summary date="02-Jan-2014" total-sum="43579.33" />
+    <summary date="03-Jan-2014" total-sum="25333.56" />
+  </location>
+  <location name="Mal'Ganis">
+    <summary date="01-Jan-2014" total-sum="16768.28" />
+    <summary date="02-Jan-2014" total-sum="44751.79" />
+    <summary date="03-Jan-2014" total-sum="51242.22" />
+  </location>
+  <location name="Netherstorm">
+    <summary date="01-Jan-2014" total-sum="18731.97" />
+    <summary date="02-Jan-2014" total-sum="26188.76" />
+    <summary date="03-Jan-2014" total-sum="16578.30" />
+  </location>
+  <location name="Proudmoore">
+    <summary date="01-Jan-2014" total-sum="16698.08" />
+    <summary date="02-Jan-2014" total-sum="20150.70" />
+    <summary date="03-Jan-2014" total-sum="24334.10" />
+  </location>
+  <location name="Sargeras">
+    <summary date="01-Jan-2014" total-sum="21732.50" />
+    <summary date="02-Jan-2014" total-sum="24836.35" />
+    <summary date="03-Jan-2014" total-sum="14166.22" />
+  </location>
+  <location name="Stormrage">
+    <summary date="01-Jan-2014" total-sum="22312.98" />
+    <summary date="02-Jan-2014" total-sum="27911.49" />
+    <summary date="03-Jan-2014" total-sum="19397.97" />
+  </location>
+  <location name="Thrall">
+    <summary date="01-Jan-2014" total-sum="12642.48" />
+    <summary date="02-Jan-2014" total-sum="25008.71" />
+    <summary date="03-Jan-2014" total-sum="18365.94" />
+  </location>
+  <location name="Tichondrius">
+    <summary date="01-Jan-2014" total-sum="20271.06" />
+    <summary date="02-Jan-2014" total-sum="26502.21" />
+    <summary date="03-Jan-2014" total-sum="34755.12" />
+  </location>
+  <location name="Zul'jin">
+    <summary date="01-Jan-2014" total-sum="24186.64" />
+    <summary date="02-Jan-2014" total-sum="32919.47" />
+    <summary date="03-Jan-2014" total-sum="27852.80" />
+  </location>
+</sales>
